@@ -28,7 +28,7 @@
     <!-- Responsive navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand fw-bold" href="#!">Home Cooked Harmony</a>
+        <a class="navbar-brand fw-bold" href="{% url 'home' %}">Home Cooked Harmony</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -43,12 +43,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item act">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="#!">Register</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="#">About</a>
             </li>
           </ul>
         </div>

@@ -4,30 +4,19 @@
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->
-      {% for post in object_list %}
       <article class="art-bg rounded">
         <!-- Post header-->
         <header class="mb-4 p-2">
           <!-- Post title-->
-          <a href="{% url 'post_details' slug=post.slug %}">
           <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
-          </a>
           <!-- Post meta content-->
           <div class="text-muted fst-italic mb-2 text-end">
             Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
           </div>
           <!-- Post categories-->
           <div class="text-end">
-            <a
-              id="categ"
-              class="badge text-decoration-none"
-              href="#!"
-              >Fish</a
-            >
-            <a
-              id="categ"
-              class="badge text-decoration-none"
-              href="#!"
+            <a id="categ" class="badge text-decoration-none" href="#!">Fish</a>
+            <a id="categ" class="badge text-decoration-none" href="#!"
               >Mediterranean</a
             >
           </div>
@@ -45,7 +34,37 @@
           <p class="fs-5 mb-4">{{ post.description }}</p>
         </section>
       </article>
-      {% endfor %}
+      <!-- Comments section-->
+      <section class="mb-5">
+        <div class="card">
+          <div class="card-body cm-bg rounded">
+            <!-- Comment form-->
+            <form class="mb-4">
+              <textarea
+                class="form-control"
+                rows="3"
+                placeholder="Join the discussion and leave a comment!"
+              ></textarea>
+            </form>
+            <!-- Comment-->
+            <div class="d-flex">
+              <div class="flex-shrink-0">
+                <img
+                  class="rounded-circle"
+                  src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
+                  alt="..."
+                />
+              </div>
+              <div class="ms-3">
+                <div class="fw-bold">Commenter Name</div>
+                When I look at the universe and all the ways the universe wants
+                to kill us, I find it hard to reconcile that with statements of
+                beneficence.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- Side widgets-->
     <div class="col-lg-4">
