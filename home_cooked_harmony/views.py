@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Post
-from .forms import PostForm
+from .models import Post, Comment
+from .forms import PostForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
@@ -19,7 +19,21 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    return render(request, "post_details.html", {"post": post})
+    comments = post.comments.all()
+    if request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save()
+            comment.post = post
+            comment.save()
+            return redirect("post_details", slug=post.slug)
+    else:
+        comment_form = CommentForm()
+    return render(
+        request,
+        "post_details.html",
+        {"post": post, "comments": comments, "form": comment_form},
+    )
 
 
 @login_required
@@ -47,6 +61,7 @@ def login_view(request):
             return render(request, "login.html")
     else:
         return render(request, "login.html")
+
 
 def logout_view(request):
     logout(request)

@@ -6,6 +6,7 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
@@ -19,17 +20,19 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.title + ' | ' + str(self.author)
-    
+        return "%s - %s" % (self.title, str(self.author))
+
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse("home")
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
-    name = models.CharField(max_length=200)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_comments"
+    )
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '%s - %s' % (self.post.title, self.name)
+        return "%s - %s - %s" % (self.body, self.post, self.user)

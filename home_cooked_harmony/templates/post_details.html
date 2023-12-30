@@ -39,6 +39,7 @@
         <div class="card">
           <div class="card-body cm-bg rounded">
             <!-- Comment form-->
+            {% if user.is_authenticated %}
             <form class="mb-4">
               <textarea
                 class="form-control"
@@ -47,21 +48,21 @@
               ></textarea>
             </form>
             <!-- Comment-->
+            {% for comment in comments %}
             <div class="d-flex">
-              <div class="flex-shrink-0">
-                <img
-                  class="rounded-circle"
-                  src="https://dummyimage.com/50x50/ced4da/6c757d.jpg"
-                  alt="..."
-                />
-              </div>
               <div class="ms-3">
-                <div class="fw-bold">Commenter Name</div>
-                When I look at the universe and all the ways the universe wants
-                to kill us, I find it hard to reconcile that with statements of
-                beneficence.
+                <div class="fw-bold">{{ comment.user }}</div>
+                <div>{{ comment.body }}</div>
               </div>
             </div>
+            {% endfor %}
+            {% else %}
+            <div class="d-flex">
+              <div class="ms-3">
+                <div class="fw-bold">Anonymous Food Enjoyer</div>
+                <div>Join the discussion and leave a comment!</div>
+              </div>
+            {% endif %}
           </div>
         </div>
       </section>
@@ -91,18 +92,63 @@
         <div class="card-header">Categories</div>
         <div class="card-body">
           <div class="row">
+            <h3 class="text-center">Meat & Poultry</h3>
             <div class="col-sm-6">
               <ul class="list-unstyled mb-0">
-                <li><a href="#!">Web Design</a></li>
-                <li><a href="#!">HTML</a></li>
-                <li><a href="#!">Freebies</a></li>
+                <li><a href="#!">Beef</a></li>
+                <li><a href="#!">Chicken</a></li>
+                <li><a href="#!">Pork</a></li>
               </ul>
             </div>
             <div class="col-sm-6">
               <ul class="list-unstyled mb-0">
-                <li><a href="#!">JavaScript</a></li>
-                <li><a href="#!">CSS</a></li>
-                <li><a href="#!">Tutorials</a></li>
+                <li><a href="#!">Lamb</a></li>
+                <li><a href="#!">Turkey</a></li>
+                <li><a href="#!">Duck</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">Veal</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">Game Meat</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <h3 class="text-center">Seafood</h3>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">General Seafood</a></li>
+                <li><a href="#!">Fish</a></li>
+                <li><a href="#!">Shrimp</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">Cod</a></li>
+                <li><a href="#!">Octopus</a></li>
+                <li><a href="#!">Salmon</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <h3 class="text-center">Other</h3>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">Dairy</a></li>
+                <li><a href="#!">Fruits</a></li>
+                <li><a href="#!">Vegetables</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li><a href="#!">Grains</a></li>
+                <li><a href="#!">Legumes</a></li>
+                <li><a href="#!">Desert</a></li>
               </ul>
             </div>
           </div>
