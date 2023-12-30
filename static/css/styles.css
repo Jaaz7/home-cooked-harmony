@@ -98,7 +98,8 @@
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -132,6 +133,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: 50%;
 }
 
 hr {
@@ -3893,6 +3897,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
+  background-color: rgb(7, 56, 56);
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);
