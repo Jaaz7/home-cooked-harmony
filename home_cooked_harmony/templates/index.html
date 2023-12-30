@@ -5,26 +5,30 @@
     <div class="col-lg-8">
       <!-- Post content-->
       {% for post in object_list %}
-      <article>
+      <article class="art-bg rounded">
         <!-- Post header-->
-        <header class="mb-4">
+        <header class="mb-4 p-2">
           <!-- Post title-->
-          <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+          <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
           <!-- Post meta content-->
-          <div class="text-muted fst-italic mb-2">
+          <div class="text-muted fst-italic mb-2 text-end">
             Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
           </div>
           <!-- Post categories-->
-          <a
-            class="badge bg-secondary text-decoration-none link-light"
-            href="#!"
-            >Web Design</a
-          >
-          <a
-            class="badge bg-secondary text-decoration-none link-light"
-            href="#!"
-            >Freebies</a
-          >
+          <div class="text-end">
+            <a
+              id="categ"
+              class="badge text-decoration-none"
+              href="#!"
+              >Fish</a
+            >
+            <a
+              id="categ"
+              class="badge text-decoration-none"
+              href="#!"
+              >Mediterranean</a
+            >
+          </div>
         </header>
         <!-- Preview image figure-->
         <figure class="mb-4">
@@ -35,14 +39,14 @@
           />
         </figure>
         <!-- Post content-->
-        <section class="mb-5">
+        <section class="mb-5 p-2">
           <p class="fs-5 mb-4">{{ post.description }}</p>
         </section>
       </article>
       <!-- Comments section-->
       <section class="mb-5">
-        <div class="card bg-light">
-          <div class="card-body">
+        <div class="card">
+          <div class="card-body cm-bg rounded">
             <!-- Comment form-->
             <form class="mb-4">
               <textarea
