@@ -161,6 +161,14 @@ body {
   border: 3px solid #b17676;
 }
 
+.add-form {
+  width: 100%;
+}
+
+#mrg {
+  margin-bottom: 60px;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;

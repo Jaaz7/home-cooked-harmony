@@ -3,4 +3,5 @@ $(document).ready(function () {
   $("#copyright").text(function (i, origText) {
     return origText + " " + currentYear;
   });
+  CKEDITOR.replace("postBody");
 });
