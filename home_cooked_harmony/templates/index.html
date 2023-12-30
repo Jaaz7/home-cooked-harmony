@@ -34,7 +34,7 @@
         </figure>
         <!-- Post content-->
         <section class="mb-5 p-2">
-          <p class="fs-5 mb-4">{{ post.description|safe }}</p>
+          <p class="fs-5 mb-4">{{ post.description|safe|truncatechars:200 }}</p>
         </section>
       </article>
       {% endfor %}
