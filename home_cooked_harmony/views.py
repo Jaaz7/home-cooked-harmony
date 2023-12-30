@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Post
 from .forms import PostForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 
@@ -47,3 +47,7 @@ def login_view(request):
             return render(request, "login.html")
     else:
         return render(request, "login.html")
+
+def logout_view(request):
+    logout(request)
+    return redirect("home")
