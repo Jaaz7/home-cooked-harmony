@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 
 
 class PostList(generic.ListView):
@@ -20,6 +22,7 @@ def post_detail(request, slug):
     return render(request, "post_details.html", {"post": post})
 
 
+@login_required
 def add_post(request):
     form = PostForm()
     if request.method == "POST":
@@ -30,3 +33,17 @@ def add_post(request):
             post.save()
             return redirect("home")
     return render(request, "add_post.html", {"form": form})
+
+
+def login_view(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect("home")
+        else:
+            return render(request, "login.html")
+    else:
+        return render(request, "login.html")
