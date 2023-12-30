@@ -134,3 +134,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CSRF_TRUSTED_ORIGINS = ["https://*.herokuapp.com"]
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
