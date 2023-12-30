@@ -1,0 +1,46 @@
+# Github
+.github/
+
+# Node
+node_modules/
+
+# Core
+core.mongo*
+core.Microsoft*
+core.python*
+
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.py[cod]
+cloudinary_python.txt
+
+# Environment files
+env.py
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# Build and distribution files
+dist/
+build/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# Cache
+.cache/
