@@ -3,6 +3,8 @@ from .models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
+    image = forms.ImageField(required=False)
+
     class Meta:
         model = Post
         fields = ["title", "description", "image"]

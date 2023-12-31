@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
+from django.core.paginator import Paginator
 from .models import Post
 from cloudinary.uploader import destroy
 from .forms import PostForm, CommentForm
@@ -75,8 +76,19 @@ def logout_view(request):
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
-    destroy(post.image.public_id)
+    if post.image and not "food_placeholder.png" in post.image.url:
+        public_id = post.image.url.split("/")[-1].split(".")[0]
+
+        destroy(public_id)
 
     post.delete()
 
     return redirect("home")
+
+
+def post_list(request):
+    post_list = Post.objects.all()
+    paginator = Paginator(post_list, 3)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, "post_list.html", {"page_obj": page_obj})

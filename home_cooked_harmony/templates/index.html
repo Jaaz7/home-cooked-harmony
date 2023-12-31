@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% load static %}
 
 <div class="container mt-5">
   <div class="row">
@@ -26,18 +26,28 @@
         </header>
         <!-- Preview image figure-->
         <figure class="mb-4">
-        <a href="{% url 'post_details' slug=post.slug %}">
-          <img
-            class="img-fluid rounded"
-            src="{{ post.image.url }}"
-            alt="{{ post.title }}}"
-          />
+          <a href="{% url 'post_details' slug=post.slug %}">
+            {% if post.image and post.image.url %}
+            <img
+              class="img-fluid rounded"
+              src="{{ post.image.url }}"
+              alt="{{ post.title }}"
+            />
+            {% else %}
+            <img
+              class="img-fluid rounded"
+              src="{% static 'assets/food_placeholder.png' %}"
+              alt="{{ post.title }}"
+            />
+            {% endif %}
           </a>
         </figure>
         <!-- Post content-->
         <section class="mb-5 p-2">
-        <a href="{% url 'post_details' slug=post.slug %}">
-          <p class="fs-5 mb-4">{{ post.description|safe|truncatechars:200 }}</p>
+          <a href="{% url 'post_details' slug=post.slug %}">
+            <p class="fs-5 mb-4">
+              {{ post.description|safe|truncatechars:200 }}
+            </p>
           </a>
         </section>
       </article>
