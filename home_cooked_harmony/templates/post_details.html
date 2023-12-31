@@ -40,13 +40,21 @@
           <div class="card-body cm-bg rounded">
             <!-- Comment form-->
             {% if user.is_authenticated %}
-            <form class="mb-4">
+            <form class="mb-4" method="POST">
+              {% csrf_token %}
               <textarea
                 class="form-control"
                 rows="3"
-                placeholder="Join the discussion and leave a comment!"
+                name="body"
+                placeholder="You can leave a comment here"
               ></textarea>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary mt-3 mx-auto">
+                  Submit
+                </button>
+              </div>
             </form>
+            <hr class="my-4" />
             <!-- Comment-->
             {% for comment in comments %}
             <div class="d-flex">
@@ -55,14 +63,29 @@
                 <div>{{ comment.body }}</div>
               </div>
             </div>
-            {% endfor %}
-            {% else %}
+            {% if not forloop.last %}
+            <hr class="my-4" />
+            {% endif %} {% endfor %} {% else %}
             <div class="d-flex">
               <div class="ms-3">
-                <div class="fw-bold">Anonymous Food Enjoyer</div>
+                <div class="fw-bold">
+                  <a href="{% url 'login' %}">Click here to login</a>
+                </div>
                 <div>Join the discussion and leave a comment!</div>
               </div>
-            {% endif %}
+            </div>
+            <hr class="my-4" />
+            <!-- Comment-->
+            {% for comment in comments %}
+            <div class="d-flex">
+              <div class="ms-3">
+                <div class="fw-bold">{{ comment.user }}</div>
+                <div>{{ comment.body }}</div>
+              </div>
+            </div>
+            {% if not forloop.last %}
+            <hr class="my-4" />
+            {% endif %} {% endfor %} {% endif %}
           </div>
         </div>
       </section>

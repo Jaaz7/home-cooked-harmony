@@ -23,8 +23,9 @@ def post_detail(request, slug):
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
-            comment = comment_form.save()
+            comment = comment_form.save(commit=False)
             comment.post = post
+            comment.user = request.user
             comment.save()
             return redirect("post_details", slug=post.slug)
     else:
