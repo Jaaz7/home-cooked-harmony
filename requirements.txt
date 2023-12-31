@@ -22,7 +22,5 @@ oauthlib==3.2.2
 django-allauth==0.57.0
 crispy-bootstrap5==0.7
 django-crispy-forms==2.1
-cloudinary==1.36.0
-dj3-cloudinary-storage==0.0.6
 urllib3==1.26.18
 typing-extensions==4.9.0
