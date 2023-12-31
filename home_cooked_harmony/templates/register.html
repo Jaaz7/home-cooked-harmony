@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 <section
-  class="vh-100 "
+  class="vh-100"
   style="
     background-image: url('{% static 'assets/coffee.png' %}');
     background-size: 50%;
@@ -60,7 +60,9 @@
 
                 <p class="text-center text-muted mt-5 mb-0">
                   Have already an account?
-                  <a href="#!" class="fw-bold text-body"><u>Login here</u></a>
+                  <a href="{% url 'login' %}" class="fw-bold text-body"
+                    ><u>Login here</u></a
+                  >
                 </p>
               </form>
             </div>
