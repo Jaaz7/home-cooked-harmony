@@ -6,7 +6,7 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-lg-8 bg-white mx-auto">
-            <form class="add-form" id="mrg" method="POST">
+            <form class="add-form" id="mrg" method="POST" enctype="multipart/form-data">
               {% csrf_token %}
               <div class="form-group">
                 <label for="postTitle">Title</label>
@@ -31,7 +31,7 @@
                 ></textarea>
               </div>
               <label for="postPic">Choose an image</label>
-              <input type="file" class="form-control-file" id="postPic" />
+              <input name="image" type="file" class="form-control-file" id="postPic" />
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>

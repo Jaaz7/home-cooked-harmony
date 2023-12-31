@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
-from .models import Post, Comment
+from .models import Post
+from cloudinary.uploader import destroy
 from .forms import PostForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -23,6 +24,7 @@ def post_detail(request, slug):
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
+            print(comment_form.errors)
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.user = request.user
@@ -66,4 +68,15 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    return redirect("home")
+
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    destroy(post.image.public_id)
+
+    post.delete()
+
     return redirect("home")

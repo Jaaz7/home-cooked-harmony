@@ -26,15 +26,19 @@
         </header>
         <!-- Preview image figure-->
         <figure class="mb-4">
+        <a href="{% url 'post_details' slug=post.slug %}">
           <img
             class="img-fluid rounded"
-            src="https://dummyimage.com/900x400/ced4da/6c757d.jpg"
-            alt="..."
+            src="{{ post.image.url }}"
+            alt="{{ post.title }}}"
           />
+          </a>
         </figure>
         <!-- Post content-->
         <section class="mb-5 p-2">
+        <a href="{% url 'post_details' slug=post.slug %}">
           <p class="fs-5 mb-4">{{ post.description|safe|truncatechars:200 }}</p>
+          </a>
         </section>
       </article>
       {% endfor %}
