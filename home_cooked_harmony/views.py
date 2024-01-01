@@ -65,7 +65,9 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(request, f"Hello foodie {username}!")
+            messages.success(
+                request, f"Welcome, {username}! You can now add posts and comments."
+            )
             return redirect("home")
         else:
             messages.error(request, "Invalid username or password.")
