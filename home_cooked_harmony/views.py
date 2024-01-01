@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.core.paginator import Paginator
@@ -6,6 +7,7 @@ from cloudinary.uploader import destroy
 from .forms import PostForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 class PostList(generic.ListView):
@@ -57,11 +59,15 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
+        if username == "" or password == "":
+            messages.error(request, "You must enter a username and password.")
+            return render(request, "login.html")
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
             return redirect("home")
         else:
+            messages.error(request, "Invalid username or password.")
             return render(request, "login.html")
     else:
         return render(request, "login.html")
@@ -93,5 +99,22 @@ def post_list(request):
     page_obj = paginator.get_page(page_number)
     return render(request, "post_list.html", {"page_obj": page_obj})
 
+
 def register(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password1 = request.POST["password1"]
+        password2 = request.POST["password2"]
+
+        if password1 != password2:
+            messages.error(request, "Passwords don't match.")
+            return render(request, "register.html")
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists.")
+            return render(request, "register.html")
+
+        User.objects.create_user(username=username, password=password1)
+        return redirect("login")
+
     return render(request, "register.html")

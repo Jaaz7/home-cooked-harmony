@@ -15,10 +15,12 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form>
+              <form method="POST">
+                {% csrf_token %}
                 <div class="form-outline mb-4">
                   <input
                     type="text"
+                    name="username"
                     id="form3Example1cg"
                     class="form-control form-control-lg"
                   />
@@ -30,6 +32,7 @@
                 <div class="form-outline mb-4">
                   <input
                     type="password"
+                    name="password1"
                     id="form3Example4cg"
                     class="form-control form-control-lg"
                   />
@@ -41,6 +44,7 @@
                 <div class="form-outline mb-4">
                   <input
                     type="password"
+                    name="password2"
                     id="form3Example4cdg"
                     class="form-control form-control-lg"
                   />
@@ -51,7 +55,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button
-                    type="button"
+                    type="submit"
                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                   >
                     Register
