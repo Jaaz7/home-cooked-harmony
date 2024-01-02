@@ -6,16 +6,19 @@ $(document).ready(function () {
   CKEDITOR.replace("postBody");
 
   $(document).on("click", "#logout-link", function (e) {
-    if (!window.confirm("Are you sure you want to logout?")) {
-      e.preventDefault();
-    }
+    e.preventDefault();
+    var logoutUrl = this.href;
+    $("#confirmLogoutModal").modal("show");
+    $("#confirmLogout").on("click", function () {
+      window.location.href = logoutUrl;
+    });
   });
 
   $(document).on("click", "#delete-button", function (e) {
     e.preventDefault();
     var form = this.form;
-    $("#confirmModal").modal("show");
-    $("#confirmDelete").on("click", function () {
+    $("#confirmDeletePostModal").modal("show");
+    $("#confirmDeletePost").on("click", function () {
       form.submit();
     });
   });

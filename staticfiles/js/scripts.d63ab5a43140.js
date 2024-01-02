@@ -5,12 +5,12 @@ $(document).ready(function () {
   });
   CKEDITOR.replace("postBody");
 
-  $(document).on("click", "#logout-link", function (e) {
+  $(document).on("click", "#logout-button", function (e) {
     e.preventDefault();
-    var logoutUrl = this.href;
+    var form = this.form;
     $("#confirmLogoutModal").modal("show");
     $("#confirmLogout").on("click", function () {
-      window.location.href = logoutUrl;
+      form.submit();
     });
   });
 

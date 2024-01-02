@@ -1,21 +1,20 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% load static %}
 
-{% load static %}
-
-
-
-
-
-<section
-  class="vh-100"
->
+<section class="vh-100">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-sm-10 offset-sm-1" id="mrg">
           <div class="card" style="border-radius: 15px">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Add a recipe</h2>
+              <h2
+                class="text-center mb-5"
+                style="color: #e6a26a; font-weight: bold"
+              >
+                <i class="fas fa-utensils"></i><br />
+                Let's get cooking!<br />Fill out the form below to share your
+                recipe with the world
+              </h2>
 
               <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -28,9 +27,7 @@
                     class="form-control form-control-lg"
                     required
                   />
-                  <label class="form-label" for="postBody"
-                    >Username</label
-                  >
+                  <label class="form-label" for="postBody">Username</label>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -39,12 +36,15 @@
                     id="postBody"
                     class="form-control form-control-lg"
                   ></textarea>
-                  <label class="form-label" for="form3Example4cg"
-                    >Body</label
-                  >
+                  <label class="form-label" for="form3Example4cg">Body</label>
                 </div>
-<label for="postPic">Choose an image</label>
-              <input name="image" type="file" class="form-control-file" id="postPic" />
+                <label for="postPic">Choose an image</label>
+                <input
+                  name="image"
+                  type="file"
+                  class="form-control-file"
+                  id="postPic"
+                />
                 <div class="d-flex justify-content-center">
                   <button
                     type="submit"

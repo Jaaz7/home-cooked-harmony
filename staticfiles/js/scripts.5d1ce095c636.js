@@ -7,7 +7,6 @@ $(document).ready(function () {
 
   $(document).on("click", "#logout-link", function (e) {
     e.preventDefault();
-    var logoutUrl = this.href;
     $("#confirmLogoutModal").modal("show");
     $("#confirmLogout").on("click", function () {
       window.location.href = logoutUrl;

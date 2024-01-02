@@ -5,19 +5,19 @@ $(document).ready(function () {
   });
   CKEDITOR.replace("postBody");
 
-  $(document).on("click", "#logout-link", function (e) {
+  $(document).on("click", "#logout-button", function (e) {
     e.preventDefault();
-    var logoutUrl = this.href;
+    var form = this.form;
     $("#confirmLogoutModal").modal("show");
     $("#confirmLogout").on("click", function () {
-      window.location.href = logoutUrl;
+      form.submit();
     });
   });
 
   $(document).on("click", "#delete-button", function (e) {
     e.preventDefault();
     var form = this.form;
-    $("#confirmDeletePostModal").modal("show");
+    $("#confirmDeleteModal").modal("show");
     $("#confirmDeletePost").on("click", function () {
       form.submit();
     });
