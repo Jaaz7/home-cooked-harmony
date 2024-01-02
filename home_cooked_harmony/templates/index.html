@@ -1,13 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
-{% load static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 
 <div class="container mt-5">
-  {% for message in messages %}
-  {% if message.tags == 'success' %}
+  {% for message in messages %} {% if message.tags == 'success' %}
   <div class="alert alert-success text-center">{{ message }}</div>
-  {% endif %}
-  {% endfor %}
+  {% endif %} {% endfor %}
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->
@@ -84,6 +80,19 @@
     </div>
     <!-- Side widgets-->
     <div class="col-lg-4">
+      <!-- About widget-->
+      <div class="card mb-4">
+        <div class="card-header">About Home Cooked Harmony</div>
+        <div class="card-body">
+          <p class="card-text">
+            Welcome to our blog! Here, we share our favorite recipes, from
+            ingredients to preparation time, and explore the world of blogging.
+            We hope you find our posts informative and delicious. Happy reading!
+            Below you can search for posts or click on the categories to find
+            what you are looking for.
+          </p>
+        </div>
+      </div>
       <!-- Search widget-->
       <div class="card mb-4">
         <div class="card-header">Search</div>
