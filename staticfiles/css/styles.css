@@ -169,6 +169,10 @@ body {
   margin-bottom: 60px;
 }
 
+#logged-in-user {
+  color: #ffffff;  
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
