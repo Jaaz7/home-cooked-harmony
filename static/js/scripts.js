@@ -5,9 +5,9 @@ $(document).ready(function () {
   });
   CKEDITOR.replace("postBody");
 
-  $('#logout-link').click(function (e) {
-    if (!confirm('Are you sure you want to logout?')) {
+  $(document).on("click", "#logout-link", function (e) {
+    if (!window.confirm("Are you sure you want to logout?")) {
       e.preventDefault();
     }
-  })
+  });
 });

@@ -101,7 +101,7 @@ def post_list(request):
     paginator = Paginator(post_list, 3)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
-    return render(request, "post_list.html", {"page_obj": page_obj})
+    return render(request, {"page_obj": page_obj})
 
 
 def register(request):

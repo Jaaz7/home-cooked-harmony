@@ -58,6 +58,9 @@
       <!-- Pagination buttons -->
       {% if is_paginated %}
       <nav aria-label="Page navigation">
+        <p class="text-center">
+          Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </p>
         <ul class="pagination justify-content-center">
           {% if page_obj.has_previous %}
           <li>
