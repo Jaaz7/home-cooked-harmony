@@ -73,7 +73,8 @@ def login_view(request):
             messages.error(request, "Invalid username or password.")
             return render(request, "login.html")
     else:
-        return render(request, "login.html")
+        context = {"current_view": "login"}
+        return render(request, "login.html", context)
 
 
 def logout_view(request):
@@ -120,4 +121,5 @@ def register(request):
         User.objects.create_user(username=username, password=password1)
         return redirect("login")
 
-    return render(request, "register.html")
+    context = {"current_view": "register"}
+    return render(request, "register.html", context)
