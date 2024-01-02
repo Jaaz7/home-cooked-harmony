@@ -40,4 +40,12 @@ $(document).ready(function () {
       }
     });
   });
+
+  $('#add_post_form').on('submit', function(e) {
+    const description = $('#postBody').val();
+    if (!description.trim()) {
+        e.preventDefault();
+        alert('Description cannot be empty.');
+    }
+});
 });

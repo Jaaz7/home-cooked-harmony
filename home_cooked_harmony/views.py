@@ -8,6 +8,7 @@ from .forms import PostForm, CommentForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.utils.text import slugify
 
 
 class PostList(generic.ListView):
@@ -45,11 +46,23 @@ def post_detail(request, slug):
 @login_required
 def add_post(request):
     form = PostForm()
+    
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
+            # Generate a unique slug if slug already exists
+            slug = slugify(post.title)
+            unique_slug = slug
+            num = 1
+
+            while Post.objects.filter(slug=unique_slug).exists():
+                unique_slug = '{}-{}'.format(slug, num)
+                num += 1
+
+            post.slug = unique_slug
+            
             post.save()
             messages.success(request, "Post added successfully! You can view it here 👇")
             return redirect("post_details", post.slug)

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
   $("#copyright").text(function (i, origText) {
     return origText + " " + currentYear;
   });
@@ -13,7 +13,7 @@ $(document).ready(function () {
 
   $(document).on("click", "#logout-link", function (e) {
     e.preventDefault();
-    var logoutUrl = this.href;
+    const logoutUrl = this.href;
     $("#confirmLogoutModal").modal("show");
     $("#confirmLogout").on("click", function () {
       window.location.href = logoutUrl;
@@ -22,7 +22,7 @@ $(document).ready(function () {
 
   $(document).on("click", "#delete-button", function (e) {
     e.preventDefault();
-    var form = this.form;
+    const form = this.form;
     $("#confirmDeletePostModal").modal("show");
     $("#confirmDeletePost").on("click", function () {
       form.submit();
@@ -31,8 +31,8 @@ $(document).ready(function () {
 
   $(document).ready(function() {
     $('#add_post_form').on('submit', function(e) {
-      var title = $('#postTitle').val();
-      var description = $('#postBody').val();
+      const title = $('#postTitle').val();
+      const description = $('#postBody').val();
   
       if (!title || !description) {
         e.preventDefault();

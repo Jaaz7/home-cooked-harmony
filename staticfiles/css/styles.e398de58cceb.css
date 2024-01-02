@@ -56,7 +56,7 @@
   --bs-body-bg-rgb: 255, 255, 255;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(
@@ -167,7 +167,7 @@ body {
 }
 
 #mrg {
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 60px;
 }
 
@@ -176,8 +176,8 @@ body {
 }
 
 #logged-username {
-color: rgb(235, 219, 79);
-font-weight: 800;
+  color: rgb(235, 219, 79);
+  font-weight: 800;
 }
 
 #button {
@@ -753,12 +753,6 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
-}
-
-@media (max-width: 400px) {
-  body {
-    font-family: initial;
-  }
 }
 
 @media (min-width: 576px) {
@@ -2070,8 +2064,9 @@ progress {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  html, body {
-    padding-top: 40px;
+  html,
+  body {
+    padding-top: 50px;
   }
 }
 @media (max-width: 767.98px) {

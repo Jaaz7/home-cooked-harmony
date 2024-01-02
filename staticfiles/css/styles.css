@@ -167,7 +167,7 @@ body {
 }
 
 #mrg {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 60px;
 }
 
@@ -753,6 +753,12 @@ progress {
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (max-width: 400px) {
+  body {
+    font-family: initial;
+  }
 }
 
 @media (min-width: 576px) {
@@ -2063,6 +2069,9 @@ progress {
   .table-responsive-sm {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+  html, body {
+    padding-top: 40px;
   }
 }
 @media (max-width: 767.98px) {
