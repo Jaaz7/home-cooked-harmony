@@ -51,6 +51,7 @@ def add_post(request):
             post = form.save(commit=False)
             post.author = request.user
             post.save()
+            messages.success(request, "Post added successfully! You can view it here 👇")
             return redirect("post_details", post.slug)
     return render(request, "add_post.html", {"form": form})
 

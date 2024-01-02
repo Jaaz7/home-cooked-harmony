@@ -16,7 +16,7 @@
                 recipe with the world
               </h2>
 
-              <form method="POST" enctype="multipart/form-data">
+              <form method="POST" enctype="multipart/form-data" id="add_post_form">
                 {% csrf_token %}
                 <div class="form-outline mb-4">
                   <input
@@ -26,7 +26,7 @@
                     class="form-control form-control-lg"
                     required
                   />
-                  <label class="form-label" for="postTitle">Recipe Title</label>
+                  <label class="form-label" for="postTitle">Recipe Title (required)</label>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -35,7 +35,7 @@
                     id="postBody"
                     class="form-control form-control-lg"
                   ></textarea>
-                  <label class="form-label" for="postBody">Recipe Description</label>
+                  <label class="form-label" for="postBody">Recipe Description (required)</label>
                 </div>
                 <label for="postPic">Choose an image</label>
                 <input

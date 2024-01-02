@@ -28,16 +28,4 @@ $(document).ready(function () {
       form.submit();
     });
   });
-
-  $(document).ready(function() {
-    $('#add_post_form').on('submit', function(e) {
-      var title = $('#postTitle').val();
-      var description = $('#postBody').val();
-  
-      if (!title || !description) {
-        e.preventDefault();
-        $('#validationModal').modal('show');
-      }
-    });
-  });
 });

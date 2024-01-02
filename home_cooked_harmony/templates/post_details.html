@@ -1,6 +1,11 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
 <div class="container mt-5">
+{% for message in messages %}
+{% if message.tags == 'success' %}
+  <div class="alert alert-success text-center">{{ message }}</div>
+  {% endif %}
+  {% endfor %}
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->

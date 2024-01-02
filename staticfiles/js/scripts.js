@@ -4,7 +4,7 @@ $(document).ready(function () {
     return origText + " " + currentYear;
   });
   tinymce.init({
-    selector: "textarea",
+    selector: "#postBody",
     plugins:
       "mentions anchor autolink charmap codesample emoticons link lists visualblocks wordcount checklist casechange formatpainter permanentpen footnotes advtemplate advcode powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
     toolbar:
@@ -26,6 +26,18 @@ $(document).ready(function () {
     $("#confirmDeletePostModal").modal("show");
     $("#confirmDeletePost").on("click", function () {
       form.submit();
+    });
+  });
+
+  $(document).ready(function() {
+    $('#add_post_form').on('submit', function(e) {
+      var title = $('#postTitle').val();
+      var description = $('#postBody').val();
+  
+      if (!title || !description) {
+        e.preventDefault();
+        $('#validationModal').modal('show');
+      }
     });
   });
 });
