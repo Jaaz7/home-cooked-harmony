@@ -1,43 +1,64 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-12 bg-white" id="mrg">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-8 bg-white mx-auto">
-            <form class="add-form" id="mrg" method="POST" enctype="multipart/form-data">
-              {% csrf_token %}
-              <div class="form-group">
-                <label for="postTitle">Title</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  name="title"
-                  id="postTitle"
-                  placeholder="Enter post title"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="postBody">Body</label>
-                <textarea
-                  class="form-control"
-                  id="postBody"
-                  rows="3"
-                  name="description"
-                  placeholder="Enter post body"
-                  required
-                ></textarea>
-              </div>
-              <label for="postPic">Choose an image</label>
+{% load static %}
+
+
+
+
+
+<section
+  class="vh-100"
+>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6" id="mrg">
+          <div class="card" style="border-radius: 15px">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Add a recipe</h2>
+
+              <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Enter title"
+                    id="form3Example1cg"
+                    class="form-control form-control-lg"
+                    required
+                  />
+                  <label class="form-label" for="postBody"
+                    >Username</label
+                  >
+                </div>
+
+                <div class="form-outline mb-4">
+                  <textarea
+                    name="description"
+                    id="postBody"
+                    class="form-control form-control-lg"
+                  ></textarea>
+                  <label class="form-label" for="form3Example4cg"
+                    >Body</label
+                  >
+                </div>
+<label for="postPic">Choose an image</label>
               <input name="image" type="file" class="form-control-file" id="postPic" />
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                <div class="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+                  >
+                    Create
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 {% endblock %}

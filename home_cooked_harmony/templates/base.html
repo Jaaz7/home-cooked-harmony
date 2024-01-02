@@ -16,6 +16,10 @@
       type="image/x-icon"
       href="{% static 'assets/chef_hat_icon.ico' %}"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <style>
@@ -34,7 +38,7 @@
         {% if user.is_authenticated %}
         <div class="nav-item">
           <a class="nav-link" id="logged-in-user"
-            >Logged in as @{{ user.username }}</a
+            ><i class="far fa-user"></i> Logged in as <span id="logged-username">{{ user.username }}</span></a
           >
         </div>
         <a href="{% url 'add_post' %}" class="ms-3">

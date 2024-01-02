@@ -166,12 +166,25 @@ body {
 }
 
 #mrg {
+  margin-top: 60px;
   margin-bottom: 60px;
 }
 
 #logged-in-user {
-  color: #ffffff;  
+  color: #ffffff;
 }
+
+#logged-username {
+color: rgb(235, 219, 79);
+font-weight: 800;
+}
+
+#button {
+  background: linear-gradient(to right, #cdd017, #ffac56);
+  border: none;
+}
+
+
 
 hr {
   margin: 1rem 0;
