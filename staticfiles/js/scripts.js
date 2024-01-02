@@ -3,7 +3,13 @@ $(document).ready(function () {
   $("#copyright").text(function (i, origText) {
     return origText + " " + currentYear;
   });
-  CKEDITOR.replace("postBody");
+  tinymce.init({
+    selector: "textarea",
+    plugins:
+      "mentions anchor autolink charmap codesample emoticons link lists visualblocks wordcount checklist casechange formatpainter permanentpen footnotes advtemplate advcode powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+    toolbar:
+      "undo redo | formatselect | bold italic underline strikethrough | link | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+  });
 
   $(document).on("click", "#logout-link", function (e) {
     e.preventDefault();

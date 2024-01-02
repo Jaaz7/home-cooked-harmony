@@ -22,12 +22,11 @@
                   <input
                     type="text"
                     name="title"
-                    placeholder="Enter title"
-                    id="form3Example1cg"
+                    id="postTitle"
                     class="form-control form-control-lg"
                     required
                   />
-                  <label class="form-label" for="postBody">Username</label>
+                  <label class="form-label" for="postTitle">Recipe Title</label>
                 </div>
 
                 <div class="form-outline mb-4">
@@ -36,7 +35,7 @@
                     id="postBody"
                     class="form-control form-control-lg"
                   ></textarea>
-                  <label class="form-label" for="form3Example4cg">Body</label>
+                  <label class="form-label" for="postBody">Recipe Description</label>
                 </div>
                 <label for="postPic">Choose an image</label>
                 <input
@@ -45,14 +44,18 @@
                   class="form-control-file"
                   id="postPic"
                 />
-                <div class="d-flex justify-content-center">
-                  <button
-                    type="submit"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-                  >
-                    Create
-                  </button>
-                </div>
+                <div class="">
+
+                  <div class="d-flex justify-content-center">
+                    <button
+                      type="submit"
+                      class="btn btn-success btn-block btn-lg fw-bold"
+                      id="button"
+                    >
+                      Create
+                    </button>
+                  </div>
+
               </form>
             </div>
           </div>
