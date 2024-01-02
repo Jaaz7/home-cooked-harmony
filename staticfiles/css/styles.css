@@ -184,8 +184,6 @@ font-weight: 800;
   border: none;
 }
 
-
-
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -5649,7 +5647,7 @@ fieldset:disabled .btn {
 
 @media (min-width: 576px) {
   .modal {
-    --bs-modal-margin: 1.75rem;
+    --bs-modal-margin: 3.75rem;
     --bs-modal-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
   .modal-dialog {

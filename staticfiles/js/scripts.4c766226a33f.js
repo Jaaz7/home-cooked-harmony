@@ -12,11 +12,8 @@ $(document).ready(function () {
   });
 
   $(document).on("click", "#delete-button", function (e) {
-    e.preventDefault();
-    var form = this.form;
-    $("#confirmModal").modal("show");
-    $("#confirmDelete").on("click", function () {
-      form.submit();
-    });
+    if (!window.confirm("Are you sure you want to delete this post?")) {
+      e.preventDefault();
+    }
   });
 });
