@@ -29,13 +29,15 @@ $(document).ready(function () {
     });
   });
 
-  $("#add_post_form").on("submit", function (e) {
-    const title = $("#postTitle").val();
-    const description = $("#postBody").val();
-
-    if (!title || !description) {
-      e.preventDefault();
-      $("#validationModal").modal("show");
-    }
+  $(document).ready(function() {
+    $('.create-post-btn').on('click', function(e) {
+      const title = $('#postTitle').val();
+      const description = $('#postBody').val();
+  
+      if (!title || !description) {
+        e.preventDefault();
+        $('#validationModal').modal('show');
+      }
+    });
   });
 });
