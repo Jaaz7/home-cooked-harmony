@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block body_style %}
+
 background-image: url('{% static 'assets/cuisine-pattern.png' %}');
-{% endblock %}
+
+{%endblock%}
 {% block content %}
+
 <div class="container mt-5">
   {% for message in messages %} {% if message.tags == 'success' %}
   <div class="alert alert-success text-center">{{ message }}</div>
@@ -13,51 +15,56 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
     <div class="col-lg-8">
       <!-- Post content-->
       {% for post in object_list %}
-      <article class="art-bg rounded">
-        <!-- Post header-->
-        <header class="mb-4 p-2">
-          <!-- Post title-->
-          <a href="{% url 'post_details' slug=post.slug %}">
-            <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
-          </a>
-          <!-- Post meta content-->
-          <div class="text-muted fst-italic mb-2 text-end">
-            Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
+      <article class="art-bg rounded mb-4">
+        <div class="row">
+          <!-- Post image -->
+          <div class="col-md-3 d-flex justify-content-center">
+            <a href="{% url 'post_details' slug=post.slug %}">
+              {% if post.image and post.image.url %}
+              <img
+                class="img-fluid rounded my-3"
+                src="{{ post.image.url }}"
+                alt="{{ post.title }}"
+              />
+              {% else %}
+              <img
+                class="img-fluid rounded my-3"
+                src="{% static 'assets/food_placeholder.png' %}"
+                alt="{{ post.title }}"
+              />
+              {% endif %}
+            </a>
           </div>
-          <!-- Post categories-->
-          <div class="text-end">
-            <a id="categ" class="badge text-decoration-none" href="#!">Fish</a>
-            <a id="categ" class="badge text-decoration-none" href="#!"
-              >Mediterranean</a
-            >
+          <!-- Post preview -->
+          <div class="col-md-6">
+            <header class="mb-2">
+              <a href="{% url 'post_details' slug=post.slug %}">
+                <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+              </a>
+              <div class="text-muted fst-italic mb-2">
+                Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
+              </div>
+            </header>
+            <section>
+              <a href="{% url 'post_details' slug=post.slug %}">
+                <p class="fs-5 mb-4">
+                  {{ post.description|safe|truncatechars:100 }}
+                </p>
+              </a>
+            </section>
           </div>
-        </header>
-        <!-- Preview image figure-->
-        <figure class="mb-4">
-          <a href="{% url 'post_details' slug=post.slug %}">
-            {% if post.image and post.image.url %}
-            <img
-              class="img-fluid rounded"
-              src="{{ post.image.url }}"
-              alt="{{ post.title }}"
-            />
-            {% else %}
-            <img
-              class="img-fluid rounded"
-              src="{% static 'assets/food_placeholder.png' %}"
-              alt="{{ post.title }}"
-            />
-            {% endif %}
-          </a>
-        </figure>
-        <!-- Post content-->
-        <section class="mb-5 p-2">
-          <a href="{% url 'post_details' slug=post.slug %}">
-            <p class="fs-5 mb-4">
-              {{ post.description|safe|truncatechars:200 }}
-            </p>
-          </a>
-        </section>
+          <!-- Edit and Delete buttons -->
+          {% if request.user.is_authenticated and request.user == post.author %}
+<div class="col-md-2 d-flex flex-column justify-content-center">
+  <a href="#" class="btn mb-2 edit-delete">
+    <i class="fas fa-pencil-alt me-2 fa-lg"></i>
+  </a>
+  <a href="#" class="btn edit-delete">
+    <i class="fas fa-trash-alt me-2 fa-lg"></i>
+  </a>
+</div>
+{% endif %}
+        </div>
       </article>
       {% endfor %}
       <!-- Pagination buttons -->
@@ -65,7 +72,8 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       <nav aria-label="Page navigation">
         <p class="text-center mb-3">
           <span class="badge bg-primary"
-            >Page {{ page_obj.number }} of {{page_obj.paginator.num_pages}}</span
+            >Page {{ page_obj.number }} of
+            {{page_obj.paginator.num_pages}}</span
           >
         </p>
         <ul class="pagination justify-content-center">

@@ -186,6 +186,22 @@ font-weight: 800;
   border: none;
 }
 
+.edit-delete {
+  padding: 15px 15px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.edit-delete i.fa-pencil-alt {
+  color: #33d64e;
+}
+
+.edit-delete i.fa-trash-alt {
+  color: #d6334e;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
