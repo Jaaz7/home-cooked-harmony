@@ -53,7 +53,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
                 <p class="fs-5 mb-2">
-                  {{ post.description|safe|truncatechars:100 }}
+                  {{ post.description|striptags|safe|truncatechars:100 }}
                 </p>
               </a>
             </section>

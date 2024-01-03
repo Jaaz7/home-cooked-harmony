@@ -220,6 +220,10 @@ figure {
   margin-right: auto;
 }
 
+body.modal-open .navbar {
+  padding-right: calc(var(--bs-gutter-x) + 15px) !important;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
