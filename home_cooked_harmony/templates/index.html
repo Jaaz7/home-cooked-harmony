@@ -1,10 +1,5 @@
-{% extends "base.html" %}
-{% load static %}
-{% block body_style %}
-
-background-image: url('{% static 'assets/cuisine-pattern.png' %}');
-
-{%endblock%}
+{% extends "base.html" %} {% load static %} {% block body_style %}
+background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
 {% block content %}
 
 <div class="container mt-5">
@@ -55,15 +50,21 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           </div>
           <!-- Edit and Delete buttons -->
           {% if request.user.is_authenticated and request.user == post.author %}
-<div class="col-md-2 d-flex flex-column justify-content-center">
-  <a href="#" class="btn mb-2 edit-delete">
-    <i class="fas fa-pencil-alt me-2 fa-lg"></i>
-  </a>
-  <a href="#" class="btn edit-delete">
-    <i class="fas fa-trash-alt me-2 fa-lg"></i>
-  </a>
-</div>
-{% endif %}
+          <div class="col-md-2 d-flex flex-column justify-content-center">
+            <form method="POST" action="#">
+              {% csrf_token %}
+              <button type="submit" class="btn mb-2 edit-delete">
+                <i class="fas fa-pencil-alt me-2 fa-lg"></i>
+              </button>
+            </form>
+            <form method="POST" action="{% url 'delete_post' post.id %}">
+              {% csrf_token %}
+              <button type="submit" id="delete-button" class="btn edit-delete">
+                <i class="fas fa-trash-alt me-2 fa-lg"></i>
+              </button>
+            </form>
+          </div>
+          {% endif %}
         </div>
       </article>
       {% endfor %}

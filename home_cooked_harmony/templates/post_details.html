@@ -1,11 +1,14 @@
-{% extends "base.html" %} {% block content %} {% load static %}
+{% extends "base.html" %} {% load static %}
+
+{% block body_style %}
+background-image: url('{% static 'assets/cuisine-pattern.png' %}');
+{%endblock%}
+{% block content %}
 
 <div class="container mt-5">
-{% for message in messages %}
-{% if message.tags == 'success' %}
+  {% for message in messages %} {% if message.tags == 'success' %}
   <div class="alert alert-success text-center">{{ message }}</div>
-  {% endif %}
-  {% endfor %}
+  {% endif %} {% endfor %}
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->
@@ -48,12 +51,17 @@
         <section class="mb-5 p-2">
           <p class="fs-5 mb-4">{{ post.description|safe }}</p>
           {% if user.is_authenticated and user == post.author %}
-          <form method="POST" action="{% url 'delete_post' post.id %}">
-            {% csrf_token %}
-            <button id="delete-button" type="submit" class="btn btn-danger">
-              Delete Post
-            </button>
-          </form>
+          <div class="d-flex">
+            <!-- Edit button -->
+            <a href="#" class="btn btn-secondary me-2">Edit</a>
+            <!-- Delete button -->
+            <form method="POST" action="{% url 'delete_post' post.id %}">
+              {% csrf_token %}
+              <button id="delete-button" type="submit" class="btn btn-danger">
+                Delete
+              </button>
+            </form>
+          </div>
           {% endif %}
         </section>
       </article>

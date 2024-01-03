@@ -195,11 +195,16 @@ font-weight: 800;
 }
 
 .edit-delete i.fa-pencil-alt {
-  color: #33d64e;
+  color: #525252;
 }
 
 .edit-delete i.fa-trash-alt {
   color: #d6334e;
+}
+
+body.modal-open {
+  padding-right: 0 !important;
+  overflow: auto !important;
 }
 
 hr {

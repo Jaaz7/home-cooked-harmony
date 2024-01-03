@@ -14,7 +14,7 @@ from django.utils.text import slugify
 class PostList(generic.ListView):
     queryset = Post.objects.all().order_by("-date")
     template_name = "index.html"
-    paginate_by = 3
+    paginate_by = 5
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -112,7 +112,7 @@ def delete_post(request, post_id):
 
 def post_list(request):
     post_list = Post.objects.all()
-    paginator = Paginator(post_list, 3)
+    paginator = Paginator(post_list)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
     return render(request, {"page_obj": page_obj})
