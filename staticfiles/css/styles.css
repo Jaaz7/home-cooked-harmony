@@ -141,6 +141,7 @@ body {
 
 .art-bg {
   background-color: #e1e1e1f7;
+  word-wrap: break-word;
 }
 
 .cm-bg {

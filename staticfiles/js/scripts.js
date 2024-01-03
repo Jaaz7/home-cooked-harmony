@@ -31,9 +31,19 @@ $(document).ready(function () {
 
   $("#add_post_form").on("submit", function (e) {
     const title = $("#postTitle").val();
-    const description = tinyMCE.get('postBody').getContent({format: 'text'}).trim();
+    const description = tinyMCE
+      .get("postBody")
+      .getContent({ format: "text" })
+      .trim();
 
-    if (!title || !description) {
+    if (
+      !title ||
+      title.length < 5 ||
+      title.length > 100 ||
+      !description ||
+      description.length < 10 ||
+      description.length > 5000
+    ) {
       e.preventDefault();
       $("#validationModal").modal("show");
     }
