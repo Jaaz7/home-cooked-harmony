@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   $("#add_post_form").on("submit", function (e) {
     const title = $("#postTitle").val();
-    const description = $("#postBody").val();
+    const description = tinyMCE.get('postBody').getContent({format: 'text'}).trim();
 
     if (!title || !description) {
       e.preventDefault();
