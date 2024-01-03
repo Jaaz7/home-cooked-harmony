@@ -1,5 +1,8 @@
-{% extends "base.html" %} {% load static %} {% block body_style %}
-background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
+{% extends "base.html" %}
+{% load static %}
+{% block body_style %}
+background-image: url('{% static 'assets/cuisine-pattern.png' %}');
+{%endblock%}
 {% block content %}
 
 <div class="container mt-5">
@@ -36,13 +39,20 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
               <a href="{% url 'post_details' slug=post.slug %}">
                 <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
               </a>
+              <!-- Post categories-->
+          <div>
+            <a id="categ" class="badge text-decoration-none" href="#!">Fish</a>
+            <a id="categ" class="badge text-decoration-none" href="#!"
+              >Mediterranean</a
+            >
+          </div>
               <div class="text-muted fst-italic mb-2">
                 Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
               </div>
             </header>
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
-                <p class="fs-5 mb-4">
+                <p class="fs-5 mb-2">
                   {{ post.description|safe|truncatechars:100 }}
                 </p>
               </a>
@@ -50,7 +60,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
           </div>
           <!-- Edit and Delete buttons -->
           {% if request.user.is_authenticated and request.user == post.author %}
-          <div class="col-md-2 d-flex flex-column justify-content-center">
+          <div class="col-md-2 d-flex flex-column justify-content-center align-items-end">
             <form method="POST" action="#">
               {% csrf_token %}
               <button type="submit" class="btn mb-2 edit-delete">
