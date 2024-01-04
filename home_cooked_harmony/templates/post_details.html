@@ -83,16 +83,18 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             <hr class="my-4" />
             <!-- Comment-->
             {% for comment in comments %}
-            <div class="d-flex">
+            <div class="d-flex flex-column">
               <div class="ms-3">
                 <div class="fw-bold comment-usertag">{{ comment.user }}</div>
                 <div class="fst-italic mb-2 comment-date">
                 Posted on {{ comment.date|date:'d/m/Y' }}
               </div>
                 <div>{{ comment.body }}</div>
-                <button class="btn btn-danger delete-comment" data-id="{{ comment.id }}">Delete</button>
+                <form method="POST" action="{% url 'delete_comment' comment.id %}">
+              {% csrf_token %}
+                <button class="btn btn-danger delete-comment" type="submit" data-id="{{ comment.id }}">Delete</button>
+            </form>
               </div>
-            </div>
             {% if not forloop.last %}
             <hr class="my-4" />
             {% endif %}
@@ -109,9 +111,8 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             <hr class="my-4" />
             <!-- Comment-->
             {% for comment in comments %}
-            <div class="d-flex">
+            <div class="d-flex flex-column">
               <div class="ms-3">
-              
                 <div class="fw-bold comment-usertag">{{ comment.user }}</div>
                 <div class="fst-italic mb-2 comment-date">
                 Posted on {{ comment.date|date:'d/m/Y' }}
