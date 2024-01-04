@@ -51,14 +51,13 @@ $(document).ready(function () {
 
   $("#id_labels").select2({
     maximumSelectionLength: 6,
-    templateSelection: function (data) {
-      $(data.element).attr('data-select2-id', data.id);
+    templateSelection: function (data, container) {
       let $option = $(
         "<span>" +
           data.text +
-          '</span class="remove-option" data-select2-id="' +
+          '</span><button class="remove-option" data-select2-id="' +
           data.id +
-          '">'
+          '">Remove</button>'
       );
       return $option;
     },

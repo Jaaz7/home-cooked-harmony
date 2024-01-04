@@ -177,8 +177,8 @@ body {
 }
 
 #logged-username {
-  color: rgb(235, 219, 79);
-  font-weight: 800;
+color: rgb(235, 219, 79);
+font-weight: 800;
 }
 
 #button {
@@ -189,7 +189,7 @@ body {
 .edit-delete {
   padding: 15px 15px;
   margin-left: 20px;
-  align-items: center;
+  align-items: center;  
 }
 
 .edit-delete i.fa-pencil-alt {
@@ -224,38 +224,12 @@ body.modal-open .navbar {
   padding-right: calc(var(--bs-gutter-x) + 15px) !important;
 }
 
-.pagination-btn {
-  background: linear-gradient(to right, #cdd017, #ffac56) !important;
-  border-radius: 5px;
-  border: none !important;
-  color: rgb(77 54 54) !important;
-  font-weight: 600;
-}
-
 hr {
   margin: 1rem 0;
   color: inherit;
   border: 0;
   border-top: 1px solid;
   opacity: 0.25;
-}
-
-.card-widget {
-  background-color: #ffe1d2;
-}
-
-.btn-search {
-  background: linear-gradient(to right, #cdd017, #ffac56);
-  color: rgb(110 59 59) !important;
-  font-weight: 600 !important;
-}
-
-.pagination-badge {
-  background: #ffffff;
-  color: rgb(77 54 54) !important;
-  font-weight: 600 !important;
-  border: 1px solid #000000;
-  font-size: 1em !important;
 }
 
 h6,
@@ -2135,8 +2109,7 @@ progress {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-  html,
-  body {
+  html, body {
     padding-top: 40px;
   }
 }
@@ -4903,7 +4876,7 @@ fieldset:disabled .btn {
   --bs-badge-padding-y: 0.35em;
   --bs-badge-font-size: 0.75em;
   --bs-badge-font-weight: 700;
-  --bs-badge-color: #ffffff;
+  --bs-badge-color: #fff;
   --bs-badge-border-radius: 0.375rem;
   display: inline-block;
   padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);

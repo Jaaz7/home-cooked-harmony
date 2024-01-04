@@ -49,27 +49,24 @@ $(document).ready(function () {
     }
   });
 
-  $("#id_labels").select2({
+  $("#id_PostForm-labels").select2({
     maximumSelectionLength: 6,
-    templateSelection: function (data) {
-      $(data.element).attr('data-select2-id', data.id);
-      let $option = $(
-        "<span>" +
-          data.text +
-          '</span class="remove-option" data-select2-id="' +
-          data.id +
-          '">'
+    templateSelection: function (data, container) {
+      $(data.element).attr("data-select2-id", data.id);
+      return (
+        data.text +
+        '<button class="remove-option" data-select2-id="' +
+        data.id +
+        '">Remove</button>'
       );
-      return $option;
     },
   });
 
   $(document).on("click", ".remove-option", function (e) {
     e.preventDefault();
-    e.stopPropagation();
     var id = $(this).data("select2-id");
-    var option = $("#id_labels").find('option[data-select2-id="' + id + '"]');
+    var option = $("#id_PostForm-labels").find('option[data-select2-id="' + id + '"]');
     option.remove();
-    $("#id_labels").trigger("change");
+    $("#id_PostForm-labels").trigger("change");
   });
 });

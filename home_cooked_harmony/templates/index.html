@@ -39,13 +39,6 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
               <a href="{% url 'post_details' slug=post.slug %}">
                 <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
               </a>
-              <!-- Post categories-->
-          <div>
-            <a id="categ" class="badge text-decoration-none" href="#!">Fish</a>
-            <a id="categ" class="badge text-decoration-none" href="#!"
-              >Mediterranean</a
-            >
-          </div>
               <div class="text-muted fst-italic mb-2">
                 Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
               </div>
@@ -82,7 +75,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       {% if is_paginated %}
       <nav aria-label="Page navigation">
         <p class="text-center mb-3">
-          <span class="badge bg-primary"
+          <span class="badge pagination-badge"
             >Page {{ page_obj.number }} of
             {{page_obj.paginator.num_pages}}</span
           >
@@ -92,13 +85,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           <li>
             <a
               href="?page={{ page_obj.previous_page_number }}"
-              class="page-link"
+              class="page-link pagination-btn"
               >&laquo; PREV</a
             >
           </li>
           {% endif %} {% if page_obj.has_next %}
           <li>
-            <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link pagination-btn">
               NEXT &raquo;</a
             >
           </li>
@@ -112,7 +105,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       <!-- About widget-->
       <div class="card mb-4">
         <div class="card-header fw-bold">About Home Cooked Harmony</div>
-        <div class="card-body">
+        <div class="card-body card-widget">
           <p class="card-text">
             Welcome to our blog!<br /><br />Here we share our favorite recipes,
             from ingredients to preparation time, and explore the world of
@@ -125,7 +118,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       <!-- Search widget-->
       <div class="card mb-4">
         <div class="card-header">Search</div>
-        <div class="card-body">
+        <div class="card-body card-widget">
           <div class="input-group">
             <input
               class="form-control"
@@ -134,79 +127,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
               aria-label="Enter search term..."
               aria-describedby="button-search"
             />
-            <button class="btn btn-primary" id="button-search" type="button">
+            <button class="btn btn-search" id="button-search" type="button">
               Go!
             </button>
           </div>
         </div>
       </div>
-      <!-- Categories widget-->
-      <div class="card mb-4">
-        <div class="card-header">Categories</div>
-        <div class="card-body">
-          <div class="row">
-            <h3 class="text-center">Meat & Poultry</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Beef</a></li>
-                <li><a href="#!">Chicken</a></li>
-                <li><a href="#!">Pork</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Lamb</a></li>
-                <li><a href="#!">Turkey</a></li>
-                <li><a href="#!">Duck</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Veal</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Game Meat</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <h3 class="text-center">Seafood</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">General Seafood</a></li>
-                <li><a href="#!">Fish</a></li>
-                <li><a href="#!">Shrimp</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Cod</a></li>
-                <li><a href="#!">Octopus</a></li>
-                <li><a href="#!">Salmon</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <h3 class="text-center">Other</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Dairy</a></li>
-                <li><a href="#!">Fruits</a></li>
-                <li><a href="#!">Vegetables</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Grains</a></li>
-                <li><a href="#!">Legumes</a></li>
-                <li><a href="#!">Desert</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </div>

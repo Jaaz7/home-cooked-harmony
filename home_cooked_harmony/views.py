@@ -20,7 +20,6 @@ class PostList(generic.ListView):
         context = super().get_context_data(**kwargs)
         context["current_view"] = "home"
         return context
-    
 
 
 def post_detail(request, slug):
@@ -47,7 +46,6 @@ def post_detail(request, slug):
 @login_required
 def add_post(request):
     form = PostForm()
-    
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
@@ -59,17 +57,16 @@ def add_post(request):
             num = 1
 
             while Post.objects.filter(slug=unique_slug).exists():
-                unique_slug = '{}-{}'.format(slug, num)
+                unique_slug = "{}-{}".format(slug, num)
                 num += 1
 
             post.slug = unique_slug
-            
+
             post.save()
 
-            form.save_m2m()
-            
             messages.success(request, "Post added successfully! You can view it here 👇")
             return redirect("post_details", post.slug)
+
     return render(request, "add_post.html", {"form": form})
 
 
@@ -83,9 +80,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            messages.success(
-                request, f"Welcome, {username}!"
-            )
+            messages.success(request, f"Welcome, {username}!")
             return redirect("home")
         else:
             messages.error(request, "Invalid username or password.")
