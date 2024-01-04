@@ -27,19 +27,19 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                 id="add_post_form"
               >
                 {% csrf_token %}
-                <div class="form-outline mb-4">
+                <label class="form-label" for="postTitle"
+                    >Recipe Title (required)</label>
+                <div class="form-outline mb-3">
                   <input
                     type="text"
                     name="title"
                     id="postTitle"
                     class="form-control form-control-lg"
                   />
-                  <label class="form-label" for="postTitle"
-                    >Recipe Title (required)</label
-                  >
+
                 </div>
-                <div class="form-row">
-                  <div class="col-md-3">
+                <div>
+                  <div class="col-md-4">
                     <label for="preptime">Preparation Time</label>
                     <select
                       id="preptime"
@@ -52,7 +52,7 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                       <option value="40+">40 minutes or more</option>
                     </select>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-4 mb-4">
                     <label for="servings">Servings</label>
                     <select id="servings" name="servings" class="form-control">
                       <option selected>Choose...</option>
@@ -62,6 +62,9 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                     </select>
                   </div>
                 </div>
+                <label class="form-label" for="postBody"
+                    >Recipe Instructions (required)</label
+                  >
                 <div class="form-outline mb-3">
                   <textarea
                     name="description"
@@ -76,9 +79,6 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                     <li><em>Add ingredient here</em></li>
                     </ul><h3>Instructions:</h3><br>
                   </textarea>
-                  <label class="form-label" for="postBody"
-                    >Recipe Instructions (required)</label
-                  >
                 </div>
                 <label for="postPic">Choose one image (optional)</label>
                 <input

@@ -295,6 +295,10 @@ a {
   font-weight: 600 !important;
 }
 
+.badge {
+  background-color: #7c4620 !important;
+}
+
 h6,
 .h6,
 h5,

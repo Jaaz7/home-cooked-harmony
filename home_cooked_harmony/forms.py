@@ -11,6 +11,8 @@ class PostForm(forms.ModelForm):
             "title",
             "description",
             "image",
+            "preptime",
+            "servings",
         ]
 
 

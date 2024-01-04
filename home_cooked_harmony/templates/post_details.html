@@ -19,8 +19,10 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
           <!-- Post meta content-->
           <div class="text-muted fst-italic mb-2 text-end">
-            Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
-          </div>
+            Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}<br>
+          <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
+          <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>
+        </div>
         </header>
         <!-- Preview image figure-->
         <figure class="mb-4">
@@ -88,6 +90,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
                 Posted on {{ comment.date|date:'d/m/Y' }}
               </div>
                 <div>{{ comment.body }}</div>
+                <button class="btn btn-danger delete-comment" data-id="{{ comment.id }}">Delete</button>
               </div>
             </div>
             {% if not forloop.last %}
