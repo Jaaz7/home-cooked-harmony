@@ -38,8 +38,31 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                     >Recipe Title (required)</label
                   >
                 </div>
-
-                <div class="form-outline mb-4">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <label for="preptime">Preparation Time</label>
+                    <select
+                      id="preptime"
+                      name="preptime"
+                      class="form-control"
+                    >
+                      <option selected>Choose...</option>
+                      <option value="20">Up to 20 minutes</option>
+                      <option value="20-40">From 20 to 40 minutes</option>
+                      <option value="40+">40 minutes or more</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="servings">Servings</label>
+                    <select id="servings" name="servings" class="form-control">
+                      <option selected>Choose...</option>
+                      <option value="1-2">1-2 people</option>
+                      <option value="2-4">2-4 people</option>
+                      <option value="4+">4+ people</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-outline mb-3">
                   <textarea
                     name="description"
                     id="postBody"
