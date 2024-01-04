@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.db import models
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.core.paginator import Paginator
@@ -15,11 +16,19 @@ class PostList(generic.ListView):
     queryset = Post.objects.all().order_by("-date")
     template_name = "index.html"
     paginate_by = 5
+    labels = models.ManyToManyField("Label")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["current_view"] = "home"
         return context
+    
+
+class Label(models.Model):
+    name = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.name
 
 
 def post_detail(request, slug):
@@ -80,7 +89,7 @@ def login_view(request):
         if user is not None:
             login(request, user)
             messages.success(
-                request, f"Welcome, {username}! You can now add posts and comments."
+                request, f"Welcome, {username}!"
             )
             return redirect("home")
         else:
