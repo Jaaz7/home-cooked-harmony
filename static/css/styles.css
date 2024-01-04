@@ -289,6 +289,12 @@ a {
   text-decoration: none !important;
 }
 
+.btn-login {
+  background: linear-gradient(to right, #cdd017, #ffac56) !important;
+  color: rgb(77 54 54) !important;
+  font-weight: 600 !important;
+}
+
 h6,
 .h6,
 h5,

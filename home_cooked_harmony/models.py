@@ -9,12 +9,26 @@ from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
+    DIFFICULTY_CHOICES = [
+        ('E', 'Easy'),
+        ('M', 'Medium'),
+        ('H', 'Hard'),
+    ]
+
+    SERVINGS_CHOICES = [
+        ('1', '1'),
+        ('1-2', '1-2'),
+        ('2-4', '2-4'),
+        ('4+', '4+'),
+    ]
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = CloudinaryField("image")
+    difficulty = models.CharField(max_length=1, choices=DIFFICULTY_CHOICES, default='E')
+    servings = models.CharField(max_length=3, choices=SERVINGS_CHOICES, default='1')
 
     def save(self, *args, **kwargs):
         if not self.slug:
