@@ -3,10 +3,16 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
-from cloudinary.uploader import destroy
 
 
 # Create your models here.
+
+
+class Label(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -15,6 +21,7 @@ class Post(models.Model):
     description = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    label = models.ManyToManyField(Label)
     image = CloudinaryField("image")
 
     def save(self, *args, **kwargs):
