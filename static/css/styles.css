@@ -140,7 +140,7 @@ body {
 }
 
 .art-bg {
-  background-color: #e1e1e1f7;
+  background-color: #ffe1d2;
   word-wrap: break-word;
 }
 
@@ -256,6 +256,37 @@ hr {
   font-weight: 600 !important;
   border: 1px solid #000000;
   font-size: 1em !important;
+}
+
+.btn-social-icon {
+  color: #ffffff !important;
+}
+
+.post-title {
+  color: #724b2c;
+}
+
+.post-description {
+  color: #b25d22;
+  font-weight: 600;
+}
+
+.comment-date {
+  color:#695a5a;
+}
+
+.comment-usertag {
+  font-size: 1.2em;
+}
+
+.btn-submit {
+  background: #9c6443 !important;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 600 !important;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 h6,

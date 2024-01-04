@@ -21,13 +21,6 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           <div class="text-muted fst-italic mb-2 text-end">
             Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
           </div>
-          <!-- Post categories-->
-          <div class="text-end">
-            <a id="categ" class="badge text-decoration-none" href="#!">Fish</a>
-            <a id="categ" class="badge text-decoration-none" href="#!"
-              >Mediterranean</a
-            >
-          </div>
         </header>
         <!-- Preview image figure-->
         <figure class="mb-4">
@@ -80,7 +73,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
                 placeholder="You can leave a comment here"
               ></textarea>
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary mt-3 mx-auto">
+                <button type="submit" class="btn btn-submit mt-3 mx-auto">
                   Submit
                 </button>
               </div>
@@ -90,13 +83,18 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             {% for comment in comments %}
             <div class="d-flex">
               <div class="ms-3">
-                <div class="fw-bold">{{ comment.user }}</div>
+                <div class="fw-bold comment-usertag">{{ comment.user }}</div>
+                <div class="fst-italic mb-2 comment-date">
+                Posted on {{ comment.date|date:'d/m/Y' }}
+              </div>
                 <div>{{ comment.body }}</div>
               </div>
             </div>
             {% if not forloop.last %}
             <hr class="my-4" />
-            {% endif %} {% endfor %} {% else %}
+            {% endif %}
+            {% endfor %}
+            {% else %}
             <div class="d-flex">
               <div class="ms-3">
                 <div class="fw-bold">
@@ -110,7 +108,11 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             {% for comment in comments %}
             <div class="d-flex">
               <div class="ms-3">
-                <div class="fw-bold">{{ comment.user }}</div>
+              
+                <div class="fw-bold comment-usertag">{{ comment.user }}</div>
+                <div class="fst-italic mb-2 comment-date">
+                Posted on {{ comment.date|date:'d/m/Y' }}
+              </div>
                 <div>{{ comment.body }}</div>
               </div>
             </div>
@@ -126,7 +128,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       <!-- Search widget-->
       <div class="card mb-4">
         <div class="card-header">Search</div>
-        <div class="card-body">
+        <div class="card-body card-widget">
           <div class="input-group">
             <input
               class="form-control"
@@ -135,79 +137,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
               aria-label="Enter search term..."
               aria-describedby="button-search"
             />
-            <button class="btn btn-primary" id="button-search" type="button">
+            <button class="btn btn-search" id="button-search" type="button">
               Go!
             </button>
           </div>
         </div>
       </div>
-      <!-- Categories widget-->
-      <div class="card mb-4">
-        <div class="card-header">Categories</div>
-        <div class="card-body">
-          <div class="row">
-            <h3 class="text-center">Meat & Poultry</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Beef</a></li>
-                <li><a href="#!">Chicken</a></li>
-                <li><a href="#!">Pork</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Lamb</a></li>
-                <li><a href="#!">Turkey</a></li>
-                <li><a href="#!">Duck</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Veal</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Game Meat</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <h3 class="text-center">Seafood</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">General Seafood</a></li>
-                <li><a href="#!">Fish</a></li>
-                <li><a href="#!">Shrimp</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Cod</a></li>
-                <li><a href="#!">Octopus</a></li>
-                <li><a href="#!">Salmon</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-            <h3 class="text-center">Other</h3>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Dairy</a></li>
-                <li><a href="#!">Fruits</a></li>
-                <li><a href="#!">Vegetables</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-6">
-              <ul class="list-unstyled mb-0">
-                <li><a href="#!">Grains</a></li>
-                <li><a href="#!">Legumes</a></li>
-                <li><a href="#!">Desert</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </div>
