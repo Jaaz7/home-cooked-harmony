@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
@@ -16,7 +16,9 @@ from django.core.exceptions import ValidationError
 
 
 class PostList(generic.ListView):
-    queryset = Post.objects.all().order_by("-date")
+    queryset = Post.objects.annotate(likes_count=Count("likes")).order_by(
+        "-likes_count", "-date"
+    )
     template_name = "index.html"
     paginate_by = 5
 
@@ -41,6 +43,7 @@ def post_detail(request, slug):
             comment.post = post
             comment.user = request.user
             comment.save()
+            messages.success(request, "Comment submitted successfully!")
             return redirect("post_details", slug=post.slug)
     else:
         comment_form = CommentForm()
@@ -108,6 +111,7 @@ def login_view(request):
         return render(request, "login.html", context)
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return redirect("home")
@@ -165,6 +169,7 @@ def register(request):
     return render(request, "register.html", context)
 
 
+@login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user == comment.user:
@@ -173,6 +178,7 @@ def delete_comment(request, comment_id):
     return redirect("post_details", slug=comment.post.slug)
 
 
+@login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     if request.user in post.likes.all():
@@ -224,6 +230,7 @@ def search_by_preptime(request, preptime):
     return render(request, "search_results.html", context)
 
 
+@login_required
 def edit_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
