@@ -9,7 +9,7 @@ background-image: url('{% static 'assets/veggies.png' %}'); background-size:
           <div class="card" style="border-radius: 15px" id="mrg">
             <div class="card-body p-5">
               {% for message in messages %} {% if message.tags == 'error' %}
-              <div class="alert alert-danger">{{ message }}</div>
+              <div class="alert alert-danger text-center">{{ message }}</div>
               {% endif %} {% endfor %}
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 

@@ -13,17 +13,17 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
       <article class="art-bg rounded mb-4">
         <div class="row">
           <!-- Post image -->
-          <div class="col-md-3 d-flex justify-content-center">
+          <div class="col-md-3 d-flex justify-content-center img-preview">
             <a href="{% url 'post_details' slug=post.slug %}">
               {% if post.image and post.image.url %}
               <img
-                class="img-fluid rounded my-3"
+                class="rounded my-3"
                 src="{{ post.image.url }}"
                 alt="{{ post.title }}"
               />
               {% else %}
               <img
-                class="img-fluid rounded my-3"
+                class="rounded my-3"
                 src="{% static 'assets/food_placeholder.png' %}"
                 alt="{{ post.title }}"
               />
@@ -35,17 +35,22 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <header class="mb-2">
               <a href="{% url 'post_details' slug=post.slug %}">
                 <h1 class="fw-bolder mb-1 post-title">
-                  {{ post.title|truncatechars:30 }}
+                  {{ post.title|truncatewords:25 }}
                 </h1>
               </a>
+              <!-- Post meta content-->
               <div class="text-muted fst-italic mb-2">
                 Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
+                <!-- Badges -->
+              <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
+              <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>
+            
               </div>
             </header>
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
-                <p class="fs-5 mb-2 post-description">
-                  {{ post.description|striptags|safe|truncatechars:100 }}
+                <p class="mb-2 post-description">
+                  {{ post.description|striptags|safe|truncatewords:100 }}
                 </p>
               </a>
             </section>
@@ -69,6 +74,11 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             </form>
           </div>
           {% endif %}
+          <!-- Simple like display -->
+          <span class="like-counter likes-preview"
+            >{{ post.likes.all.count }} {% if post.likes.all.count == 1 %} like
+            {% else %} likes {% endif %}
+          </span>
         </div>
       </article>
       {% endfor %}
@@ -106,22 +116,9 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
     </div>
     <!-- Side widgets-->
     <div class="col-lg-4">
-      <!-- About widget-->
-      <div class="card mb-4">
-        <div class="card-header fw-bold">About Home Cooked Harmony</div>
-        <div class="card-body card-widget">
-          <p class="card-text">
-            Welcome to our blog!<br /><br />Here we share our favorite recipes,
-            from ingredients to preparation time, and explore the world of
-            blogging.<br /><br />We hope you find the posts informative and
-            delicious. Happy reading!<br /><br />Below you can search for posts
-            or click on the categories to find what you are looking for.
-          </p>
-        </div>
-      </div>
       <!-- Search widget-->
       <div class="card mb-4">
-        <div class="card-header">Search</div>
+        <div class="card-header card-header-bg">Search</div>
         <div class="card-body card-widget">
           <form method="GET" action="{% url 'search' %}">
             <div class="input-group">
@@ -142,13 +139,25 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <h5>Search by amount of servings:</h5>
             <ul>
               {% for serving in servings %}
-              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a> people</li>
+              <li>
+                <a
+                  href="{% url 'search_by_serving' serving=serving %} "
+                  class="search-term"
+                  >{{ serving }} people</a
+                >
+              </li>
               {% endfor %}
             </ul>
             <h5>Search by preparation time:</h5>
             <ul>
               {% for prep in preptime %}
-              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a> minutes</li>
+              <li>
+                <a
+                  href="{% url 'search_by_preptime' preptime=prep %}"
+                  class="search-term"
+                  >{{ prep }} minutes</a
+                >
+              </li>
               {% endfor %}
             </ul>
           </div>

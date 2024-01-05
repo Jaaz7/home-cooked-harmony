@@ -17,7 +17,7 @@ background-repeat: repeat;
             <div class="card-body p-5">
               {% for message in messages %}
               {% if message.tags == 'error' %}
-              <div class="alert alert-danger">{{ message }}</div>
+              <div class="alert alert-danger text-center">{{ message }}</div>
               
               {% elif message.tags == 'success' %}
               <div class="alert alert-success text-center">{{ message }}</div>

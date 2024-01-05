@@ -112,7 +112,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(77 54 54);
+  background-color: #666052;
   color: white;
   text-align: center;
   margin-top: auto;
@@ -139,7 +139,7 @@ body {
 }
 
 .art-bg {
-  background-color: #ffe1d2;
+  background-color: #f1d6aa;
   word-wrap: break-word;
 }
 
@@ -176,12 +176,12 @@ body {
 }
 
 #logged-username {
-  color: rgb(235, 219, 79);
+  color: #ffc096;
   font-weight: 800;
 }
 
 #button {
-  background: linear-gradient(to right, #cdd017, #ffac56);
+  background: linear-gradient(to right, #ef9661, #ffca92);
   border: none;
 }
 
@@ -224,7 +224,7 @@ body.modal-open .navbar {
 }
 
 .pagination-btn {
-  background: linear-gradient(to right, #cdd017, #ffac56) !important;
+  background: linear-gradient(to right, #ef9661, #ffca92) !important;
   border-radius: 5px;
   border: none !important;
   color: rgb(77 54 54) !important;
@@ -240,18 +240,23 @@ hr {
 }
 
 .card-widget {
-  background-color: #ffe1d2;
+  background-color: #f1d6aa;
+}
+
+.card-header-bg {
+  background-color: #9fb2ac !important;
 }
 
 .btn-search {
-  background: linear-gradient(to right, #cdd017, #ffac56);
+  background: linear-gradient(to right, #ef9661, #ffca92);
   color: rgb(110 59 59) !important;
   font-weight: 600 !important;
+  border: none !important;
 }
 
 .pagination-badge {
-  background: #ffffff;
-  color: rgb(77 54 54) !important;
+  background: #666052;
+  color: rgb(255, 255, 255) !important;
   font-weight: 600 !important;
   border: 1px solid #000000;
   font-size: 1em !important;
@@ -267,7 +272,7 @@ hr {
 }
 
 .post-description {
-  color: #b25d22;
+  color: #634a39;
   font-weight: 500;
   font-size: 1.1em;
 }
@@ -281,9 +286,10 @@ hr {
 }
 
 .btn-submit {
-  background: #9c6443 !important;
+  background: #666052 !important;
   color: rgb(255, 255, 255) !important;
   font-weight: 600 !important;
+  border: none !important;
 }
 
 a {
@@ -291,13 +297,14 @@ a {
 }
 
 .btn-login {
-  background: linear-gradient(to right, #cdd017, #ffac56) !important;
+  background: linear-gradient(to right, #ef9661, #ffca92) !important;
   color: rgb(77 54 54) !important;
   font-weight: 600 !important;
+  border: none !important;
 }
 
 .badge {
-  background-color: #7c4620 !important;
+  background-color: #9fb2ac !important;
 }
 
 .heart-icon {
@@ -318,25 +325,25 @@ a {
 }
 
 .img-preview {
-  width: 10em !important;
-  height: 10em !important;
+  width: 11em !important;
+  height: 11em !important;
   overflow: hidden;
   position: relative;
 }
 
 .img-preview img {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  margin: auto;
-  min-width: 100%;
-  min-height: 100%;
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .likes-preview {
   padding-left: 55px !important;
+}
+
+.search-term {
+  color: #3c85a6;
 }
 
 h6,
@@ -4100,7 +4107,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
-  background-color: rgb(77 54 54);
+  background-color: #666052;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);

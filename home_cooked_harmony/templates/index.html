@@ -38,8 +38,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
                   {{ post.title|truncatewords:25 }}
                 </h1>
               </a>
+              <!-- Post meta content-->
               <div class="text-muted fst-italic mb-2">
                 Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}
+                <!-- Badges -->
+              <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
+              <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>
+            
               </div>
             </header>
             <section>
@@ -116,7 +121,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
     <div class="col-lg-4">
       <!-- About widget-->
       <div class="card mb-4">
-        <div class="card-header fw-bold">About Home Cooked Harmony</div>
+        <div class="card-header fw-bold card-header-bg">About Home Cooked Harmony</div>
         <div class="card-body card-widget">
           <p class="card-text">
             Welcome to our blog!<br /><br />Here we share our favorite recipes,
@@ -129,7 +134,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
       </div>
       <!-- Search widget-->
       <div class="card mb-4">
-        <div class="card-header">Search</div>
+        <div class="card-header card-header-bg">Search</div>
         <div class="card-body card-widget">
           <form method="GET" action="{% url 'search' %}">
             <div class="input-group">
@@ -150,13 +155,25 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <h5>Search by amount of servings:</h5>
             <ul>
               {% for serving in servings %}
-              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }} people</a></li>
+              <li>
+                <a
+                  href="{% url 'search_by_serving' serving=serving %} "
+                  class="search-term"
+                  >{{ serving }} people</a
+                >
+              </li>
               {% endfor %}
             </ul>
             <h5>Search by preparation time:</h5>
             <ul>
               {% for prep in preptime %}
-              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }} minutes</a></li>
+              <li>
+                <a
+                  href="{% url 'search_by_preptime' preptime=prep %}"
+                  class="search-term"
+                  >{{ prep }} minutes</a
+                >
+              </li>
               {% endfor %}
             </ul>
           </div>

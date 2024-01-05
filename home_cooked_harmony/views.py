@@ -62,6 +62,8 @@ def add_post(request):
     form = PostForm()
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
+        if 'preparation_time' not in request.POST or 'servings' not in request.POST:
+            messages.error(request, "You must choose a preparation time and servings amount.")
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
