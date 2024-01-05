@@ -171,14 +171,26 @@ def search(request):
     posts = Post.objects.filter(
         Q(title__icontains=query) | Q(description__icontains=query)
     )
-    return render(request, "search_results.html", {"posts": posts})
+    context = {}
+    context["posts"] = posts
+    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    return render(request, "search_results.html", context)
 
 
 def search_by_serving(request, serving):
     posts = Post.objects.filter(servings=serving)
-    return render(request, "search_results.html", {"posts": posts})
+    context = {}
+    context["posts"] = posts
+    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    return render(request, "search_results.html", context)
 
 
 def search_by_preptime(request, preptime):
     posts = Post.objects.filter(preptime=preptime)
-    return render(request, "search_results.html", {"posts": posts})
+    context = {}
+    context["posts"] = posts
+    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    return render(request, "search_results.html", context)
