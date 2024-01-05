@@ -51,8 +51,12 @@
                   {% csrf_token %}
                   <button id="delete-button" type="submit" class="btn btn-danger">Delete</button>
                 </form>
-                {% if user.is_authenticated %}
-              <!-- Like button with form for authenticated users -->
+              </div>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+              <div class="pushed-right">
+                <!-- Like button with form for authenticated users -->
                 <form method="POST" action="{% url 'like_post' post.id %}">
                   {% csrf_token %}
                   <button class="btn btn-link" type="submit">
@@ -67,22 +71,22 @@
                   </span>
                 </form>
               </div>
-            {% endif %}
             {% else %}
-            <!-- Like button simple showcase for visitors -->
-            <div class="pushed-right">
-              <button class="btn btn-link" type="button">
-                <i class="far fa-heart heart-icon"></i>
-              </button>
-              <span class="like-counter">{{ post.likes.all.count }}
-                {% if post.likes.all.count == 1 %}
-                  like
-                {% else %}
-                  likes
-                {% endif %}
-              </span>
-              {% endif %}
-          </div>
+              <div class="pushed-right">
+                <!-- Like button simple showcase for visitors -->
+                <button class="btn btn-link" type="button">
+                  <i class="far fa-heart heart-icon"></i>
+                </button>
+                <span class="like-counter">{{ post.likes.all.count }}
+                  {% if post.likes.all.count == 1 %}
+                    like
+                  {% else %}
+                    likes
+                  {% endif %}
+                </span>
+              </div>
+            {% endif %}
+          </section>
         </article>
         <!-- Comments section-->
         <section class="mb-5">
