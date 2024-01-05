@@ -299,6 +299,18 @@ a {
   background-color: #7c4620 !important;
 }
 
+.heart-icon {
+    color: red;
+    font-size: 1.5em;
+    float: right;
+}
+
+.heart-parent {
+    display: flex !important;
+    justify-content: center !important;
+
+}
+
 h6,
 .h6,
 h5,

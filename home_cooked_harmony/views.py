@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.core.paginator import Paginator
@@ -143,3 +144,11 @@ def delete_comment(request, comment_id):
     if request.user == comment.user:
         comment.delete()
     return redirect('post_details', slug=comment.post.slug)
+
+def like_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user in post.likes.all():
+        post.likes.remove(request.user)
+    else:
+        post.likes.add(request.user)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))

@@ -28,6 +28,7 @@ class Post(models.Model):
     image = CloudinaryField("image")
     preptime = models.CharField(max_length=5, choices=PREPTIME_CHOICES, default='20')
     servings = models.CharField(max_length=3, choices=SERVINGS_CHOICES, default='1-2')
+    likes = models.ManyToManyField(User, related_name="likes", blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
