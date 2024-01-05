@@ -3,9 +3,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
 {% block content %}
 
 <div class="container mt-5">
-  {% for message in messages %} {% if message.tags == 'success' %}
+  {% for message in messages %}
+  {% if message.tags == 'success' %}
   <div class="alert alert-success text-center">{{ message }}</div>
-  {% endif %} {% endfor %}
+  {% elif message.tags == 'error' %}
+  <div class="alert alert-danger text-center">{{ message }}</div>
+  {% endif %}
+  {% endfor %}
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->

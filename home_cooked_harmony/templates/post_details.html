@@ -117,9 +117,10 @@
                         <div class="fst-italic mb-2 comment-date">Posted on {{ comment.date|date:'d/m/Y' }}</div>
                         <div>{{ comment.body }}</div>
                       </div>
+                      <!-- Comment delete button -->
                       <form method="POST" action="{% url 'delete_comment' comment.id %}">
                         {% csrf_token %}
-                        <button class="btn btn-danger delete-comment" type="submit" data-id="{{ comment.id }}">Delete</button>
+                        <button class="btn btn-danger delete-comment" id="delete-button" type="submit" data-id="{{ comment.id }}">Delete</button>
                       </form>
                     </div>
                     {% if not forloop.last %}

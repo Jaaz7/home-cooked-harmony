@@ -123,6 +123,7 @@ def delete_post(request, post_id):
         destroy(public_id)
 
     post.delete()
+    messages.success(request, "Post deleted successfully!")
 
     return redirect("home")
 
@@ -168,6 +169,7 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user == comment.user:
         comment.delete()
+        messages.success(request, "Comment deleted successfully!")
     return redirect("post_details", slug=comment.post.slug)
 
 
