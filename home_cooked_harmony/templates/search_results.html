@@ -3,9 +3,14 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
 {% block content %}
 
 <div class="container mt-5">
-  {% for message in messages %} {% if message.tags == 'success' %}
+  {% for message in messages %}
+  {% if message.tags == 'success' %}
   <div class="alert alert-success text-center">{{ message }}</div>
-  {% endif %} {% endfor %}
+  {% elif message.tags == 'info' %}
+  <div class="alert alert-info text-center">{{ message }}</div>
+  {% endif %}
+  {% endfor %}
+
   <div class="row">
     <div class="col-lg-8">
       <!-- Post content-->
@@ -50,7 +55,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
                 <p class="mb-2 post-description">
-                  {{ post.description|striptags|safe|truncatewords:100 }}
+                  {{ post.description|striptags|safe|truncatechars:100 }}
                 </p>
               </a>
             </section>
@@ -81,7 +86,12 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
           </span>
         </div>
       </article>
+
+        {% empty %}
+          <div class="alert alert-info text-center">No posts found.</div>
+
       {% endfor %}
+
       <!-- Pagination buttons -->
       {% if is_paginated %}
       <nav aria-label="Page navigation">
