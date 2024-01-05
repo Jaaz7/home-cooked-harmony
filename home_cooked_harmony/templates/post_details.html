@@ -46,6 +46,22 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
         <section class="mb-5 p-2">
           <p class="fs-5 mb-4">{{ post.description|safe }}</p>
 
+          {% if user.is_authenticated %}
+          <div class="d-flex heart-alone">
+          <form method="POST" action="{% url 'like_post' post.id %}">
+                {% csrf_token %}
+                <button class="btn btn-link" type="submit">
+                <i class="{% if request.user in post.likes.all %}fas{% else %}far{% endif %} fa-heart heart-icon"></i>
+                </button>
+                <span class="like-counter">{{ post.likes.all.count }}
+                {% if post.likes.all.count == 1 %}
+                  like
+                {% else %}
+                  likes
+                {% endif %}</span>
+            </form>
+            </div>
+            {% endif %}
           {% if user.is_authenticated and user == post.author %}
             <div class="d-flex heart-parent">
               <!-- Edit button -->
@@ -57,13 +73,6 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
                   Delete
                 </button>
               </form>
-              
-              <form method="POST" action="{% url 'like_post' post.id %}">
-                {% csrf_token %}
-                <button class="btn btn-link" type="submit">
-                <i class="{% if request.user in post.likes.all %}fas{% else %}far{% endif %} fa-heart heart-icon"></i>
-                </button>
-            </form>
             </div>
             
           {% endif %}

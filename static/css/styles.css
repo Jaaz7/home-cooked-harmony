@@ -272,7 +272,7 @@ hr {
 }
 
 .comment-date {
-  color:#695a5a;
+  color: #695a5a;
 }
 
 .comment-usertag {
@@ -300,15 +300,24 @@ a {
 }
 
 .heart-icon {
-    color: red;
-    font-size: 1.5em;
-    float: right;
+  color: red;
+  font-size: 1.5em;
+  float: right;
 }
 
 .heart-parent {
-    display: flex !important;
-    justify-content: center !important;
+  display: flex;
+  justify-content: center;
+}
 
+.heart-alone {
+  display: flex;
+  justify-content: right;
+}
+
+.like-counter {
+  color: #724b2c;
+  font-weight: 600;
 }
 
 h6,
