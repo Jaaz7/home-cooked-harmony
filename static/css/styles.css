@@ -305,9 +305,9 @@ a {
   float: right;
 }
 
-.heart-parent {
+.centered {
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .heart-alone {

@@ -7,6 +7,7 @@ urlpatterns = [
     path("login/", views.login_view, name="login"),
     path("logout/", views.logout_view, name="logout"),
     path("register/", views.register, name="register"),
+    path('search/', views.search, name='search'),
     path(
         "comment/<int:comment_id>/delete/", views.delete_comment, name="delete_comment"
     ),

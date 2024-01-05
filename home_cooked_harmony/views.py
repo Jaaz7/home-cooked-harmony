@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
@@ -152,3 +153,8 @@ def like_post(request, post_id):
     else:
         post.likes.add(request.user)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+
+def search(request):
+    query = request.GET.get('q')
+    posts = Post.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+    return render(request, 'search_results.html', {'posts': posts})

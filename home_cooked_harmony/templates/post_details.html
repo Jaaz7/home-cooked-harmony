@@ -63,7 +63,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
             </div>
             {% endif %}
           {% if user.is_authenticated and user == post.author %}
-            <div class="d-flex heart-parent">
+            <div class="d-flex centered">
               <!-- Edit button -->
               <a href="#" class="btn btn-secondary me-2">Edit</a>
               <!-- Delete button -->
@@ -151,18 +151,21 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
       <div class="card mb-4">
         <div class="card-header">Search</div>
         <div class="card-body card-widget">
-          <div class="input-group">
-            <input
-              class="form-control"
-              type="text"
-              placeholder="Enter search term..."
-              aria-label="Enter search term..."
-              aria-describedby="button-search"
-            />
-            <button class="btn btn-search" id="button-search" type="button">
-              Go!
-            </button>
-          </div>
+          <form method="GET" action="{% url 'search' %}">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="text"
+                name="q"
+                placeholder="Enter search term..."
+                aria-label="Enter search term..."
+                aria-describedby="button-search"
+              />
+              <button class="btn btn-search" id="button-search" type="submit">
+                Go!
+              </button>
+            </div>
+          </form>
         </div>
       </div>
       
