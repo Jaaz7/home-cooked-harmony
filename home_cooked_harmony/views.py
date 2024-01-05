@@ -62,8 +62,10 @@ def add_post(request):
     form = PostForm()
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
-        if 'preparation_time' not in request.POST or 'servings' not in request.POST:
-            messages.error(request, "You must choose a preparation time and servings amount.")
+        if "preparation_time" not in request.POST or "servings" not in request.POST:
+            messages.error(
+                request, "You must choose a preparation time and servings amount."
+            )
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -218,3 +220,23 @@ def search_by_preptime(request, preptime):
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
+
+
+def edit_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    # Check if the current user is the author of the post
+    if request.user != post.author:
+        messages.error(request, "You don't have permission to edit this post.")
+        return redirect("post_details", post.slug)
+
+    if request.method == "POST":
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Post updated successfully!")
+            return redirect("post_details", post.slug)
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, "edit_post.html", {"form": form})

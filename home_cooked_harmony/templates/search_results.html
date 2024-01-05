@@ -60,7 +60,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
           <div
             class="col-md-2 d-flex flex-column justify-content-center align-items-end"
           >
-            <form method="POST" action="#">
+            <form method="POST" action="{% url 'edit_post' post.id %}">
               {% csrf_token %}
               <button type="submit" class="btn mb-2 edit-delete">
                 <i class="fas fa-pencil-alt me-2 fa-lg"></i>

@@ -45,8 +45,13 @@
 
             {% if user.is_authenticated and user == post.author %}
               <div class="d-flex pushed-right">
+
                 <!-- Edit button -->
-                <a href="#" class="btn btn-secondary me-2">Edit</a>
+                <form method="POST" action="{% url 'edit_post' post.id %}">
+                  {% csrf_token %}
+                  <button class="btn btn-secondary me-2" type="submit">Edit</button>
+                </form>
+                
                 <!-- Delete button -->
                 <form method="POST" action="{% url 'delete_post' post.id %}">
                   {% csrf_token %}

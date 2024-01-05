@@ -9,7 +9,9 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("search/", views.search, name="search"),
     path(
-        "search_by_serving/<str:serving>/", views.search_by_serving, name="search_by_serving"
+        "search_by_serving/<str:serving>/",
+        views.search_by_serving,
+        name="search_by_serving",
     ),
     path(
         "search_by_preptime/<str:preptime>/",
@@ -22,4 +24,5 @@ urlpatterns = [
     path("post/<int:post_id>/like/", views.like_post, name="like_post"),
     path("post/<int:post_id>/delete/", views.delete_post, name="delete_post"),
     path("<slug:slug>/", views.post_detail, name="post_details"),
+    path("edit_post/<int:post_id>/", views.edit_post, name="edit_post"),
 ]

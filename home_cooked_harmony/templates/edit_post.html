@@ -1,0 +1,99 @@
+{% extends "base.html" %} {% load static %} {% block body_style %}
+background-image: url('{% static 'assets/cuisine-pattern.png' %}');
+background-size: 50%; background-repeat: repeat; {% endblock %}
+{% block content%}
+
+<div class="container mt-5">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-9">
+          <div class="card" style="border-radius: 15px" id="mrg">
+            <div class="card-body p-5">
+              {% for message in messages %} {% if message.tags == 'error' %}
+              <div class="alert alert-danger text-center">{{ message }}</div>
+              {% endif %} {% endfor %}
+              <h2
+                class="text-center mb-5"
+                style="color: #e6a26a; font-weight: bold"
+              >
+                <i class="fas fa-utensils"></i><br />
+                Edit your post
+              </h2>
+
+              <form
+                method="POST"
+                enctype="multipart/form-data"
+                id="add_post_form"
+              >
+                {% csrf_token %}
+                <label class="form-label" for="postTitle"
+                  >Recipe Title (required)</label
+                >
+                <div class="form-outline mb-3">
+                  <input
+                    type="text"
+                    name="title"
+                    id="postTitle"
+                    class="form-control form-control-lg"
+                    value="{{ form.instance.title }}"
+                  />
+                </div>
+                <div>
+                  <div class="col-md-4">
+                    <label for="preptime">Preparation Time (required)</label>
+                    <select id="preptime" name="preptime" class="form-control">
+                      <option value="20" {% if form.instance.preptime == "20" %}selected{% endif %}>Up to 20 minutes</option>
+                      <option value="20-40" {% if form.instance.preptime == "20-40" %}selected{% endif %}>From 20 to 40 minutes</option>
+                      <option value="40+" {% if form.instance.preptime == "40+" %}selected{% endif %}>40 minutes or more</option>
+                  </select>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <label for="servings">Servings (required)</label>
+                    <select id="servings" name="servings" class="form-control">
+                      <option selected>Choose...</option>
+                      <option value="1-2" {% if form.instance.servings == "1-2" %}selected{% endif %}>1-2 people</option>
+                      <option value="2-4" {% if form.instance.servings == "2-4" %}selected{% endif %}>2-4 people</option>
+                      <option value="4+" {% if form.instance.servings == "4+" %}selected{% endif %}>4+ people</option>
+                  </select>
+                  </div>
+                </div>
+                <label class="form-label" for="postBody"
+                  >Recipe Instructions (required)</label
+                >
+                <div class="form-outline mb-3">
+                  <textarea
+                    name="description"
+                    id="postBody"
+                    rows="10"
+                    class="form-control form-control-lg"
+                  >
+                  {{ form.instance.description }}
+                  </textarea>
+                </div>
+                <label for="postPic">Choose one image (optional)</label>
+                <input
+                  name="image"
+                  type="file"
+                  class="form-control-file"
+                  id="postPic"
+                />
+
+                <div class="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    class="btn btn-success btn-block btn-lg fw-bold mt-5 create-post-btn"
+                    id="button"
+                  >
+                    Update
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
