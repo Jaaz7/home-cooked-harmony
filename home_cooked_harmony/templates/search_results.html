@@ -138,6 +138,20 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
               </button>
             </div>
           </form>
+          <div class="mt-3">
+            <h5>Search by amount of servings:</h5>
+            <ul>
+              {% for serving in servings %}
+              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a></li>
+              {% endfor %}
+            </ul>
+            <h5>Search by preparation time:</h5>
+            <ul>
+              {% for prep in preptime %}
+              <li><a href="{% url 'search_by_preptime' preptime=preptime %}">{{ prep }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -21,12 +21,16 @@ class PostList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["current_view"] = "home"
+        context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+        context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
         return context
 
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.all().order_by('-date')
+    comments = post.comments.all().order_by("-date")
+    servings = Post.objects.values_list("servings", flat=True).distinct()
+    preptime = Post.objects.values_list("preptime", flat=True).distinct()
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -41,7 +45,13 @@ def post_detail(request, slug):
     return render(
         request,
         "post_details.html",
-        {"post": post, "comments": comments, "form": comment_form},
+        {
+            "post": post,
+            "comments": comments,
+            "form": comment_form,
+            "servings": servings,
+            "preptime": preptime,
+        },
     )
 
 
@@ -144,7 +154,8 @@ def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
     if request.user == comment.user:
         comment.delete()
-    return redirect('post_details', slug=comment.post.slug)
+    return redirect("post_details", slug=comment.post.slug)
+
 
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -152,9 +163,22 @@ def like_post(request, post_id):
         post.likes.remove(request.user)
     else:
         post.likes.add(request.user)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
+
 
 def search(request):
-    query = request.GET.get('q')
-    posts = Post.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
-    return render(request, 'search_results.html', {'posts': posts})
+    query = request.GET.get("q")
+    posts = Post.objects.filter(
+        Q(title__icontains=query) | Q(description__icontains=query)
+    )
+    return render(request, "search_results.html", {"posts": posts})
+
+
+def search_by_serving(request, serving):
+    posts = Post.objects.filter(servings=serving)
+    return render(request, "search_results.html", {"posts": posts})
+
+
+def search_by_preptime(request, preptime):
+    posts = Post.objects.filter(preptime=preptime)
+    return render(request, "search_results.html", {"posts": posts})
