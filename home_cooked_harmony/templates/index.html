@@ -13,17 +13,17 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
       <article class="art-bg rounded mb-4">
         <div class="row">
           <!-- Post image -->
-          <div class="col-md-3 d-flex justify-content-center">
+          <div class="col-md-3 d-flex justify-content-center img-preview">
             <a href="{% url 'post_details' slug=post.slug %}">
               {% if post.image and post.image.url %}
               <img
-                class="img-fluid rounded my-3"
+                class="rounded my-3"
                 src="{{ post.image.url }}"
                 alt="{{ post.title }}"
               />
               {% else %}
               <img
-                class="img-fluid rounded my-3"
+                class="rounded my-3"
                 src="{% static 'assets/food_placeholder.png' %}"
                 alt="{{ post.title }}"
               />
@@ -35,7 +35,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <header class="mb-2">
               <a href="{% url 'post_details' slug=post.slug %}">
                 <h1 class="fw-bolder mb-1 post-title">
-                  {{ post.title|truncatechars:30 }}
+                  {{ post.title|truncatewords:25 }}
                 </h1>
               </a>
               <div class="text-muted fst-italic mb-2">
@@ -44,8 +44,8 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             </header>
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
-                <p class="fs-5 mb-2 post-description">
-                  {{ post.description|striptags|safe|truncatechars:100 }}
+                <p class="mb-2 post-description">
+                  {{ post.description|striptags|safe|truncatewords:100 }}
                 </p>
               </a>
             </section>
@@ -69,6 +69,14 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             </form>
           </div>
           {% endif %}
+          <!-- Simple like display -->
+            <span class="like-counter likes-preview">{{ post.likes.all.count }}
+              {% if post.likes.all.count == 1 %}
+                like
+              {% else %}
+                likes
+              {% endif %}
+            </span>
         </div>
       </article>
       {% endfor %}

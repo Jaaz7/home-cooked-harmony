@@ -144,6 +144,7 @@ def register(request):
             return render(request, "register.html")
 
         User.objects.create_user(username=username, password=password1)
+        messages.success(request, "Account created! You can log in now.")
         return redirect("login")
 
     context = {"current_view": "register"}
