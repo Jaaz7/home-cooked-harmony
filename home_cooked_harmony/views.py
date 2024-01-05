@@ -11,6 +11,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.text import slugify
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError
 
 
 class PostList(generic.ListView):
@@ -141,6 +143,13 @@ def register(request):
 
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
+            return render(request, "register.html")
+
+        try:
+            validate_password(password1)
+        except ValidationError as e:
+            for error in e.messages:
+                messages.error(request, error)
             return render(request, "register.html")
 
         User.objects.create_user(username=username, password=password1)
