@@ -25,7 +25,7 @@ class PostList(generic.ListView):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    comments = post.comments.all()
+    comments = post.comments.all().order_by('-date')
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
