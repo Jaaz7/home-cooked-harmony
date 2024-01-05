@@ -142,13 +142,13 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <h5>Search by amount of servings:</h5>
             <ul>
               {% for serving in servings %}
-              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a></li>
+              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a> people</li>
               {% endfor %}
             </ul>
             <h5>Search by preparation time:</h5>
             <ul>
               {% for prep in preptime %}
-              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a></li>
+              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a> minutes</li>
               {% endfor %}
             </ul>
           </div>
