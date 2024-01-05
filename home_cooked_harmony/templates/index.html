@@ -148,7 +148,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <h5>Search by preparation time:</h5>
             <ul>
               {% for prep in preptime %}
-              <li><a href="{% url 'search_by_preptime' preptime=preptime %}">{{ prep }}</a></li>
+              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a></li>
               {% endfor %}
             </ul>
           </div>

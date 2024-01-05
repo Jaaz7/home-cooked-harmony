@@ -171,6 +171,10 @@ def search(request):
     posts = Post.objects.filter(
         Q(title__icontains=query) | Q(description__icontains=query)
     )
+    if posts:
+        messages.success(request, f"Found {posts.count()} result(s) for '{query}'")
+    else:
+        messages.warning(request, f"No results found for '{query}'")
     context = {}
     context["posts"] = posts
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
@@ -180,6 +184,10 @@ def search(request):
 
 def search_by_serving(request, serving):
     posts = Post.objects.filter(servings=serving)
+    if posts:
+        messages.success(request, f"Found {posts.count()} result(s) for '{serving}'")
+    else:
+        messages.warning(request, f"No results found for '{serving}'")
     context = {}
     context["posts"] = posts
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
@@ -189,6 +197,10 @@ def search_by_serving(request, serving):
 
 def search_by_preptime(request, preptime):
     posts = Post.objects.filter(preptime=preptime)
+    if posts:
+        messages.success(request, f"Found {posts.count()} result(s) for '{preptime}'")
+    else:
+        messages.warning(request, f"No results found for '{preptime}'")
     context = {}
     context["posts"] = posts
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
