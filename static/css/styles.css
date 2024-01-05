@@ -305,19 +305,16 @@ a {
   float: right;
 }
 
-.centered {
+.pushed-right {
   display: flex;
-  justify-content: right;
-}
-
-.heart-alone {
-  display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .like-counter {
   color: #724b2c;
   font-weight: 600;
+
 }
 
 h6,

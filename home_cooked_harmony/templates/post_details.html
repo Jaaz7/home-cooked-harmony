@@ -1,189 +1,176 @@
-{% extends "base.html" %} {% load static %}
+{% extends "base.html" %}
+{% load static %}
 
 {% block body_style %}
-background-image: url('{% static 'assets/cuisine-pattern.png' %}');
-{%endblock%}
+  background-image: url('{% static 'assets/cuisine-pattern.png' %}');
+{% endblock %}
+
 {% block content %}
+  <div class="container mt-5">
+    {% for message in messages %}
+      {% if message.tags == 'success' %}
+        <div class="alert alert-success text-center">{{ message }}</div>
+      {% endif %}
+    {% endfor %}
 
-<div class="container mt-5">
-  {% for message in messages %} {% if message.tags == 'success' %}
-  <div class="alert alert-success text-center">{{ message }}</div>
-  {% endif %} {% endfor %}
-  <div class="row">
-    <div class="col-lg-8">
-      <!-- Post content-->
-      <article class="art-bg rounded">
-        <!-- Post header-->
-        <header class="mb-4 p-2">
-          <!-- Post title-->
-          <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
-          <!-- Post meta content-->
-          <div class="text-muted fst-italic mb-2 text-end">
-            Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}<br>
-          <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
-          <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>
-        </div>
-        </header>
-        <!-- Preview image figure-->
-        <figure class="mb-4">
-          <a href="{% url 'post_details' slug=post.slug %}">
-            {% if post.image and post.image.url %}
-            <img
-              class="img-fluid rounded post-img"
-              src="{{ post.image.url }}"
-              alt="{{ post.title }}"
-            />
-            {% else %}
-            <img
-              class="img-fluid rounded post-img"
-              src="{% static 'assets/food_placeholder.png' %}"
-              alt="{{ post.title }}"
-            />
-            {% endif %}
-          </a>
-        </figure>
+    <div class="row">
+      <div class="col-lg-8">
         <!-- Post content-->
-        <section class="mb-5 p-2">
-          <p class="fs-5 mb-4">{{ post.description|safe }}</p>
+        <article class="art-bg rounded">
+          <!-- Post header-->
+          <header class="mb-4 p-2">
+            <!-- Post title-->
+            <h1 class="fw-bolder mb-1 text-center title">{{ post.title }}</h1>
+            <!-- Post meta content-->
+            <div class="text-muted fst-italic mb-2 text-end">
+              Posted on {{ post.date|date:'d/m/Y' }}, by {{post.author}}<br>
+              <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
+              <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>
+            </div>
+          </header>
+          <!-- Preview image figure-->
+          <figure class="mb-4">
+            <a href="{% url 'post_details' slug=post.slug %}">
+              {% if post.image and post.image.url %}
+                <img class="img-fluid rounded post-img" src="{{ post.image.url }}" alt="{{ post.title }}" />
+              {% else %}
+                <img class="img-fluid rounded post-img" src="{% static 'assets/food_placeholder.png' %}" alt="{{ post.title }}" />
+              {% endif %}
+            </a>
+          </figure>
+          <!-- Post content-->
+          <section class="mb-5 p-2">
+            <p class="fs-5 mb-4">{{ post.description|safe }}</p>
 
-          {% if user.is_authenticated %}
-          <div class="d-flex heart-alone">
-          <form method="POST" action="{% url 'like_post' post.id %}">
-                {% csrf_token %}
-                <button class="btn btn-link" type="submit">
-                <i class="{% if request.user in post.likes.all %}fas{% else %}far{% endif %} fa-heart heart-icon"></i>
-                </button>
-                <span class="like-counter">{{ post.likes.all.count }}
+            {% if user.is_authenticated and user == post.author %}
+              <div class="d-flex pushed-right">
+                <!-- Edit button -->
+                <a href="#" class="btn btn-secondary me-2">Edit</a>
+                <!-- Delete button -->
+                <form method="POST" action="{% url 'delete_post' post.id %}">
+                  {% csrf_token %}
+                  <button id="delete-button" type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                {% if user.is_authenticated %}
+              <!-- Like button with form for authenticated users -->
+                <form method="POST" action="{% url 'like_post' post.id %}">
+                  {% csrf_token %}
+                  <button class="btn btn-link" type="submit">
+                    <i class="{% if request.user in post.likes.all %}fas{% else %}far{% endif %} fa-heart heart-icon"></i>
+                  </button>
+                  <span class="like-counter">{{ post.likes.all.count }}
+                    {% if post.likes.all.count == 1 %}
+                      like
+                    {% else %}
+                      likes
+                    {% endif %}
+                  </span>
+                </form>
+              </div>
+            {% endif %}
+            {% else %}
+            <!-- Like button simple showcase for visitors -->
+            <div class="pushed-right">
+              <button class="btn btn-link" type="button">
+                <i class="far fa-heart heart-icon"></i>
+              </button>
+              <span class="like-counter">{{ post.likes.all.count }}
                 {% if post.likes.all.count == 1 %}
                   like
                 {% else %}
                   likes
-                {% endif %}</span>
-            </form>
-            </div>
-            {% endif %}
-          {% if user.is_authenticated and user == post.author %}
-            <div class="d-flex centered">
-              <!-- Edit button -->
-              <a href="#" class="btn btn-secondary me-2">Edit</a>
-              <!-- Delete button -->
-              <form method="POST" action="{% url 'delete_post' post.id %}">
-                {% csrf_token %}
-                <button id="delete-button" type="submit" class="btn btn-danger">
-                  Delete
-                </button>
-              </form>
-            </div>
-            
-          {% endif %}
-        </section>
-      </article>
-      <!-- Comments section-->
-      <section class="mb-5">
-        <div class="card">
-          <div class="card-body cm-bg rounded">
-            <!-- Comment form-->
-            {% if user.is_authenticated %}
-            <form class="mb-4" method="POST">
-              {% csrf_token %}
-              <textarea
-                class="form-control"
-                rows="3"
-                name="body"
-                placeholder="You can leave a comment here"
-              ></textarea>
-              <div class="d-grid">
-                <button type="submit" class="btn btn-submit mt-3 mx-auto">
-                  Submit
-                </button>
-              </div>
-            </form>
-            <hr class="my-4" />
-            <!-- Comment-->
-            {% for comment in comments %}
-            <div class="d-flex flex-column">
-              <div class="ms-3">
-                <div class="fw-bold comment-usertag">{{ comment.user }}</div>
-                <div class="fst-italic mb-2 comment-date">
-                Posted on {{ comment.date|date:'d/m/Y' }}
-              </div>
-                <div>{{ comment.body }}</div>
-                <form method="POST" action="{% url 'delete_comment' comment.id %}">
-              {% csrf_token %}
-                <button class="btn btn-danger delete-comment" type="submit" data-id="{{ comment.id }}">Delete</button>
-            </form>
-              </div>
-            {% if not forloop.last %}
-            <hr class="my-4" />
-            {% endif %}
-            {% endfor %}
-            {% else %}
-            <div class="d-flex">
-              <div class="ms-3">
-                <div class="fw-bold">
-                  <a href="{% url 'login' %}">Click here to login</a>
-                </div>
-                <div>Join the discussion and leave a comment!</div>
-              </div>
-            </div>
-            <hr class="my-4" />
-            <!-- Comment-->
-            {% for comment in comments %}
-            <div class="d-flex flex-column">
-              <div class="ms-3">
-                <div class="fw-bold comment-usertag">{{ comment.user }}</div>
-                <div class="fst-italic mb-2 comment-date">
-                Posted on {{ comment.date|date:'d/m/Y' }}
-              </div>
-                <div>{{ comment.body }}</div>
-              </div>
-            </div>
-            {% if not forloop.last %}
-            <hr class="my-4" />
-            {% endif %} {% endfor %} {% endif %}
+                {% endif %}
+              </span>
+              {% endif %}
           </div>
-        </div>
-      </section>
-    </div>
-    <!-- Side widgets-->
-    <div class="col-lg-4">
-      <!-- Search widget-->
-      <div class="card mb-4">
-        <div class="card-header">Search</div>
-        <div class="card-body card-widget">
-          <form method="GET" action="{% url 'search' %}">
-            <div class="input-group">
-              <input
-                class="form-control"
-                type="text"
-                name="q"
-                placeholder="Enter search term..."
-                aria-label="Enter search term..."
-                aria-describedby="button-search"
-              />
-              <button class="btn btn-search" id="button-search" type="submit">
-                Go!
-              </button>
+        </article>
+        <!-- Comments section-->
+        <section class="mb-5">
+          <div class="card">
+            <div class="card-body cm-bg rounded">
+              <!-- Comment form-->
+              {% if user.is_authenticated %}
+                <form class="mb-4" method="POST">
+                  {% csrf_token %}
+                  <textarea class="form-control" rows="3" name="body" placeholder="You can leave a comment here"></textarea>
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-submit mt-3 mx-auto">Submit</button>
+                  </div>
+                </form>
+                <hr class="my-4" />
+                <!-- Comment-->
+                {% for comment in comments %}
+                  <div class="d-flex flex-column">
+                    <div class="ms-3">
+                      <div class="fw-bold comment-usertag">{{ comment.user }}</div>
+                      <div class="fst-italic mb-2 comment-date">Posted on {{ comment.date|date:'d/m/Y' }}</div>
+                      <div>{{ comment.body }}</div>
+                      <form method="POST" action="{% url 'delete_comment' comment.id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-danger delete-comment" type="submit" data-id="{{ comment.id }}">Delete</button>
+                      </form>
+                    </div>
+                    {% if not forloop.last %}
+                      <hr class="my-4" />
+                    {% endif %}
+                  {% endfor %}
+              {% else %}
+                <div class="d-flex">
+                  <div class="ms-3">
+                    <div class="fw-bold">
+                      <a href="{% url 'login' %}">Click here to login</a>
+                    </div>
+                    <div>Join the discussion and leave a comment!</div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <!-- Comment-->
+                {% for comment in comments %}
+                  <div class="d-flex flex-column">
+                    <div class="ms-3">
+                      <div class="fw-bold comment-usertag">{{ comment.user }}</div>
+                      <div class="fst-italic mb-2 comment-date">Posted on {{ comment.date|date:'d/m/Y' }}</div>
+                      <div>{{ comment.body }}</div>
+                    </div>
+                  </div>
+                  {% if not forloop.last %}
+                    <hr class="my-4" />
+                  {% endif %} 
+                {% endfor %} 
+              {% endif %}
             </div>
-          </form>
-          <div class="mt-3">
-            <h5>Search by amount of servings:</h5>
-            <ul>
-              {% for serving in servings %}
-              <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a></li>
-              {% endfor %}
-            </ul>
-            <h5>Search by preparation time:</h5>
-            <ul>
-              {% for prep in preptime %}
-              <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a></li>
-              {% endfor %}
-            </ul>
+          </div>
+        </section>
+      </div>
+      <!-- Side widgets-->
+      <div class="col-lg-4">
+        <!-- Search widget-->
+        <div class="card mb-4">
+          <div class="card-header">Search</div>
+          <div class="card-body card-widget">
+            <form method="GET" action="{% url 'search' %}">
+              <div class="input-group">
+                <input class="form-control" type="text" name="q" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                <button class="btn btn-search" id="button-search" type="submit">Go!</button>
+              </div>
+            </form>
+            <div class="mt-3">
+              <h5>Search by amount of servings:</h5>
+              <ul>
+                {% for serving in servings %}
+                  <li><a href="{% url 'search_by_serving' serving=serving %}">{{ serving }}</a></li>
+                {% endfor %}
+              </ul>
+              <h5>Search by preparation time:</h5>
+              <ul>
+                {% for prep in preptime %}
+                  <li><a href="{% url 'search_by_preptime' preptime=prep %}">{{ prep }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      
     </div>
   </div>
-</div>
 {% endblock %}

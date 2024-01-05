@@ -28,7 +28,8 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
               >
                 {% csrf_token %}
                 <label class="form-label" for="postTitle"
-                    >Recipe Title (required)</label>
+                  >Recipe Title (required)</label
+                >
                 <div class="form-outline mb-3">
                   <input
                     type="text"
@@ -36,16 +37,11 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                     id="postTitle"
                     class="form-control form-control-lg"
                   />
-
                 </div>
                 <div>
                   <div class="col-md-4">
-                    <label for="preptime">Preparation Time</label>
-                    <select
-                      id="preptime"
-                      name="preptime"
-                      class="form-control"
-                    >
+                    <label for="preptime">Preparation Time (required)</label>
+                    <select id="preptime" name="preptime" class="form-control">
                       <option selected>Choose...</option>
                       <option value="20">Up to 20 minutes</option>
                       <option value="20-40">From 20 to 40 minutes</option>
@@ -53,7 +49,7 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                     </select>
                   </div>
                   <div class="col-md-4 mb-4">
-                    <label for="servings">Servings</label>
+                    <label for="servings">Servings (required)</label>
                     <select id="servings" name="servings" class="form-control">
                       <option selected>Choose...</option>
                       <option value="1-2">1-2 people</option>
@@ -63,8 +59,8 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
                   </div>
                 </div>
                 <label class="form-label" for="postBody"
-                    >Recipe Instructions (required)</label
-                  >
+                  >Recipe Instructions (required)</label
+                >
                 <div class="form-outline mb-3">
                   <textarea
                     name="description"
