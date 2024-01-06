@@ -14,7 +14,7 @@ from django.utils.text import slugify
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
-
+# Class-based view for listing posts with pagination and sorting by likes and date
 class PostList(generic.ListView):
     queryset = Post.objects.annotate(likes_count=Count("likes")).order_by(
         "-likes_count", "-date"
@@ -22,6 +22,8 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 5
 
+    # Adding extra context to the view, such as current
+    # view identifier and distinct servings and prep times for search filters
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["current_view"] = "home"
@@ -30,6 +32,7 @@ class PostList(generic.ListView):
         return context
 
 
+# Detailed view for a single post, including comments and pagination for comments
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.all().order_by("-date")
@@ -40,6 +43,7 @@ def post_detail(request, slug):
     page_number = request.GET.get("page")
     comments = paginator.get_page(page_number)
 
+    # Handling comment submission
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -65,6 +69,7 @@ def post_detail(request, slug):
     )
 
 
+# View for adding a new post
 @login_required
 def add_post(request):
     form = PostForm()
@@ -96,6 +101,7 @@ def add_post(request):
     return render(request, "add_post.html", {"form": form})
 
 
+# View for user login
 def login_view(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -116,6 +122,7 @@ def login_view(request):
         return render(request, "login.html", context)
 
 
+# View for user logout
 @login_required
 def logout_view(request):
     logout(request)
@@ -123,6 +130,7 @@ def logout_view(request):
     return redirect("home")
 
 
+# View for deleting a post
 @login_required
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -138,6 +146,7 @@ def delete_post(request, post_id):
     return redirect("home")
 
 
+# View for listing all posts with pagination
 def post_list(request):
     post_list = Post.objects.all()
     paginator = Paginator(post_list)
@@ -146,20 +155,25 @@ def post_list(request):
     return render(request, {"page_obj": page_obj})
 
 
+# View for registering a new user
 def register(request):
+    # Handling for user registration
     if request.method == "POST":
         username = request.POST["username"]
         password1 = request.POST["password1"]
         password2 = request.POST["password2"]
 
+        # Checking if passwords match
         if password1 != password2:
             messages.error(request, "Passwords don't match.")
             return render(request, "register.html")
 
+        # Checking if username already exists
         if User.objects.filter(username=username).exists():
             messages.error(request, "Username already exists.")
             return render(request, "register.html")
 
+        # Password validation
         try:
             validate_password(password1)
         except ValidationError as e:
@@ -167,49 +181,61 @@ def register(request):
                 messages.error(request, error)
             return render(request, "register.html")
 
+        # Creating new user
         User.objects.create_user(username=username, password=password1)
         messages.success(request, "Account created! You can log in now.")
         return redirect("login")
 
+    # Rendering registration form
     context = {"current_view": "register"}
     return render(request, "register.html", context)
 
 
+# Delete comment view
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
+    # Checking if the logged-in user is the author of the comment
     if request.user == comment.user:
         comment.delete()
         messages.success(request, "Comment deleted successfully!")
+    # Redirecting to the post details page
     return redirect("post_details", slug=comment.post.slug)
 
-
+# Like post view
 @login_required
 def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
+    # Toggling like status
     if request.user in post.likes.all():
         post.likes.remove(request.user)
     else:
         post.likes.add(request.user)
+    # Redirecting to the previous page
     return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
 
 
+# Search view
 def search(request):
+    # Retrieving search query
     query = request.GET.get("q")
+    # Filtering posts based on the query
     posts = Post.objects.filter(
         Q(title__icontains=query) | Q(description__icontains=query)
     )
+    # Displaying success or warning message based on search results
     if posts:
         messages.success(request, f"Found {posts.count()} result(s) for '{query}'")
     else:
         messages.warning(request, f"No results found for '{query}'")
+    # Context for rendering search results
     context = {}
     context["posts"] = posts
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
-
+# Search by serving view
 def search_by_serving(request, serving):
     posts = Post.objects.filter(servings=serving)
     if posts:
@@ -222,7 +248,7 @@ def search_by_serving(request, serving):
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
-
+# Search by preparation time view
 def search_by_preptime(request, preptime):
     posts = Post.objects.filter(preptime=preptime)
     if posts:
@@ -235,7 +261,7 @@ def search_by_preptime(request, preptime):
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
-
+# Edit post view
 @login_required
 def edit_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
@@ -245,9 +271,11 @@ def edit_post(request, post_id):
         messages.error(request, "You don't have permission to edit this post.")
         return redirect("post_details", post.slug)
 
+    # Handling form submission
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
+            # Checking if any changes were made in the form
             if form.has_changed():
                 form.save()
                 messages.success(request, "Post updated successfully!")
@@ -257,4 +285,5 @@ def edit_post(request, post_id):
     else:
         form = PostForm(instance=post)
 
+    # Rendering the edit post form
     return render(request, "edit_post.html", {"form": form})
