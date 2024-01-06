@@ -135,7 +135,6 @@ body {
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: 50%;
-  margin-top: 110px;
 }
 
 .dynamic-p {
@@ -170,6 +169,10 @@ body {
   width: 100%;
 }
 
+#mrg {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
 
 #logged-in-user {
   color: #ffffff;
@@ -4156,6 +4159,7 @@ fieldset:disabled .btn {
   --bs-navbar-toggler-border-radius: 0.375rem;
   --bs-navbar-toggler-focus-width: 0.25rem;
   --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -4168,7 +4172,6 @@ fieldset:disabled .btn {
   position: fixed;
   width: 100%;
 }
-
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,

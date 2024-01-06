@@ -7,7 +7,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
 <!-- Main content block -->
 {% block content %}
 
-<div class="container mt-5">
+<div class="container">
   <!-- Displaying messages -->
   {% for message in messages %}
   {% if message.tags == 'success' %}
@@ -68,7 +68,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           </div>
           {% endif %}
           <!-- Displaying like count -->
-          <span class="like-counter likes-preview">
+          <span class="like-counter">
             {{ post.likes.all.count }}
             {% if post.likes.all.count == 1 %}
               like

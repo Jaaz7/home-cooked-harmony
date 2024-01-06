@@ -51,10 +51,10 @@ $(document).ready(function () {
 
   $('#navbarSupportedContent').on('shown.bs.collapse', function () {
     var headerHeight = $('.navbar').outerHeight();
-    $('body').css('margin-top', (headerHeight +20) + 'px');
+    $('body').css('margin-top', headerHeight + 'px');
   });
   
   $('#navbarSupportedContent').on('hidden.bs.collapse', function () {
-    $('body').css('margin-top', '110px');
+    $('body').css('margin-top', '0');
   });
 });

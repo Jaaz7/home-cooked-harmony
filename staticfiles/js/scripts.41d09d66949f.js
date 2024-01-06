@@ -49,12 +49,12 @@ $(document).ready(function () {
     }
   });
 
-  $('#navbarSupportedContent').on('shown.bs.collapse', function () {
-    var headerHeight = $('.navbar').outerHeight();
-    $('body').css('margin-top', (headerHeight +20) + 'px');
-  });
-  
-  $('#navbarSupportedContent').on('hidden.bs.collapse', function () {
-    $('body').css('margin-top', '110px');
+  $(".navbar-toggler").on("click", function () {
+    const headerHeight = $(".navbar").outerHeight();
+    if ($("#navbarSupportedContent").hasClass("show")) {
+      $("body").css("margin-top", "76px");
+    } else {
+      $("body").css("margin-top", headerHeight + "px");
+    }
   });
 });

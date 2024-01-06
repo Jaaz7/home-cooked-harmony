@@ -135,7 +135,6 @@ body {
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: 50%;
-  margin-top: 110px;
 }
 
 .dynamic-p {
@@ -170,6 +169,10 @@ body {
   width: 100%;
 }
 
+/* #mrg {
+  margin-top: 30px;
+  margin-bottom: 60px;
+} */
 
 #logged-in-user {
   color: #ffffff;
@@ -4168,7 +4171,10 @@ fieldset:disabled .btn {
   position: fixed;
   width: 100%;
 }
+.push-body-down {
+  margin-top: 56px;
 
+}
 .navbar > .container,
 .navbar > .container-fluid,
 .navbar > .container-sm,
