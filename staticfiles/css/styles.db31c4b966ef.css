@@ -927,7 +927,7 @@ progress {
   .edit-delete-btns {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center;
+    justify-content: center; 
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -940,7 +940,7 @@ progress {
   }
 
   .img-upload-div {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }
 
