@@ -910,6 +910,30 @@ progress {
   margin-left: auto;
 }
 
+@media (max-width: 767px) {
+  .centering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .img-preview {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .edit-delete-btns {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .align-items-end {
+    align-items: initial !important;
+  }
+}
+
 @media (max-width: 400px) {
   body {
     font-family: initial;
@@ -2227,7 +2251,7 @@ progress {
   }
   html,
   body {
-    padding-top: 20px;
+    padding-top: 40px;
   }
 }
 @media (max-width: 767.98px) {
@@ -7896,7 +7920,7 @@ fieldset:disabled .btn {
 }
 
 .flex-column {
-  flex-direction: column !important;
+  flex-direction: column;
 }
 
 .flex-row-reverse {
@@ -7964,7 +7988,7 @@ fieldset:disabled .btn {
 }
 
 .align-items-end {
-  align-items: flex-end !important;
+  align-items: flex-end;
 }
 
 .align-items-center {
