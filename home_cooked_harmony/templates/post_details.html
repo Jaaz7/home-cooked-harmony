@@ -80,7 +80,7 @@
             {% else %}
               <div class="pushed-right">
                 <!-- Like button simple showcase for visitors -->
-                <button class="btn btn-link" type="button">
+                <button class="btn btn-link" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
                   <i class="far fa-heart heart-icon"></i>
                 </button>
                 <span class="like-counter">{{ post.likes.all.count }}

@@ -98,6 +98,8 @@
   }
 }
 
+
+
 html,
 body {
   height: 100%;
@@ -2225,7 +2227,7 @@ progress {
   }
   html,
   body {
-    padding-top: 40px;
+    padding-top: 20px;
   }
 }
 @media (max-width: 767.98px) {
