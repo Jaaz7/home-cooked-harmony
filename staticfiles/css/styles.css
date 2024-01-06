@@ -138,12 +138,6 @@ body {
   margin-top: 110px;
 }
 
-@media (max-width: 331px) {
-  body {
-    margin-top: 150px;
-  }
-}
-
 .dynamic-p {
   display: none;
 }
