@@ -98,6 +98,8 @@
   }
 }
 
+
+
 html,
 body {
   height: 100%;
@@ -139,7 +141,7 @@ body {
 }
 
 .dynamic-p {
-  display: none;
+  display: none !important;
 }
 
 .art-bg {
@@ -935,8 +937,8 @@ progress {
     align-items: initial !important;
   }
 
-  .dynamic-p {
-    display: block !important;
+  .formatting-options {
+    display: none !important;
   }
 }
 
