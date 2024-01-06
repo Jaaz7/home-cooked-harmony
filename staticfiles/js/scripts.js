@@ -49,12 +49,16 @@ $(document).ready(function () {
     }
   });
 
-  $('#navbarSupportedContent').on('shown.bs.collapse', function () {
-    var headerHeight = $('.navbar').outerHeight();
-    $('body').css('margin-top', (headerHeight +20) + 'px');
+  $("#navbarSupportedContent").on("shown.bs.collapse", function () {
+    var headerHeight = $(".navbar").outerHeight();
+    $("body").css("margin-top", headerHeight + 20 + "px");
   });
-  
-  $('#navbarSupportedContent').on('hidden.bs.collapse', function () {
-    $('body').css('margin-top', '110px');
+
+  $("#navbarSupportedContent").on("hidden.bs.collapse", function () {
+    if (window.innerWidth <= 331) {
+      $("body").css("margin-top", "150px");
+    } else {
+      $("body").css("margin-top", "110px");
+    }
   });
 });
