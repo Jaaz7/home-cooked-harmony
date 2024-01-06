@@ -19,6 +19,10 @@ background-size: 50%; background-repeat: repeat;
               {% for message in messages %}
               {% if message.tags == 'error' %}
               <div class="alert alert-danger text-center">{{ message }}</div>
+              {% elif message.tags == 'error' %}
+                <div class="alert alert-danger text-center">{{ message }}</div>
+              {% else %}
+                <div class="alert alert-info text-center">{{ message }}</div>
               {% endif %}
               {% endfor %}
               <h2 class="text-center mb-5" style="color: #e6a26a; font-weight: bold">

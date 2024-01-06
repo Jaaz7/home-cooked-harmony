@@ -248,9 +248,12 @@ def edit_post(request, post_id):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            form.save()
-            messages.success(request, "Post updated successfully!")
-            return redirect("post_details", post.slug)
+            if form.has_changed():
+                form.save()
+                messages.success(request, "Post updated successfully!")
+                return redirect("post_details", post.slug)
+            else:
+                messages.info(request, "No changes were made to the post.")
     else:
         form = PostForm(instance=post)
 
