@@ -145,31 +145,44 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
               </button>
             </div>
           </form>
-          <div class="mt-3">
+          div class="mt-3">
             <h5>Search by amount of servings:</h5>
             <ul>
-              {% for serving in servings %}
-              <li>
-                <a
-                  href="{% url 'search_by_serving' serving=serving %} "
-                  class="search-term"
-                  >{{ serving }} people</a
-                >
-              </li>
-              {% endfor %}
+            {% if servings %}
+                {% for serving in servings %}
+                <li>
+                  <a
+                    href="{% url 'search_by_serving' serving=serving %} "
+                    class="search-term"
+                    >{{ serving }} people</a
+                  >
+                </li>
+                {% endfor %}
+                {% else %}
+                <li>
+                  <p>No posts available</p>
+                </li>
+              
+              {% endif %}
+              </ul>
+              <h5>Search by preparation time:</h5>
+              <ul>
+                
+                {% if preptime %}
+                {% for prep in preptime %}
+                <li>
+                  <a
+                    href="{% url 'search_by_preptime' preptime=prep %}"
+                    class="search-term"
+                    >{{ prep }} minutes</a
+                  >
+                </li>
+                {% endfor %}
+                {% else %}
+                <li>
+                  <p>No posts available</p>
             </ul>
-            <h5>Search by preparation time:</h5>
-            <ul>
-              {% for prep in preptime %}
-              <li>
-                <a
-                  href="{% url 'search_by_preptime' preptime=prep %}"
-                  class="search-term"
-                  >{{ prep }} minutes</a
-                >
-              </li>
-              {% endfor %}
-            </ul>
+            {% endif %}
           </div>
         </div>
       </div>
