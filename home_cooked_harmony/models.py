@@ -45,7 +45,7 @@ class Post(models.Model):
 
 # Comment model for creating comments on blog posts
 class Comment(models.Model):
-    #Fields for the post model
+    # Fields for the post model
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_comments"
