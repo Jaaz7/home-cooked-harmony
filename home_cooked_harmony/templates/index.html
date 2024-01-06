@@ -54,7 +54,7 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}'); {%endblock%}
             <section>
               <a href="{% url 'post_details' slug=post.slug %}">
                 <p class="mb-2 post-description">
-                  {{ post.description|striptags|safe|truncatechars:100 }}
+                  {{ post.description|striptags|safe|truncatechars:50 }}
                 </p>
               </a>
             </section>
