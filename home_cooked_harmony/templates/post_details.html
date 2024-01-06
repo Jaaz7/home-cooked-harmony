@@ -118,10 +118,12 @@
                         <div>{{ comment.body }}</div>
                       </div>
                       <!-- Comment delete button -->
+                      {% if user == comment.user %}
                       <form method="POST" action="{% url 'delete_comment' comment.id %}">
                         {% csrf_token %}
                         <button class="btn btn-danger delete-comment" id="delete-button" type="submit" data-id="{{ comment.id }}">Delete</button>
                       </form>
+                      {% endif %}
                     </div>
                     {% if not forloop.last %}
                       <hr class="my-4" />
@@ -149,11 +151,31 @@
                   {% if not forloop.last %}
                     <hr class="my-4" />
                   {% endif %} 
-                {% endfor %} 
+                {% endfor %}                 
               {% endif %}
             </div>
           </div>
         </section>
+        <!-- Pagination buttons -->
+              {% if comments.has_other_pages %}
+                  <nav aria-label="Page navigation">
+                    <p class="text-center mb-3">
+                      <span class="badge pagination-badge">Comment Page {{ comments.number }} of {{ comments.paginator.num_pages }}</span>
+                    </p>
+                    <ul class="pagination justify-content-center">
+                      {% if comments.has_previous %}
+                        <li>
+                          <a href="?page={{ comments.previous_page_number }}" class="page-link pagination-btn">&laquo; PREV</a>
+                        </li>
+                      {% endif %}
+                      {% if comments.has_next %}
+                        <li>
+                          <a href="?page={{ comments.next_page_number }}" class="page-link pagination-btn">NEXT &raquo;</a>
+                        </li>
+                      {% endif %}
+                    </ul>
+                  </nav>
+                {% endif %}
       </div>
       <!-- Side widgets-->
       <div class="col-lg-4">

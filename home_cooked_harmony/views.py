@@ -35,6 +35,11 @@ def post_detail(request, slug):
     comments = post.comments.all().order_by("-date")
     servings = Post.objects.values_list("servings", flat=True).distinct()
     preptime = Post.objects.values_list("preptime", flat=True).distinct()
+
+    paginator = Paginator(comments, 5)
+    page_number = request.GET.get('page')
+    comments = paginator.get_page(page_number)
+
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
