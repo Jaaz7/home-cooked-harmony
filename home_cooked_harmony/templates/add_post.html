@@ -15,7 +15,7 @@ background-size: 50%; background-repeat: repeat;
                 <div class="col-12 col-md-9 col-lg-7 col-xl-9">
                     <div class="card" style="border-radius: 15px;" id="mrg">
                         <div class="card-body p-5">
-                            <!-- Display messages if any -->
+                            <!-- Displaying messages -->
                             {% for message in messages %}
                             {% if message.tags == 'error' %}
                             <div class="alert alert-danger text-center">{{ message }}</div>

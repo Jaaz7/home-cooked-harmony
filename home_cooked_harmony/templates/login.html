@@ -1,6 +1,11 @@
-{% extends "base.html" %} {% load static %} {% block body_style %}
+{% extends "base.html" %}
+{% load static %}
+<!-- Background settings -->
+{% block body_style %}
 background-image: url('{% static 'assets/mediterranean.png' %}');
-background-size: 50%; background-repeat: repeat; {% endblock %}
+background-size: 50%; background-repeat: repeat; 
+{% endblock %}
+<!-- Main content block -->
 {% block content %}
 
 <div class="container mt-5">
@@ -10,55 +15,40 @@ background-size: 50%; background-repeat: repeat; {% endblock %}
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px" id="mrg">
             <div class="card-body p-5">
-              {% for message in messages %} {% if message.tags == 'error' %}
+              <!-- Displaying messages -->
+              {% for message in messages %}
+              {% if message.tags == 'error' %}
               <div class="alert alert-danger text-center">{{ message }}</div>
-
               {% elif message.tags == 'success' %}
               <div class="alert alert-success text-center">{{ message }}</div>
-
-              {% endif %} {% endfor %}
+              {% endif %}
+              {% endfor %}
+              <!-- Login header -->
               <h2 class="text-uppercase text-center mb-5">Welcome Back</h2>
 
+              <!-- Login form -->
               <form method="POST">
                 {% csrf_token %}
+                <!-- Username input field -->
                 <div class="form-outline mb-4">
-                  <input
-                    type="text"
-                    name="username"
-                    id="form3Example1cg"
-                    class="form-control form-control-lg"
-                  />
-                  <label class="form-label" for="form3Example1cg"
-                    >Username</label
-                  >
+                  <input type="text" name="username" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">Username</label>
                 </div>
 
+                <!-- Password input field -->
                 <div class="form-outline mb-4">
-                  <input
-                    type="password"
-                    name="password"
-                    id="form3Example4cg"
-                    class="form-control form-control-lg"
-                  />
-                  <label class="form-label" for="form3Example4cg"
-                    >Password</label
-                  >
+                  <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
+                <!-- Login button -->
                 <div class="d-flex justify-content-center">
-                  <button
-                    type="submit"
-                    class="btn btn-login btn-block btn-lg gradient-custom-4 text-body"
-                  >
-                    Login
-                  </button>
+                  <button type="submit" class="btn btn-login btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
+                <!-- Registration link -->
                 <p class="text-center text-muted mt-5 mb-0">
-                  Don't have an account?
-                  <a href="{% url 'register' %}" class="fw-bold text-body"
-                    ><u>Register here</u></a
-                  >
+                  Don't have an account? <a href="{% url 'register' %}" class="fw-bold text-body"><u>Register here</u></a>
                 </p>
               </form>
             </div>
