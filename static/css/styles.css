@@ -112,7 +112,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #666052;
+  background-color: #465b5d;
   color: white;
   text-align: center;
   margin-top: auto;
@@ -4143,7 +4143,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
-  background-color: #666052;
+  background-color: #465b5d;
   --bs-navbar-padding-x: 0;
   --bs-navbar-padding-y: 0.5rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);

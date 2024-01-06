@@ -37,7 +37,7 @@ def post_detail(request, slug):
     preptime = Post.objects.values_list("preptime", flat=True).distinct()
 
     paginator = Paginator(comments, 5)
-    page_number = request.GET.get('page')
+    page_number = request.GET.get("page")
     comments = paginator.get_page(page_number)
 
     if request.method == "POST":

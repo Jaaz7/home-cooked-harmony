@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class HomeCookedHarmonyConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'home_cooked_harmony'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "home_cooked_harmony"
