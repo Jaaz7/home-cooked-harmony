@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Load static files -->
 {% load static %}
 <head>
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <!-- Page Title -->
     <title>Home Cooked Harmony</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'assets/chef_hat_icon.png' %}" />
@@ -18,6 +21,7 @@
 <body style="{% block body_style %}{% endblock %}">
     <!-- Responsive navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <!-- navbar content -->
         <div class="container">
             <a class="navbar-brand fw-bold" href="{% url 'home' %}">Home Cooked Harmony</a>
             {% if user.is_authenticated %}
@@ -57,9 +61,8 @@
     <!-- Page content -->
     {% block content %}{% endblock %}
 
-    <!-- HTML Modals for defensive programming -->
-
-    <!-- Post Deletion Modal -->
+    <!-- HTML Modals for various functionalities -->
+    <!-- Modal for Confirming Post Deletion -->
     <div class="modal" tabindex="-1" id="confirmDeletePostModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -74,7 +77,7 @@
         </div>
     </div>
 
-    <!-- Visitor Post Liking Modal -->
+     <!-- Modal for prompting login before liking a post -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -92,7 +95,7 @@
         </div>
     </div>
 
-    <!-- Logout Modal -->
+    <!-- Modal for Confirming Logout -->
     <div class="modal" tabindex="-1" id="confirmLogoutModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -107,7 +110,7 @@
         </div>
     </div>
 
-    <!-- Add Post Modal -->
+    <!-- Modal for Add Post Validation -->
     <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
