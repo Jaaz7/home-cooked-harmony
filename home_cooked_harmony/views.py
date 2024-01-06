@@ -119,6 +119,7 @@ def login_view(request):
 @login_required
 def logout_view(request):
     logout(request)
+    messages.success(request, "Logged out successfully!")
     return redirect("home")
 
 
