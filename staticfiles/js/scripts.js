@@ -1,8 +1,11 @@
 $(document).ready(function () {
+  // Update the copyright year dynamically
   const currentYear = new Date().getFullYear();
   $("#copyright").text(function (i, origText) {
     return origText + " " + currentYear;
   });
+
+  // Initialize TinyMCE rich text editor
   tinymce.init({
     selector: "#postBody",
     plugins:
@@ -11,6 +14,7 @@ $(document).ready(function () {
       "undo redo | formatselect | bold italic underline strikethrough | link | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
   });
 
+  // Handle logout link click with confirmation modal
   $(document).on("click", "#logout-link", function (e) {
     e.preventDefault();
     const logoutUrl = this.href;
@@ -20,6 +24,7 @@ $(document).ready(function () {
     });
   });
 
+  // Confirmation modal for post deletion
   $(document).on("click", "#delete-button", function (e) {
     e.preventDefault();
     const form = this.form;
@@ -29,6 +34,7 @@ $(document).ready(function () {
     });
   });
 
+  // Form validation for adding a new post
   $("#add_post_form").on("submit", function (e) {
     const title = $("#postTitle").val();
     const description = tinyMCE
@@ -36,6 +42,7 @@ $(document).ready(function () {
       .getContent({ format: "text" })
       .trim();
 
+    // Check conditions for title and description length
     if (
       !title ||
       title.length < 5 ||
@@ -49,11 +56,13 @@ $(document).ready(function () {
     }
   });
 
+  // Adjust body margin-top when navbar is shown
   $('#navbarSupportedContent').on('shown.bs.collapse', function () {
     var headerHeight = $('.navbar').outerHeight();
     $('body').css('margin-top', (headerHeight +20) + 'px');
   });
   
+  // Reset body margin-top when navbar is hidden
   $('#navbarSupportedContent').on('hidden.bs.collapse', function () {
     $('body').css('margin-top', '110px');
   });

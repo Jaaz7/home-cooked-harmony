@@ -18,10 +18,10 @@
     <div class="row">
       <div class="col-lg-8">
         <!-- Post content article -->
-        <article class="art-bg art-bg-main rounded">
+        <article class="art-bg-main rounded">
           <!-- Post header -->
           <header class="mb-4 p-2">
-            <h1 class="fw-bolder mb-1 text-center post-title">{{ post.title }}</h1>
+            <h1 class="fw-bolder mb-1 text-center post-title-main">{{ post.title }}</h1>
             <!-- Post meta content -->
             <div class="fst-italic mb-2 text-end">
               Posted on {{ post.date|date:'d/m/Y' }}, by {{ post.author }}<br>
@@ -40,8 +40,8 @@
             </a>
           </figure>
           <!-- Post body content -->
-          <section class="mb-5 p-2">
-            <p class="fs-5 mb-4 post-description">{{ post.description|safe }}</p>
+          <section class="mb-5 p-2 post-description">
+            <p class="fs-5 mb-4">{{ post.description|safe }}</p>
 
             <!-- Edit and Delete options for post authors -->
             {% if user.is_authenticated and user == post.author %}

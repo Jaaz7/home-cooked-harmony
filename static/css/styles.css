@@ -10,9 +10,9 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
- 
- :root {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+
+:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -139,82 +139,92 @@ body {
   background-size: 50%;
   margin-top: 110px;
 }
+/* --------------------------This section represents my custom css -------------------*/
 
+/* Hide paragraph above textarea in create 
+  post view from large screens*/
 .dynamic-p {
   display: none;
 }
 
+@media (max-width: 767px) {
+  /* Show paragraph above textarea in create 
+  post view to indicate mobile users where to see text formatting options*/
+  .dynamic-p {
+    display: block !important;
+  }
+}
+
+/* Settings for article in preview mode */
 .art-bg {
   background-color: #9fb2acf0;
   word-wrap: break-word;
 }
 
-.art-bg {
-  background-color: #9fb2ac;
+/* Background color of detailed post view article */
+.art-bg-main {
+  background-color: #b2b6b5;
+  word-wrap: break-word;
 }
 
+/* Background color of comment section */
 .cm-bg {
   background-color: #ffb581;
 }
 
-#categ {
-  background-color: rgb(157 123 123);
-  color: #ffffff;
-}
-
-.title {
-  color: #724b2c;
-}
-
+/* Settings for buttons:
+>> Used to create posts in add post view;
+>> Used to update posts in edit post view
+ */
 #button {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #ef9661, #ffca92);
   color: rgb(77 54 54);
-  border: 3px solid #b17676;
+  border: none;
 }
 
-.add-form {
-  width: 100%;
-}
-
-#logged-in-user {
+/* Color of message in navbar when user is logged in */
+#logged-in-msg {
   color: #ffffff;
 }
 
+/* Settings for the username in navbar*/
 #logged-username {
   color: #ffc096;
   font-weight: 800;
 }
 
-#button {
-  background: linear-gradient(to right, #ef9661, #ffca92);
-  border: none;
-}
-
+/* Settings for the edit and delete icon buttons in the post preview */
 .edit-delete {
   padding: 15px 15px;
   margin-left: 20px;
   align-items: center;
 }
 
+/* Color of the edit icon button */
 .edit-delete i.fa-pencil-alt {
   color: #525252;
 }
 
+/* Color of the delete icon button */
 .edit-delete i.fa-trash-alt {
   color: #d6334e;
 }
 
+/* Making sure that opening modals won't disturb
+the state of the page in the background */
 body.modal-open {
   padding-right: 0 !important;
   overflow: auto !important;
 }
 
+/* Parent flex settings for the post image in detailed post view */
 figure {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Settings for the post image in detailed post view */
 .post-img {
   width: 100%;
   max-height: 40em;
@@ -224,10 +234,7 @@ figure {
   margin-right: auto;
 }
 
-body.modal-open .navbar {
-  padding-right: calc(var(--bs-gutter-x) + 15px) !important;
-}
-
+/* Settings for the pagination button */
 .pagination-btn {
   background: linear-gradient(to right, #ef9661, #ffca92) !important;
   border-radius: 5px;
@@ -236,22 +243,17 @@ body.modal-open .navbar {
   font-weight: 600;
 }
 
-hr {
-  margin: 1rem 0;
-  color: inherit;
-  border: 0;
-  border-top: 1px solid;
-  opacity: 0.25;
-}
-
+/* Background color for the about and search cards */
 .card-widget {
   background-color: #d3d3d3;
 }
 
+/* Background color for the about and search cards header */
 .card-header-bg {
   background-color: #9fb2ac !important;
 }
 
+/* Settings for the search button in the search card */
 .btn-search {
   background: linear-gradient(to right, #ef9661, #ffca92);
   color: rgb(110 59 59) !important;
@@ -259,6 +261,7 @@ hr {
   border: none !important;
 }
 
+/* Settings for the badge that shows pagination number */
 .pagination-badge {
   background: #666052;
   color: rgb(255, 255, 255) !important;
@@ -267,31 +270,50 @@ hr {
   font-size: 1em !important;
 }
 
+/* Color of the social icons in the footer */
 .btn-social-icon {
   color: #ffffff !important;
 }
 
+/* Hover color of the social icons in the footer */
+.btn-social-icon:hover {
+  background-color: rgb(118, 145, 146) !important;
+}
+
+/* Settings for the post title in preview mode */
 .post-title {
   color: #3f3939;
   font-size: 2em;
   font-weight: 500;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
 }
 
+/* Settings for the post title in detailed view */
+.post-title-main {
+  color: #3f3939;
+  font-size: 3em;
+  font-weight: 500;
+  font-family: "Playfair Display", sans-serif;
+}
+
+/* Settings for the post description text */
 .post-description {
   color: #000000;
   font-size: 1.1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
+/* Color of the date stamp on comments */
 .comment-date {
   color: #695a5a;
 }
 
+/* Font size of commenter username text*/
 .comment-usertag {
   font-size: 1.2em;
 }
 
+/* Settings for add comment button */
 .btn-submit {
   background: #666052 !important;
   color: rgb(255, 255, 255) !important;
@@ -299,45 +321,57 @@ hr {
   border: none !important;
 }
 
+/* Removing text decoration for links */
 a {
   text-decoration: none !important;
 }
 
-.btn-login {
+/* Settings for buttons:
+Used in register new user view
+Used in login view */
+.btn-login-reg {
   background: linear-gradient(to right, #ef9661, #ffca92) !important;
   color: rgb(77 54 54) !important;
   font-weight: 600 !important;
   border: none !important;
 }
 
+/* Background color for the servings and preptime badge tags */
 .badge {
   background-color: #465b5d !important;
   color: #4b4c4d;
 }
 
+/* Settings for the like icon button */
 .heart-icon {
   color: red;
   font-size: 1.5em;
   float: right;
 }
 
+/* Settings to push the edit, delete and like
+buttons to the right in detailed post view */
 .pushed-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
+/* Settings for the likes counter */
 .like-counter {
   color: #000000;
   font-weight: 600;
 }
 
+/* Adding padding left to the likes counter in post preview
+for screens smaller than 767px*/
 @media (min-width: 767px) {
   .likes-preview {
     padding-left: 80px !important;
   }
 }
 
+/* Parent settings for image in post preview */
 .img-preview {
   width: 11em !important;
   height: 11em !important;
@@ -346,6 +380,7 @@ a {
   margin-left: 15px;
 }
 
+/* Settings for image in post preview */
 .img-preview img {
   position: relative;
   object-fit: cover;
@@ -353,8 +388,26 @@ a {
   height: 100%;
 }
 
+/* Text color for searchable links in search card:
+search by servings;
+search by preptime*/
 .search-term {
   color: #3c85a6;
+}
+
+/* Settings for separator in comment section */
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  border: 0;
+  border-top: 1px solid;
+  opacity: 0.25;
+}
+
+/* -------------------------------- End of custom css section--------------------------- */
+
+body.modal-open .navbar {
+  padding-right: calc(var(--bs-gutter-x) + 15px) !important;
 }
 
 h6,
@@ -940,10 +993,6 @@ progress {
   }
   .align-items-end {
     align-items: initial !important;
-  }
-
-  .dynamic-p {
-    display: block !important;
   }
 
   .img-upload-div {
