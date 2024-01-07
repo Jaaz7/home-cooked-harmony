@@ -60,16 +60,16 @@ $(document).ready(function () {
   // adding 30px to the height of the navbar
   const headerHeight = $(".navbar").outerHeight();
   const marginTop = (headerHeight + 30) + "px";
-  $("body").css("margin-top", marginTop);
+  $(".main").css("margin-top", marginTop);
 
   // Adjust body margin-top when navbar is shown
   $("#navbarSupportedContent").on("shown.bs.collapse", function () {
     const headerHeight = $(".navbar").outerHeight();
-    $("body").css("margin-top", headerHeight + 30 + "px");
+    $(".main").css("margin-top", headerHeight + 30 + "px");
   });
 
   // Reset body margin-top when navbar is hidden
   $("#navbarSupportedContent").on("hidden.bs.collapse", function () {
-    $("body").css("margin-top", (headerHeight + 30) + "px");
+    $(".main").css("margin-top", (headerHeight + 30) + "px");
   });
 });
