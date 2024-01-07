@@ -21,14 +21,12 @@ footer {
 
 body {
   flex: 1 0 auto;
-  margin: 0;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: 50%;
-  margin-top: 110px;
 }
 
 /* Hide paragraph above textarea in create 
@@ -37,17 +35,23 @@ body {
   display: none;
 }
 
+/* Settings for screen widths smaller than 767px*/
 @media (max-width: 767px) {
-  /* Settings for screen widths smaller than 767px*/
+  /* Show paragraph above textarea in create 
+  post view from large screens*/
   .dynamic-p {
     display: block !important;
   }
+
+  /* Center content in detailed post preview*/
   .centering {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
+
+  /* Settings for image in detailed post preview */
   .img-preview {
     display: block;
     margin-left: auto;
@@ -55,6 +59,8 @@ body {
     justify-content: center;
     margin-left: auto !important;
   }
+
+  /* Settings for edit and delete buttons in detailed post preview */
   .edit-delete-btns {
     display: flex !important;
     flex-direction: row !important;
@@ -62,10 +68,13 @@ body {
     margin-left: auto !important;
     margin-right: auto !important;
   }
+
+  /* Remove default align-items-end setting */
   .align-items-end {
     align-items: initial !important;
   }
 
+  /* Reduce size of upload image button in add post view */
   .img-upload-div {
     font-size: 0.9em;
   }
@@ -319,10 +328,13 @@ hr {
   border-top: 1px solid;
   opacity: 0.25;
 }
+
+/* Make sure modal doesn't interfere with navbar when opened */
 body.modal-open .navbar {
   padding-right: calc(var(--bs-gutter-x) + 15px) !important;
 }
 
+/* Bootstrap navbar settings, color scheme changed */
 .navbar {
   background-color: #465b5d;
   --bs-navbar-padding-x: 0;
@@ -358,6 +370,7 @@ body.modal-open .navbar {
   width: 100%;
 }
 
+/* Bootstrap navbar-dark settings, color scheme changed */
 .navbar-dark {
   --bs-navbar-color: rgba(255, 255, 255, 0.55);
   --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
