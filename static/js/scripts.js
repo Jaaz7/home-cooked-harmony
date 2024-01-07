@@ -56,19 +56,19 @@ $(document).ready(function () {
     }
   });
 
-  // Dynamically adjust body margin-top
-  // adding 30px to the height of the navbar
+  // Dynamically adjust margin-top to the element with class "main"
+  // to avoid overlapping with the navbar
   const headerHeight = $(".navbar").outerHeight();
   const marginTop = (headerHeight + 30) + "px";
   $(".main").css("margin-top", marginTop);
 
-  // Adjust body margin-top when navbar is shown
+  // Adjust margin-top of element with the "main" class when navbar is hidden
   $("#navbarSupportedContent").on("shown.bs.collapse", function () {
     const headerHeight = $(".navbar").outerHeight();
     $(".main").css("margin-top", headerHeight + 30 + "px");
   });
 
-  // Reset body margin-top when navbar is hidden
+  // Reset margin-top of element with the "main" class when navbar is hidden
   $("#navbarSupportedContent").on("hidden.bs.collapse", function () {
     $(".main").css("margin-top", (headerHeight + 30) + "px");
   });

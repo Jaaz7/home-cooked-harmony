@@ -2,7 +2,7 @@
 **A blog where you can share your favourite recipes.**
 <br><br>A django-based blog for sharing and discovering recipes. Users can browse through a variety of recipes, 
 each with detailed preparation times, serving sizes, and step-by-step cooking instructions.<br><br>
-<img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/19e8e8e5-53b0-49d9-adf8-440c621de5ab" width=90% height=90%>
+<img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0bb6b13d-add8-459c-8ccc-7185cc8186d7" width=90% height=90%>
 <br>
 **[Visit the live project here.](https://home-cooked-harmony-33e620becec5.herokuapp.com/)**
 
