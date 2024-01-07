@@ -18,7 +18,7 @@
     {% endfor %}
 
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-8 centering">
         <!-- Iterating over posts -->
         {% for post in posts %}
           <article class="art-bg rounded mb-4">
@@ -53,7 +53,7 @@
               </div>
               <!-- Edit and Delete buttons for post authors -->
               {% if request.user.is_authenticated and request.user == post.author %}
-                <div class="col-md-2 d-flex flex-column justify-content-center align-items-end">
+                <div class="col-md-2 d-flex edit-delete-btns flex-column justify-content-center align-items-end">
                   <form method="POST" action="{% url 'edit_post' post.id %}">
                     {% csrf_token %}
                     <button type="submit" class="btn mb-2 edit-delete">

@@ -330,7 +330,7 @@ a {
 
 @media (min-width: 767px) {
   .likes-preview {
-    padding-left: 80px !important;
+    padding-left: 55px !important;
   }
 }
 
@@ -339,7 +339,6 @@ a {
   height: 11em !important;
   overflow: hidden;
   position: relative;
-  margin-left: 15px;
 }
 
 .img-preview img {

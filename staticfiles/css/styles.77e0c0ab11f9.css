@@ -10,9 +10,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
- 
- :root {
+:root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -145,7 +143,7 @@ body {
 }
 
 .art-bg {
-  background-color: #9fb2acf0;
+  background-color: #9fb2ac;
   word-wrap: break-word;
 }
 
@@ -268,16 +266,15 @@ hr {
 }
 
 .post-title {
-  color: #3f3939;
-  font-size: 2em;
-  font-weight: 500;
-  font-family: 'Playfair Display', sans-serif;
+  color: #724b2c;
+  font-size: 1.7em;
+  font-family: Roboto, sans-serif;
 }
 
 .post-description {
   color: #000000;
+  font-weight: 500;
   font-size: 1.1em;
-  font-family: 'Open Sans', sans-serif;
 }
 
 .comment-date {
@@ -324,14 +321,8 @@ a {
 }
 
 .like-counter {
-  color: #000000;
+  color: #724b2c;
   font-weight: 600;
-}
-
-@media (min-width: 767px) {
-  .likes-preview {
-    padding-left: 80px !important;
-  }
 }
 
 .img-preview {
@@ -339,7 +330,6 @@ a {
   height: 11em !important;
   overflow: hidden;
   position: relative;
-  margin-left: 15px;
 }
 
 .img-preview img {
@@ -347,6 +337,10 @@ a {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.likes-preview {
+  padding-left: 55px !important;
 }
 
 .search-term {
