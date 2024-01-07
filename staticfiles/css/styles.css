@@ -149,6 +149,10 @@ body {
   word-wrap: break-word;
 }
 
+.art-bg {
+  background-color: #9fb2ac;
+}
+
 .cm-bg {
   background-color: #ffb581;
 }

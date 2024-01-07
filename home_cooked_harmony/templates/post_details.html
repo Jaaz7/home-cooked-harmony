@@ -18,12 +18,12 @@
     <div class="row">
       <div class="col-lg-8">
         <!-- Post content article -->
-        <article class="art-bg rounded">
+        <article class="art-bg art-bg-main rounded">
           <!-- Post header -->
           <header class="mb-4 p-2">
             <h1 class="fw-bolder mb-1 text-center post-title">{{ post.title }}</h1>
             <!-- Post meta content -->
-            <div class="text-muted fst-italic mb-2 text-end">
+            <div class="fst-italic mb-2 text-end">
               Posted on {{ post.date|date:'d/m/Y' }}, by {{ post.author }}<br>
               <span class="badge text-decoration-none link-light text-end">Preparation Time: {{ post.preptime }} minutes</span>
               <span class="badge text-decoration-none link-light text-end">Servings: {{ post.servings }} people</span>

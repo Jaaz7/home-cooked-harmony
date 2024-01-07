@@ -78,6 +78,21 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
           </span>
         </div>
       </article>
+      {% empty %}
+      <div class="col-lg-8 centering mx-auto">
+    <article class="art-bg rounded mb-4 text-center">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <header class="mb-2">
+            <h1 class="fw-bolder mb-1 post-title">No posts found</h1>
+          </header>
+          <section>
+            <p class="mb-2 post-description">No delicious posts found... Check back soon! :)</p>
+          </section>
+        </div>
+      </div>
+    </article>
+  </div>
       {% endfor %}
       <!-- Pagination section -->
       {% if is_paginated %}
