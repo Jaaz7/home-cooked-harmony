@@ -46,4 +46,4 @@ build/
 .cache/
 
 # staticfiles
-staticfiles/
+/staticfiles/
