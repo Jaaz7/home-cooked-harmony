@@ -158,6 +158,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Deployment
   - ### Local Cloning
+    <details><summary>Click here to expand</summary>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
     <br>
     ‎2. Click on the green code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
@@ -168,11 +169,10 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br>
     ‎5. Type `git clone` and then paste The URL copied in step 2.
     <br>
-    ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).
+    ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).</details>
     <br>
     ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
-    <br><br>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
     <br><br>
     ‎2. At the top of the Repository, under the main navigation, Click "Fork" button. Your fork has been created. You can locate it in your repositories section.
