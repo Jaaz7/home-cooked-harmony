@@ -18,9 +18,7 @@ from django.core.exceptions import ValidationError
 
 # Class-based view for listing posts with pagination and sorting by likes and date
 class PostList(generic.ListView):
-    queryset = Post.objects.annotate(likes_count=Count("likes")).order_by(
-        "-likes_count", "-date"
-    )
+    queryset = Post.objects.order_by("-date")
     template_name = "index.html"
     paginate_by = 5
 
