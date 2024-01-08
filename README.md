@@ -172,53 +172,52 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br>
     ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
-    By forking the repository, a copy of the original one is made inside the GitHub account. This is important if one wants to view and make changes to a project without affecting the original. The steps are the following:
     <br><br>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
-    <br>
+    <br><br>
     ‎2. At the top of the Repository, under the main navigation, Click "Fork" button. Your fork has been created. You can locate it in your repositories section.
   - ### Elephant SQL Database
     ‎1. Create account and click Create New Instance to start a new database.
-    <br>
+    <br><br>
     ‎2. Provide a name.
-    <br>
+    <br><br>
     ‎3. Select the Tiny Turtle (Free) plan.
-    <br>
+    <br><br>
     ‎4. Select the Region and Data Center closest to you.
-    <br>
+    <br><br>
     ‎5. Once created you can access the new database configuration to view the database URL and API key.
   - ### Cloudinary
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
     On your Cloudinary Dashboard.
-    <br>
+    <br><br>
     ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".
   - ### Deploying to Heroku
     ‎1. Log in to [Heroku](https://dashboard.heroku.com/) or create a new account.
-    <br>
+    <br><br>
     ‎2. On the main page click "New" and select "Create new app".
-    <br>
+    <br><br>
     ‎3. Choose your unique app name and select your region.
-    <br>
+    <br><br>
     ‎4. Click "Create app".
-    <br>
+    <br><br>
     ‎5. On the next page find "settings" and locate "Config Vars".
-    <br>
+    <br><br>
     ‎6. Add necessary config vars which ideally are in an env.py file and being ignored to github by a .gitignore file. Click "Reveal Config Vars" and add the 'SECRET_KEY' which can be any key you create, I generated mine [here](https://django-secret-key-generator.netlify.app/). Add any API keys, I'm using two, ElephantSQL and Cloudinary. Therefore 'DATABASE_URL' and 'CLOUDINARY_URL' are also added.
-    <br>
+    <br><br>
     ‎7. If choosing another database applies, comment out the default Django database configuration and make migrations with `python3 manage.py makemigrations` and `python3 manage.py migrate`.
-    <br>
+    <br><br>
     ‎8. Add Heroku to allowed hosts in settings.py. `ALLOWED_HOSTS=[".herokuapp.com"]`.
-    <br>
+    <br><br>
     ‎9. Add and freeze dependencies to requirements.txt file with command `pip3 freeze --local > requirements.txt`, careful to only do this with a virtual environment activated in a local IDE, to potentially avoid pushing hundreds of unwanted and unused dependencies.
-    <br>
+    <br><br>
     ‎10. Add a Procfile by running `echo web: gunicorn myproject.wsgi > Procfile` where "myproject" is the name of your Django project.
-    <br>
+    <br><br>
     ‎11. Select GitHub as deployment method and search for your repository and link them together.
-    <br>
+    <br><br>
     ‎12. Make sure debug is set to false in settings.py before deploying. `DEBUG = False`
-    <br>
+    <br><br>
     ‎13. Scroll down and select "Enable Automatic Deploys", Click to deploy.
-    <br>
+    <br><br>
     ‎14. Your website is deployed and linked to your GitHub account. This means that running `git push` from your IDE will reflect in the newest version of your app in production.
 
 ---
