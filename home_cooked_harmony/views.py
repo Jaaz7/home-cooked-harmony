@@ -32,6 +32,15 @@ class PostList(generic.ListView):
         return context
 
 
+# View for listing all posts in homepage with pagination
+def post_list(request):
+    post_list = Post.objects.all()
+    paginator = Paginator(post_list)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, {"page_obj": page_obj})
+
+
 # Detailed view for a single post, including comments and pagination for comments
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
@@ -107,7 +116,7 @@ def login_view(request):
     if request.user.is_authenticated:
         messages.info(request, "You're already logged in.")
         return redirect("home")
-    
+
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
@@ -149,15 +158,6 @@ def delete_post(request, post_id):
     messages.success(request, "Post deleted successfully!")
 
     return redirect("home")
-
-
-# View for listing all posts with pagination
-def post_list(request):
-    post_list = Post.objects.all()
-    paginator = Paginator(post_list)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-    return render(request, {"page_obj": page_obj})
 
 
 # View for registering a new user
@@ -229,6 +229,11 @@ def search(request):
     posts = Post.objects.filter(
         Q(title__icontains=query) | Q(description__icontains=query)
     )
+    # Paginator
+    paginator = Paginator(posts, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     # Displaying success or warning message based on search results
     if posts:
         messages.success(request, f"Found {posts.count()} result(s) for '{query}'")
@@ -236,36 +241,54 @@ def search(request):
         messages.warning(request, f"No results found for '{query}'")
     # Context for rendering search results
     context = {}
-    context["posts"] = posts
+    context["posts"] = page_obj.object_list
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    context["page_obj"] = page_obj
+    context["is_paginated"] = page_obj.has_other_pages()
     return render(request, "search_results.html", context)
 
 
 # Search by serving view
 def search_by_serving(request, serving):
     posts = Post.objects.filter(servings=serving)
+
+    # Paginator
+    paginator = Paginator(posts, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     if posts:
         messages.success(request, f"Found {posts.count()} result(s) for '{serving}'")
     else:
         messages.warning(request, f"No results found for '{serving}'")
     context = {}
-    context["posts"] = posts
+    context["posts"] = page_obj.object_list
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    context["page_obj"] = page_obj
+    context["is_paginated"] = page_obj.has_other_pages()
     return render(request, "search_results.html", context)
 
 
 # Search by preparation time view
 def search_by_preptime(request, preptime):
     posts = Post.objects.filter(preptime=preptime)
+
+    # Paginator
+    paginator = Paginator(posts, 5)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
     if posts:
         messages.success(request, f"Found {posts.count()} result(s) for '{preptime}'")
     else:
         messages.warning(request, f"No results found for '{preptime}'")
     context = {}
-    context["posts"] = posts
+    context["posts"] = page_obj.object_list
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+    context["page_obj"] = page_obj
+    context["is_paginated"] = page_obj.has_other_pages()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
