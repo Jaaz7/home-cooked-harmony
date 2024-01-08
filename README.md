@@ -189,7 +189,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. Once created you can access the new database configuration to view the database URL and API key.</details>
   - ### Cloudinary
-  <details><summary>Click here to expand</summary>
+    <details><summary>Click here to expand</summary>
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
     at Cloudinary Dashboard.</details>
     <br><br>
