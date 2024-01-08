@@ -160,23 +160,25 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Local Cloning
     <details><summary>Click here to expand</summary>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
-    <br>
+    <br><br>
     ‎2. Click on the green code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
-    <br>
+    <br><br>
     ‎3. Open the terminal in your IDE and change the current working directory to the location you want to use for the cloned directory.
-    <br>
+    <br><br>
     ‎4. Change the current working directory to the location where you want the cloned directory to be created.
-    <br>
+    <br><br>
     ‎5. Type `git clone` and then paste The URL copied in step 2.
-    <br>
+    <br><br>
     ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).</details>
     <br>
     ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
+    <details><summary>Click here to expand</summary>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
     <br><br>
-    ‎2. At the top of the Repository, under the main navigation, Click "Fork" button. Your fork has been created. You can locate it in your repositories section.
+    ‎2. At the top of the Repository, under the main navigation, Click "Fork" button. Your fork has been created. You can locate it in your repositories section.</details>
   - ### Elephant SQL Database
+    <details><summary>Click here to expand</summary>
     ‎1. Create account and click Create New Instance to start a new database.
     <br><br>
     ‎2. Provide a name.
@@ -185,13 +187,14 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎4. Select the Region and Data Center closest to you.
     <br><br>
-    ‎5. Once created you can access the new database configuration to view the database URL and API key.
+    ‎5. Once created you can access the new database configuration to view the database URL and API key.</details>
   - ### Cloudinary
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
     On your Cloudinary Dashboard.
     <br><br>
     ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".
   - ### Deploying to Heroku
+    <details><summary>Click here to expand</summary>
     ‎1. Log in to [Heroku](https://dashboard.heroku.com/) or create a new account.
     <br><br>
     ‎2. On the main page click "New" and select "Create new app".
@@ -218,7 +221,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎13. Scroll down and select "Enable Automatic Deploys", Click to deploy.
     <br><br>
-    ‎14. Your website is deployed and linked to your GitHub account. This means that running `git push` from your IDE will reflect in the newest version of your app in production.
+    ‎14. Your website is deployed and linked to your GitHub account. This means that running `git push` from your IDE will reflect in the newest version of your app in production.</details>
 
 ---
 ## Testing
