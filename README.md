@@ -169,8 +169,16 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     ‎5. Type `git clone` and then paste The URL copied in step 2.
     <br>
     ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).
+    <br>
     ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
+    By forking the repository, a copy of the original one is made inside the GitHub account. This is important if one wants to view and make changes to a project without affecting the original. The steps are the following:
+    <br>
+    ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
+    <br>
+    ‎2. At the top of the Repository, under the main navigation, Click "Fork" button.
+    <br>
+    ‎Your fork has been created. You can locate it in your repositories section.
   - ### Elephant SQL Database
   - ### Cloudinary
   - ### Deploying to Heroku
