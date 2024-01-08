@@ -169,9 +169,9 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. Type `git clone` and then paste The URL copied in step 2.
     <br><br>
-    ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).</details>
+    ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).
     <br>
-    ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
+    ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.</details>
   - ### Forking the Github Repository
     <details><summary>Click here to expand</summary>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
@@ -209,7 +209,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎7. If choosing another database applies, comment out the default Django database configuration and make migrations with `python3 manage.py makemigrations` and `python3 manage.py migrate`.
     <br><br>
-    ‎8. Add Heroku to allowed hosts in settings.py. `ALLOWED_HOSTS=[".herokuapp.com"]`.
+    8. Add Heroku to allowed hosts in settings.py. `ALLOWED_HOSTS=[".herokuapp.com"]`.
     <br><br>
     ‎9. Add and freeze dependencies to requirements.txt file with command `pip3 freeze --local > requirements.txt`, careful to only do this with a virtual environment activated in a local IDE, to potentially avoid pushing hundreds of unwanted and unused dependencies.
     <br><br>
