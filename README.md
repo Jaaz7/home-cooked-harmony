@@ -169,7 +169,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. Type <pre><code>git clone</code></pre> and then paste The URL copied in step 2.
     <br><br>
-    ‎6. Set up a virtual environment navigating into your project with <pre><code>cd path/to/project</code></pre> and running the command <pre><code>python3 -m venv venv</code></pre> replace the second "venv" with any name you want. Activate your virtual environment with <pre><code>source venv/bin/activate</pre></code> (on Linux OS).
+    ‎6. Set up a virtual environment navigating into your project with <pre><code>cd path/to/project</code></pre> and running the command <pre><code>python3 -m venv venv</code></pre> replace the second "venv" with any name you want. Activate your virtual environment with:  (in Linux OS) <pre><code>source venv/bin/activate</pre></code>
     <br><br>
     ‎7. Install dependencies with <pre><code>pip3 install -r requirements.txt</pre></code>Your local clone has been created.</details>
   - ### Forking the Github Repository
@@ -189,8 +189,9 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. Once created you can access the new database configuration to view the database URL and API key.</details>
   - ### Cloudinary
+  <details><summary>Click here to expand</summary>
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
-    at Cloudinary Dashboard.
+    at Cloudinary Dashboard.</details>
     <br><br>
     ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".
   - ### Deploying to Heroku
