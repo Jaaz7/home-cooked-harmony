@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.http import Http404
 from django.db.models import Q, Count
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
@@ -13,6 +14,7 @@ from django.contrib import messages
 from django.utils.text import slugify
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
+
 
 # Class-based view for listing posts with pagination and sorting by likes and date
 class PostList(generic.ListView):
@@ -202,6 +204,7 @@ def delete_comment(request, comment_id):
     # Redirecting to the post details page
     return redirect("post_details", slug=comment.post.slug)
 
+
 # Like post view
 @login_required
 def like_post(request, post_id):
@@ -235,6 +238,7 @@ def search(request):
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
+
 # Search by serving view
 def search_by_serving(request, serving):
     posts = Post.objects.filter(servings=serving)
@@ -247,6 +251,7 @@ def search_by_serving(request, serving):
     context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
+
 
 # Search by preparation time view
 def search_by_preptime(request, preptime):
@@ -261,10 +266,15 @@ def search_by_preptime(request, preptime):
     context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
+
 # Edit post view
 @login_required
 def edit_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)
+    try:
+        post = get_object_or_404(Post, id=post_id)
+    except Http404:
+        messages.error(request, "You're trying to edit a post that doesn't exist.")
+        return redirect("home")
 
     # Check if the current user is the author of the post
     if request.user != post.author:

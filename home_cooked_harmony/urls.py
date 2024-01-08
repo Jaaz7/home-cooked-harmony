@@ -8,6 +8,9 @@ urlpatterns = [
     # Route for adding a new post
     path("add_post/", views.add_post, name="add_post"),
 
+    # Route to login page when an error occurs
+    path('accounts/login/', views.login_view, name='login'),
+
     # Login page
     path("login/", views.login_view, name="login"),
 
