@@ -103,6 +103,11 @@ def add_post(request):
 
 # View for user login
 def login_view(request):
+    # Redirecting to home page if user is already logged in
+    if request.user.is_authenticated:
+        messages.info(request, "You're already logged in.")
+        return redirect("home")
+    
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]

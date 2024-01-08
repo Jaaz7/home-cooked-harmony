@@ -14,6 +14,8 @@ background-image: url('{% static 'assets/cuisine-pattern.png' %}');
   <div class="alert alert-success text-center">{{ message }}</div>
   {% elif message.tags == 'error' %}
   <div class="alert alert-danger text-center">{{ message }}</div>
+  {% else %}
+  <div class="alert alert-info text-center">{{ message }}</div>
   {% endif %}
   {% endfor %}
   <div class="row">
