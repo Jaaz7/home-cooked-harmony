@@ -49,7 +49,7 @@ Users can search by number of servings, by preparation time or do a free search.
 Users can share their own recipes and comment culinary tips, enriching the overall blogging experience.
 
 ### Visual Appeal:
-Users are encouraged to upload visually appealing images. When adding a post, users are prompted with clear instructions pased as "criteria" for uploading an organized post, this includes where to put the ingredients and measurements. Users have a rich text editor to customize their own formatting. If the website has many posts and comments, users will find it easy to navigate with organized pagination buttons. This ensures a visually informative browsing experience.
+Users are encouraged to upload visually appealing images. When adding a post, users are prompted with clear instructions passed as "criteria" for uploading an organized post, this includes where to put the ingredients and measurements. Users have a rich text editor to customize their own formatting. If the website has many posts and comments, users will find it easy to navigate with organized pagination buttons. This ensures a visually informative browsing experience.
 
 ### Multi-Device Accessibility:
 Optimized for all devices, the website ensures a smooth experience, whether users are planning their meals on a desktop or browsing recipes on a mobile device.
@@ -103,7 +103,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - Smooth but strict signup allowing to a secure and personalized user account.
     - Easy login page with clear error messages if any encountered.
     - Access to posting recipes.
-    - Acess to posting comments.
+    - Access to posting comments.
     - Ability to like posts.
     - Ability to edit their own posts.
 
@@ -130,7 +130,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Database Scheme
     Models
     - AllAuth User Model<br>
-      Django Allauth, the User model is the default user model provided by the Django authentication system.<br><br>
+      Django AllAuth, the User model is the default user model provided by the Django authentication system.<br><br>
     - Post Model<br>
       A model created for the purpose of storing post information in an online database.<br><br>
     - Comment Model<br>
@@ -139,10 +139,10 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Security Features
   - User Authentication
-    Django Allauth is a popular authentication and authorization library for Django, which provides a set of features for managing user                   authentication, registration, login and logout.<br><br>
+    Django AllAuth is a popular authentication and authorization library for Django, which provides a set of features for managing user                   authentication, registration, login and logout.<br><br>
   - Login Decorator
     I use the login_required decorator for the following views: add_post, logout_view, delete_post, delete_comment, like_post and edit_post.
-    This ensures protection so everything goes as planned in the backend, with also raising a good experience for the user: if the user tries to           access any of these views previously mentioned but they-re not logged in, they are redirected to the login page.<br><br>
+    This ensures backend protection and enhances user experience: if the user tries to access any of these views previously mentioned but they're not logged in, they are redirected to the login page.<br><br>
   - CSRF Protection
     CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the         user is authenticated. Django has a built-in protection uses tokens to ensure that any form submitted or a request made to a Django app really         comes from the user, not an imposter. This protection is being used in every form that requires user input.
 
@@ -158,6 +158,18 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Deployment
   - ### Local Cloning
+    ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
+    <br>
+    ‎2. Click on the green code button, select clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+    <br>
+    ‎3. Open the terminal in your IDE and change the current working directory to the location you want to use for the cloned directory.
+    <br>
+    ‎4. Change the current working directory to the location where you want the cloned directory to be created.
+    <br>
+    ‎5. Type `git clone` and then paste The URL copied in step 2.
+    <br>
+    ‎6. Set up a virtual environment navigating into your project with `cd path/to/project` and running the command `python3 -m venv venv`, replace the second `venv` with any name you want. Activate your virtual environment with `source venv/bin/activate` (on Linux OS).
+    ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
   - ### Elephant SQL Database
   - ### Cloudinary
@@ -169,7 +181,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## References
   - ### Documentation
-    - [Python 3.11.7 documentation](https://docs.python.org/3.11/) - Official Python documentation, used for language syntax and library reference.
+    - [Python 3.11.7 documentation](https://docs.python.org/3.11) - Official Python documentation, used for language syntax and library reference.
     - [Django 5.0.1 documentation](https://django.readthedocs.io/en/stable/contents.html) - Comprehensive guide for Django framework used in the          project.
     - [PostgreSQL 5.4 documentation](https://www.postgresql.org/docs/15/sql-commands.html) - This documentation was important for performing commands 
     in the database, eg. retrieving field types from tables.
