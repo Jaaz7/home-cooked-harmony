@@ -33,7 +33,7 @@
   - [Deploying To Heroku](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#deploying-to-heroku)
 - ### [Testing](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#testing-1)
 - ### [References](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#references-1)
-  - [Docs](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#docs)
+  - [Documentation](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#docs)
   - [Content](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#content)
   - [Acknowledgements](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#acknowledgements)
 
@@ -168,13 +168,21 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 
 ---
 ## References
-  - ### Docs
-    - Code Institute's "I Think Therefore I Blog" walkthrough project.
-    - [Python 3.11.7 documentation.](https://docs.python.org/3.11/)
-    - [Django tutorials from Codemy](https://www.youtube.com/@Codemycom/featured)
-    - [Brave search engine.]()
+  - ### Documentation
+    - [Python 3.11.7 documentation](https://docs.python.org/3.11/) - Official Python documentation, used for language syntax and library reference.
+    - [Django 5.0.1 documentation](https://django.readthedocs.io/en/stable/contents.html) - Comprehensive guide for Django framework used in the          project.
+    - [PostgreSQL 5.4 documentation](https://www.postgresql.org/docs/15/sql-commands.html) - This documentation was important for performing commands 
+    in the database, eg. retrieving field types from tables.
+  - ### Inspirational Resources
+    - [Django tutorials from Codemy](https://www.youtube.com/@Codemycom/featured) - A video series by John Elder, providing practical Django         development skills.
+    - Code Institute's "I Think Therefore I Blog" walkthrough project - Provided a foundational understanding of blog development in Django.
+  - ### Tools
+    - [Brave search engine](https://search.brave.com/) - Primary search engine used for research and troubleshooting.
   - ### Content
     - All code and content were written by Jaaziel do Vale.
     - Orange chef hat favicon image [source](https://icons8.com/icon/LZnCmNzYfzAk/chef-hat).
     - Rest of images were powered by DALL-E [Bing Chat](https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV), an Artificial Intelligence (AI).
   - ### Acknowledgements
+    - Mentor Mitko Bachvarov for providing mentorship and feedback.
+    - Slack community and tutors for help and observations.
+    - Stephanie Herz for helping me populate the blog, posting recipes that have her own flair. (The pictures are original content too!)
