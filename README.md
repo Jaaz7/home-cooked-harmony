@@ -173,12 +173,10 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     ‎7. Install dependencies with `pip3 install -r requirements.txt`. Your local clone has been created.
   - ### Forking the Github Repository
     By forking the repository, a copy of the original one is made inside the GitHub account. This is important if one wants to view and make changes to a project without affecting the original. The steps are the following:
-    <br>
+    <br><br>
     ‎1. Log in to GitHub and locate [GitHub Repository home-cooked-harmony](https://github.com/Jaaz7/home-cooked-harmony).
     <br>
-    ‎2. At the top of the Repository, under the main navigation, Click "Fork" button.
-    <br>
-    ‎Your fork has been created. You can locate it in your repositories section.
+    ‎2. At the top of the Repository, under the main navigation, Click "Fork" button. Your fork has been created. You can locate it in your repositories section.
   - ### Elephant SQL Database
   - ### Cloudinary
   - ### Deploying to Heroku
