@@ -1,5 +1,5 @@
 # Home Cooked Harmony
-**A blog where you can share your favourite recipes and engage with the community.**
+**A django-based blog where you can share your favourite recipes and engage with the community.**
 <br><br>
 <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0bb6b13d-add8-459c-8ccc-7185cc8186d7" width=90% height=90%>
 <br>
@@ -15,8 +15,11 @@
   - [Registered User](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#registered-user)
 - ### [Design](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#design-1)
   - [Colors]()
-  - [Images]()
+  - [Images and Patterns]()
   - [Entity-Relationship Diagram (ERD)]()
+  - [Typography]()
+  - [Wireframes]()
+  - [Database Scheme]()
 - ### [Security Features](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#security-features-1)
 - ### [Features](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#features-1)
   - [Existing Features]()
@@ -106,9 +109,32 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 
 ---
 ## Design
-  - Colors
-  - Images
-  - Entity-Relationship Diagram (ERD)
+  - ### Colors
+    <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0f8e360e-f737-47e6-857c-016e3f914813" width="100%" height="100%">
+  - ### Images and Patterns
+    - Favicon<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/6e1751a7-8955-46e3-abe1-53bb38fcb04d" width="10%" height="10%">
+    - Homepage background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/c69b5ead-661a-41e7-978d-44e2419d2f2a" width="30%" height="30%">
+    - Post image placeholder<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/49ca73cc-6544-4cab-b6c4-1f8ee345c47e" width="30%" height="30%">
+    - Login page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/56777ace-4eea-41e6-8b07-d52d543a6ee6" width="30%" height="30%">
+    - Register page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/8ebeae7c-bcb6-4d6c-9f9b-239b3fe5995e" width="30%" height="30%">
+  - ### Entity-Relationship Diagram (ERD)
+    Field type nomenclature is that of SQL.
+    The "Likes" table is a field from the Post table, however since it's a many-to-many field,
+    creating a separate table allows for better visibility. It's also viewed as a separate table in Elephant SQL.<br><br>
+    <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/1e5f9656-5558-4c41-8a61-523d59903ae2" width="50%" height="50%">
+  - ### Typography
+    - Post title font: PlayFair Display.
+    - Post description font: Open Sans.
+  - ### Wireframes
+  - ### Database Scheme
+    Models
+    - AllAuth User Model<br>
+      Django Allauth, the User model is the default user model provided by the Django authentication system.
+      The User entity has a one-to-many relationship with the Post identity.<br><br>
+    - Post Model<br>
+      A model created for the purpose of storing post information in an online database.<br><br>
+    - Comment Model<br>
+      A model created for the purpose of storing comment information in an online database.
 
 ---
 ## Security Features
@@ -140,5 +166,6 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - 
   - ### Content
     - All code and content were written by Jaaziel do Vale.
-    - All images were powered by Artificial Intelligence (AI).
+    - Orange chef hat favicon image [source](https://icons8.com/icon/LZnCmNzYfzAk/chef-hat).
+    - Rest of images were powered by DALL-E [Bing Chat](https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV), an Artificial Intelligence (AI).
   - ### Acknowledgements
