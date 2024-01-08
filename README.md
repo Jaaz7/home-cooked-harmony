@@ -130,8 +130,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Database Scheme
     Models
     - AllAuth User Model<br>
-      Django Allauth, the User model is the default user model provided by the Django authentication system.
-      The User entity has a one-to-many relationship with the Post identity.<br><br>
+      Django Allauth, the User model is the default user model provided by the Django authentication system.<br><br>
     - Post Model<br>
       A model created for the purpose of storing post information in an online database.<br><br>
     - Comment Model<br>
@@ -140,6 +139,12 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Security Features
   - User Authentication
+    Django Allauth is a popular authentication and authorization library for Django, which provides a set of features for managing user                   authentication, registration, login and logout.<br><br>
+  - Login Decorator
+    I use the login_required decorator for the following views: add_post, logout_view, delete_post, delete_comment, like_post and edit_post.
+    This ensures protection so everything goes as planned in the backend, with also raising a good experience for the user: if the user tries to           access any of these views previously mentioned but they-re not logged in, they are redirected to the login page.<br><br>
+  - CSRF Protection
+    CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the         user is authenticated, Django has a built-in protection uses tokens to ensure that any form submitted or a request made to a Django app really         comes from the user, not an imposter. This protection is being used in any form that required user input.
 
 ---
 ## Features
