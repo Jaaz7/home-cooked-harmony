@@ -206,7 +206,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. On the next page find "settings" and locate "Config Vars".
     <br><br>
-    ‎6. Add necessary config vars which ideally are in an env.py file and being ignored to github by a .gitignore file.<br>Click "Reveal Config Vars" and add the 'SECRET_KEY' which can be any key you create. I'm using two API keys, ElephantSQL and Cloudinary.<br>Therefore 'DATABASE_URL' and 'CLOUDINARY_URL' are also added.
+    ‎6. Add necessary config vars which ideally are in an env.py file and being ignored to github by a .gitignore file.<br>Click "Reveal Config Vars" and add the 'SECRET_KEY' which can be any key you create.<br>I'm using two API keys, ElephantSQL and Cloudinary.<br>Therefore 'DATABASE_URL' and 'CLOUDINARY_URL' are also added.
     <br><br>
     ‎7. If choosing another database applies, comment out the default Django database configuration and make migrations with <pre><code>python3 manage.py makemigrations</pre></code> and <pre><code>python3 manage.py migrate</pre></code>
     <br>
