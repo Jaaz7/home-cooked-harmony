@@ -191,9 +191,9 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Cloudinary
     <details><summary>Click here to expand</summary>
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
-    at Cloudinary Dashboard.</details>
+    at Cloudinary Dashboard.
     <br><br>
-    ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".
+    ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".</details>
   - ### Deploying to Heroku
     <details><summary>Click here to expand</summary>
     ‎1. Log in to Heroku or create a new account.
