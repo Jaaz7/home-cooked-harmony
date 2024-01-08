@@ -14,28 +14,28 @@
   - [Visitor](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#visitor)
   - [Registered User](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#registered-user)
 - ### [Design](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#design-1)
-  - [Colors]()
-  - [Images and Patterns]()
-  - [Entity-Relationship Diagram (ERD)]()
-  - [Typography]()
-  - [Wireframes]()
-  - [Database Scheme]()
+  - [Colors](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#colors)
+  - [Images and Patterns](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#images-and-patterns)
+  - [Entity-Relationship Diagram (ERD)](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#entity-relationship-diagram-erd)
+  - [Typography](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#typography)
+  - [Wireframes](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#wireframes)
+  - [Database Scheme](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#database-scheme)
 - ### [Security Features](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#security-features-1)
 - ### [Features](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#features-1)
-  - [Existing Features]()
-  - [Features Left to Implement]()
+  - [Existing Features](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#existing-features)
+  - [Features Left to Implement](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#features-left-to-implement)
 - ### [Technologies Used](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#technologies-used-1)
 - ### [Deployment](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#deployment-1)
-  - [Local Cloning]()
-  - [Forking The Github Repository]()
-  - [Elephant SQL Database]()
-    [Cloudinary]()
-  - [Deploying To Heroku]()
+  - [Local Cloning](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#local-cloning)
+  - [Forking The Github Repository](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#forking-the-github-repository)
+  - [Elephant SQL Database](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#elephant-sql-database)
+    [Cloudinary](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#cloudinary)
+  - [Deploying To Heroku](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#deploying-to-heroku)
 - ### [Testing](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#testing-1)
 - ### [References](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#references-1)
-  - [Docs]()
-  - [Content]()
-  - [Acknowledgements]()
+  - [Docs](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#docs)
+  - [Content](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#content)
+  - [Acknowledgements](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#acknowledgements)
 
 ---
 ## User Experience (UX)
@@ -64,7 +64,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - Project Board is set to public.
     - Project Board was utilized to track User Stories in the "Todo", "In Progress" and "Done" columns.
     - Labels were added to indicate importance, such as "Must do".
-    - <details><summary>User Stories' Issues</summary>
+    - <details><summary>User Stories' Issues (click to expand)</summary>
       <br>
       User Story: View for authenticated users
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/00b62259-e24f-4893-8a7a-40acae0b49f8" width=100% height=100%>
@@ -77,7 +77,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
       User Story: login and logout validation
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/a92c8250-0d48-4a68-85bf-d524772ed91f" width=100% height=100%>
       </details>
-    - <details><summary>Project Board</summary>
+    - <details><summary>Project Board (click to expand)</summary>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/fbc2ebed-9566-4ded-a2ba-b5268563969e" width=100% height=100%>
       </details>
 
@@ -112,16 +112,17 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Colors
     <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0f8e360e-f737-47e6-857c-016e3f914813" width="100%" height="100%">
   - ### Images and Patterns
-    - Favicon<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/6e1751a7-8955-46e3-abe1-53bb38fcb04d" width="10%" height="10%">
-    - Homepage background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/c69b5ead-661a-41e7-978d-44e2419d2f2a" width="30%" height="30%">
-    - Post image placeholder<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/49ca73cc-6544-4cab-b6c4-1f8ee345c47e" width="30%" height="30%">
-    - Login page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/56777ace-4eea-41e6-8b07-d52d543a6ee6" width="30%" height="30%">
-    - Register page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/8ebeae7c-bcb6-4d6c-9f9b-239b3fe5995e" width="30%" height="30%">
+    <details><summary>Click here to expand</summary>
+    <br>Favicon<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/6e1751a7-8955-46e3-abe1-53bb38fcb04d" width="10%" height="10%"><br><br>
+    Homepage background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/c69b5ead-661a-41e7-978d-44e2419d2f2a" width="30%" height="30%"><br><br>
+    Post image placeholder<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/49ca73cc-6544-4cab-b6c4-1f8ee345c47e" width="30%" height="30%"><br><br>
+    Login page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/56777ace-4eea-41e6-8b07-d52d543a6ee6" width="30%" height="30%"><br><br>
+    Register page background<br><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/8ebeae7c-bcb6-4d6c-9f9b-239b3fe5995e" width="30%" height="30%"></details>
   - ### Entity-Relationship Diagram (ERD)
     Field type nomenclature is that of SQL.
     The "Likes" table is a field from the Post table, however since it's a many-to-many field,
-    creating a separate table allows for better visibility. It's also viewed as a separate table in Elephant SQL.<br><br>
-    <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/1e5f9656-5558-4c41-8a61-523d59903ae2" width="50%" height="50%">
+    creating a separate table in the ERD allows for better visibility. It's also viewed as a separate table in Elephant SQL.<br><br>
+    <details><summary>Click here to expand</summary><img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/1e5f9656-5558-4c41-8a61-523d59903ae2" width="60%" height="60%"></details>
   - ### Typography
     - Post title font: PlayFair Display.
     - Post description font: Open Sans.
