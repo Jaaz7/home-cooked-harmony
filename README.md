@@ -169,9 +169,9 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎5. Type <pre><code>git clone</code></pre> and then paste The URL copied in step 2.
     <br><br>
-    ‎6. Set up a virtual environment navigating into your project with <pre><code>cd path/to/project</code></pre> and running the command <pre><code>python3 -m venv venv</code></pre>, replace the second <pre><code>venv</code></pre> with any name you want. Activate your virtual environment with <pre><code>source venv/bin/activate</pre></code> (on Linux OS).
-    <br>
-    ‎7. Install dependencies with <pre><code>pip3 install -r requirements.txt</pre></code>. Your local clone has been created.</details>
+    ‎6. Set up a virtual environment navigating into your project with <pre><code>cd path/to/project</code></pre> and running the command <pre><code>python3 -m venv venv</code></pre> replace the second "venv" with any name you want. Activate your virtual environment with <pre><code>source venv/bin/activate</pre></code> (on Linux OS).
+    <br><br>
+    ‎7. Install dependencies with <pre><code>pip3 install -r requirements.txt</pre></code>Your local clone has been created.</details>
   - ### Forking the Github Repository
     <details><summary>Click here to expand</summary>
     ‎1. Log in to GitHub and locate GitHub Repository home-cooked-harmony.
@@ -190,7 +190,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     ‎5. Once created you can access the new database configuration to view the database URL and API key.</details>
   - ### Cloudinary
     ‎1. Create account and you'll find your API key in your Cloudinary dashboard 
-    On your Cloudinary Dashboard.
+    at Cloudinary Dashboard.
     <br><br>
     ‎2. Copy the API environment variable but take out the start "CLOUDINARY_URL".
   - ### Deploying to Heroku
@@ -207,21 +207,21 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎6. Add necessary config vars which ideally are in an env.py file and being ignored to github by a .gitignore file. Click "Reveal Config Vars" and add the 'SECRET_KEY' which can be any key you create, I generated mine [here](https://django-secret-key-generator.netlify.app/). Add any API keys, I'm using two, ElephantSQL and Cloudinary. Therefore 'DATABASE_URL' and 'CLOUDINARY_URL' are also added.
     <br><br>
-    ‎7. If choosing another database applies, comment out the default Django database configuration and make migrations with <pre><code>python3 manage.py makemigrations</pre></code> and <pre><code>python3 manage.py migrate</pre></code>.
+    ‎7. If choosing another database applies, comment out the default Django database configuration and make migrations with <pre><code>python3 manage.py makemigrations</pre></code> and <pre><code>python3 manage.py migrate</pre></code>
     <br><br>
-    ‎8. Add Heroku to allowed hosts in settings.py. <pre><code>ALLOWED_HOSTS=[".herokuapp.com"]</pre></code>.
+    ‎8. Add Heroku to allowed hosts in settings.py. <pre><code>ALLOWED_HOSTS=[".herokuapp.com"]</pre></code>
     <br><br>
-    ‎9. Add and freeze dependencies to requirements.txt file with command <pre><code>pip3 freeze --local > requirements.txt</pre></code>, careful to only do this with a virtual environment activated in a local IDE, to potentially avoid pushing hundreds of unwanted and unused dependencies.
+    ‎9. Add and freeze dependencies to requirements.txt file with command <pre><code>pip3 freeze --local > requirements.txt</pre></code>careful to only do this with a virtual environment activated in a local IDE, to potentially avoid pushing hundreds of unwanted and unused dependencies.
     <br><br>
-    ‎10. Add a Procfile by running <pre><code>echo web: gunicorn myproject.wsgi > Procfile</pre></code> where "myproject" is the name of your Django project.
+    ‎10. Add a Procfile by running <pre><code>echo web: gunicorn myproject.wsgi > Procfile</pre></code>where "myproject" is the name of your Django project.
     <br><br>
     ‎11. Select GitHub as deployment method and search for your repository and link them together.
     <br><br>
-    ‎12. Make sure debug is set to false in settings.py before deploying. <pre><code>DEBUG = False</pre></code>.
+    ‎12. Make sure debug is set to false in settings.py before deploying. <pre><code>DEBUG = False</pre></code>
     <br><br>
     ‎13. Scroll down and select "Enable Automatic Deploys", Click to deploy.
     <br><br>
-    ‎14. Your website is deployed and linked to your GitHub account. This means that running <pre><code>git push</pre></code> from your IDE will reflect in the newest version of your app in production.</details>
+    ‎14. Your website is deployed and linked to your GitHub account. This means that running <pre><code>git push</pre></code>from your IDE will reflect in the newest version of your app in production.</details>
 
 ---
 ## Testing
