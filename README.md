@@ -29,11 +29,13 @@
   - [Local Cloning](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#local-cloning)
   - [Forking The Github Repository](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#forking-the-github-repository)
   - [Elephant SQL Database](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#elephant-sql-database)
-    [Cloudinary](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#cloudinary)
+  - [Cloudinary](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#cloudinary)
   - [Deploying To Heroku](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#deploying-to-heroku)
 - ### [Testing](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#testing-1)
 - ### [References](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#references-1)
   - [Documentation](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#docs)
+  - [Inspirational Resources]()
+  - [Tools]()
   - [Content](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#content)
   - [Acknowledgements](https://github.com/Jaaz7/home-cooked-harmony/tree/main?tab=readme-ov-file#acknowledgements)
 
@@ -127,6 +129,20 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - Post title font: PlayFair Display.
     - Post description font: Open Sans.
   - ### Wireframes
+    - <details><summary>Homepage Desktop</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/29aba06a-511e-4de2-a5ac-ce699b55ce27" width="80%" height="80%">></details>
+    - <details><summary>Post Details Desktop</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/ef678282-5b98-4093-a5a0-b21fd72cae83" width="80%" height="80%">></details>
+    - <details><summary>Homepage Mobile</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/a7ee9b8b-e2cd-4b99-b803-42547f851fc2" width="50%" height="50%">></details>
+    - <details><summary>Login Page Desktop</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/eb473803-db20-49b6-b7f7-94faa840f8a6" width="80%" height="80%">></details>
+    - <details><summary>Login Page Mobile</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/46f7bbd3-55a9-414e-80c0-46ff55a2b2a3" width="50%" height="50%">></details>
+    - <details><summary>Register Page Desktop</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/ee1ba273-9d39-4e46-8cb6-2e877fc13eb1" width="80%" height="80%">></details>
+    - <details><summary>Register Page Mobile</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/b8a96964-2687-469e-9d89-0786d9510715" width="50%" height="50%">></details>
   - ### Database Scheme
     Models
     - AllAuth User Model<br>
@@ -176,7 +192,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - [VS Code](https://code.visualstudio.com/) - To write code.
     - [GitHub](https://github.com/) - For repository hosting.
     - [Django Template Language (DTL)](https://docs.djangoproject.com/en/4.2/ref/templates/language/) - Template engine that works very similar to Jinja2.
-    - [Heroku]() - Used as the cloud-based platform to deploy the site.
+    - [Heroku](https://www.heroku.com/) - Used as the cloud-based platform to deploy the site.
     - [Google Fonts](https://fonts.google.com/) - Import main font the website.
     - [WireframeSketcher](https://wireframesketcher.com/) - Used to create wireframes and schemes.
     - [Am I Responsive](https://ui.dev/amiresponsive) - Show the website on a range of devices.
@@ -258,7 +274,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 
 ---
 ## Testing
-
+  ### Refer to the TESTS.md file for a detailed and in-depth documentation of all testing procedures.
 ---
 ## References
   - ### Documentation
