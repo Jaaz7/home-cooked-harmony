@@ -1,5 +1,5 @@
 # Home Cooked Harmony
-**A full-stack, django-based blog where you can share your favourite recipes and engage with the community.**
+**A full-stack, django-based blog application designed for sharing your favourite recipes and engage with the community.**
 <br><br>
 <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0bb6b13d-add8-459c-8ccc-7185cc8186d7" width=90% height=90%>
 <br>
@@ -45,7 +45,7 @@
 Home Cooked Harmony offers a good user experience with a user-friendly interface.
 
 ### Personalized Recipe Discovery:
-Users can search by number of servings, by preparation time or do a free search.
+Users can filter by number of servings, preparation time or through a free-form search.
 
 ### Community Interaction:
 Users can share their own recipes and comment culinary tips, enriching the overall blogging experience.
@@ -192,7 +192,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - [VS Code](https://code.visualstudio.com/) - To write code.
     - [GitHub](https://github.com/) - For repository hosting.
     - [Django Template Language (DTL)](https://docs.djangoproject.com/en/4.2/ref/templates/language/) - Template engine that works very similar to Jinja2.
-    - [Heroku](https://www.heroku.com/) - Used as the cloud-based platform to deploy the site.
+    - [Heroku](https://www.heroku.com/) - Used as the cloud-based platform to deploy the website.
     - [Google Fonts](https://fonts.google.com/) - Import main font the website.
     - [WireframeSketcher](https://wireframesketcher.com/) - Used to create wireframes and schemes.
     - [Am I Responsive](https://ui.dev/amiresponsive) - Show the website on a range of devices.
@@ -231,7 +231,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     <br><br>
     ‎2. Provide a name.
     <br><br>
-    ‎3. Select the Tiny Turtle (Free) plan.
+    ‎3. Select the Tiny Turtle plan.
     <br><br>
     ‎4. Select the Region and Data Center closest to you.
     <br><br>
