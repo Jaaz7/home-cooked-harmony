@@ -142,7 +142,8 @@
           </div>
         </div>
       </div>
-              
+      
+      
       <!-- Side widgets for search and other functionalities -->
       <div class="col-lg-4">
         <!-- Search widget -->
@@ -183,7 +184,26 @@
               {% endif %}
             </ul>
           </div>
+          
         </div>
+        <!-- Pagination for comments -->
+        {% if comments.has_other_pages %}
+          <nav aria-label="Page navigation">
+            <p class="text-center mb-3">
+            <span class="badge pagination-badge">Page {{ comments.number }} of {{ comments.paginator.num_pages }}</span>
+            </p>
+            <ul class="pagination justify-content-center">
+              {% if comments.has_previous %}
+                <li><a href="?page={{ comments.previous_page_number }}" class="page-link pagination-btn">&laquo; PREV</a></li>
+              {% endif %}
+              {% if comments.has_next %}
+                <li><a href="?page={{ comments.next_page_number }}" class="page-link pagination-btn">NEXT &raquo;</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+        </div>
+      </div>
       </div>
     </div>
   </div>
