@@ -274,7 +274,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 
 ---
 ## Testing
-  ### Refer to the [TESTS.md](https://github.com/Jaaz7/home-cooked-harmony/blob/main/TESTS.md) file for a detailed and in-depth documentation of all testing procedures.
+  ### Refer to the [TESTS.md](https://github.com/Jaaz7/home-cooked-harmony/blob/main/TESTS.md) file for a detailed testing documentation.
 ---
 ## References
   - ### Documentation
