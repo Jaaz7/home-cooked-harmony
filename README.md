@@ -174,6 +174,11 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - Registered users can edit and delete their posts.
   - Registered users can delete their comments.
   - ### Existing Features
+    - <details><summary>Homepage</summary>
+      <br>For visitors<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/76f7d05a-6ed2-48e1-b1bf-8ad9e921bdcc" width="80%" height="80%"><br>
+      <br>For Registered users<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/1e3c9999-01b9-416c-bd48-6a3b671e2487" width="80%" height="80%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
