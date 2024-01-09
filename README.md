@@ -213,11 +213,15 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - <details><summary>Edit Post Page</summary>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/413ad1ee-911c-4e3c-b2bc-76c994fe849e" width="80%" height="80%"></details>
     - <details><summary>Modals</summary>
-      <br>There are 4 modals in total, two for defensive programming (deleting posts&comments and logout), and two informative ones. This is one example, they are explored in the TESTS.md file<br><br>
+      <br>There are 4 modals in total, two for defensive programming (deleting posts&comments and logout), and two informative ones.<br><br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/dbadef70-ead0-480b-9632-c37de4d2634b" width="50%" height="50%"></details>
     - <details><summary>Alerts</summary>
-      <br>There is a multitude of messages, one for every CRUD action and some informative ones for user experience enhancement. This is one example, they are explored in the TESTS.md file<br><br>
+      <br>There is a multitude of messages, one for every CRUD action and some informative ones for user experience enhancement.<br><br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4734028e-e442-4e0a-9fac-fb55b7d439ca" width="100%" height="100%"></details>
+    - <details><summary>No Posts Message</summary>
+      <br>These messages show up when there are no posts to view<br><br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/429f05a3-0fa5-4f27-8de5-8491daeca883" width="80%" height="80%">
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/920b6258-c4bd-4e72-ad65-e5a5d3e2f9e3" width="80%" height="80%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
