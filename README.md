@@ -1,5 +1,5 @@
 # Home Cooked Harmony
-**A full-stack, django-based blog application designed for sharing your favourite recipes and engage with the community.**
+**A full-stack, Django-based blog application designed for sharing your favourite recipes and engage with the community.**
 <br><br>
 <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0bb6b13d-add8-459c-8ccc-7185cc8186d7" width=90% height=90%>
 <br>
@@ -155,7 +155,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Security Features
   - User Authentication
-    Django AllAuth is a popular authentication and authorization library for Django, which provides a set of features for managing user                   authentication, registration, login and logout.<br><br>
+    Django AllAuth, a popular Django library, provides comprehensive features for user authentication, registration, login, and logout.<br><br>
   - Login Decorator
     I use the login_required decorator for the following views: add_post, logout_view, delete_post, delete_comment, like_post and edit_post.
     This ensures backend protection and enhances user experience: if the user tries to access any of these views previously mentioned but they're not logged in, they are redirected to the login page.<br><br>
@@ -228,15 +228,15 @@ Optimized for all devices, the website ensures a smooth experience, whether user
 ---
 ## Technologies Used
   - ### Languages
-    - [HTML5](https://en.wikipedia.org/wiki/HTML5)
-    - [CSS3](https://en.wikipedia.org/wiki/CSS)
-    - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+    - [HTML5](https://en.wikipedia.org/wiki/HTML5).
+    - [CSS3](https://en.wikipedia.org/wiki/CSS).
+    - [Python](https://en.wikipedia.org/wiki/Python_(programming_language)).
+    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript).
   - ### Databases
     - [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL.
     - [Cloudinary](https://cloudinary.com/) - Cloud-based service for image storage.
   - ### Frameworks
-    - [Bootstrap](https://getbootstrap.com/) - Provides a collection of HTML, CSS, and JavaScript-based design.
+    - [Bootstrap](https://getbootstrap.com/) - Provides a collection of HTML, CSS, and JavaScript-based design templates.
     - [jQuery](https://jquery.com/) - For efficient JavaScript manipulation.
   - ### Libraries
     - [Fontawesome](https://fontawesome.com/) - Provides vector icon sets for the blog.
@@ -342,7 +342,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - ### Tools
     - [Brave search engine](https://search.brave.com/) - Primary search engine used for research and troubleshooting.
   - ### Content
-    - All code and content were written by Jaaziel do Vale.
+    - All code and content have been written by Jaaziel do Vale.
     - Orange chef hat favicon image [source](https://icons8.com/icon/LZnCmNzYfzAk/chef-hat).
     - Rest of images were powered by DALL-E [Bing Chat](https://www.bing.com/search?showconv=1&q=bing%20AI&sf=codex3p&form=MA13FV), an Artificial Intelligence (AI).
   - ### Acknowledgements
