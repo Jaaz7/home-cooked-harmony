@@ -8,13 +8,29 @@ Return to [README](README.md)
   - [HTML Validation]()
   - [CSS Validation]()
   - [JavaScript Validation]()
-  - [Python]()
+  - [Python Validation]()
 - ### [Bugs]()
   - [Resolved Bugs]()
   - [Unresolved Bugs]()
 - ### [Features Testing]()
 
+---
+## Responsiveness Testing
 
+---
+## Code Validation
+- ### HTML Validation
+- ### CSS Validation
+- ### JavaScript Validation
+- ### Python Validation
+
+---
+## Bugs
+- ### Resolved Bugs
+- ### Unresolved Bugs
+
+---
+## Features Testing
 
 ---
 Return to [README](README.md)
