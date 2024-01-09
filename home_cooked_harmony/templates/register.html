@@ -29,29 +29,29 @@ background-image: url('{% static 'assets/veggies.png' %}'); background-size: 50%
                 {% csrf_token %}
                 <!-- Username input -->
                 <div class="form-outline mb-4">
-                  <input type="text" name="username" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" name="username" id="form3Example1cg" class="form-control form-control-lg" >
                   <label class="form-label" for="form3Example1cg">Your Username</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" name="password1" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" name="password1" id="form3Example4cg" class="form-control form-control-lg" >
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
 
                 <!-- Password repeat input -->
                 <div class="form-outline mb-4">
-                  <input type="password" name="password2" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <input type="password" name="password2" id="form3Example4cdg" class="form-control form-control-lg" >
                   <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                   <!-- Password criteria -->
-                  <small class="form-text text-muted pb-3">
+                  <div class="form-text text-muted pb-3">
                     <ul>
                       <li>Your password cannot be similar to your username</li>
                       <li>Your password must contain at least 8 characters</li>
                       <li>Your password can't be a commonly used password</li>
                       <li>Your password can't be entirely numeric</li>
                     </ul>
-                  </small>
+                  </div>
                 </div>
 
                 <!-- Registration button -->

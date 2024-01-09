@@ -16,7 +16,8 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
 
-# Class-based view for listing posts with pagination and sorting by likes and date
+# Class-based view for listing posts with pagination
+# and sorting by likes and date
 class PostList(generic.ListView):
     queryset = Post.objects.order_by("-date")
     template_name = "index.html"
@@ -27,8 +28,10 @@ class PostList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["current_view"] = "home"
-        context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
-        context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+        context["servings"] = Post.objects.values_list(
+            "servings", flat=True).distinct()
+        context["preptime"] = Post.objects.values_list(
+            "preptime", flat=True).distinct()
         return context
 
 
@@ -41,7 +44,8 @@ def post_list(request):
     return render(request, {"page_obj": page_obj})
 
 
-# Detailed view for a single post, including comments and pagination for comments
+# Detailed view for a single post, including
+# comments and pagination for comments
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
     comments = post.comments.all().order_by("-date")
@@ -84,9 +88,11 @@ def add_post(request):
     form = PostForm()
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
-        if "preparation_time" not in request.POST or "servings" not in request.POST:
+        if ("preparation_time" not in request.POST or
+                "servings" not in request.POST):
             messages.error(
-                request, "You must choose a preparation time and servings amount."
+                request, "You must choose a preparation"
+                "time and servings amount."
             )
         if form.is_valid():
             post = form.save(commit=False)
@@ -104,7 +110,8 @@ def add_post(request):
 
             post.save()
 
-            messages.success(request, "Post added successfully! You can view it here 👇")
+            messages.success(request, "Post added successfully! You"
+            " can view it here 👇")
             return redirect("post_details", post.slug)
 
     return render(request, "add_post.html", {"form": form})
@@ -149,7 +156,8 @@ def logout_view(request):
 def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
-    if post.image and not "food_placeholder.png" in post.image.url:
+    if (post.image and not "food_placeholder.png" in
+    post.image.url):
         public_id = post.image.url.split("/")[-1].split(".")[0]
 
         destroy(public_id)
@@ -236,14 +244,17 @@ def search(request):
 
     # Displaying success or warning message based on search results
     if posts:
-        messages.success(request, f"Found {posts.count()} result(s) for '{query}'")
+        messages.success(request,
+        f"Found {posts.count()} result(s) for '{query}'")
     else:
         messages.warning(request, f"No results found for '{query}'")
     # Context for rendering search results
     context = {}
     context["posts"] = page_obj.object_list
-    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
-    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    context["servings"] = Post.objects.values_list(
+        "servings", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list(
+        "preptime", flat=True).distinct()
     context["page_obj"] = page_obj
     context["is_paginated"] = page_obj.has_other_pages()
     return render(request, "search_results.html", context)
@@ -259,13 +270,16 @@ def search_by_serving(request, serving):
     page_obj = paginator.get_page(page_number)
 
     if posts:
-        messages.success(request, f"Found {posts.count()} result(s) for '{serving}'")
+        messages.success(request,
+        f"Found {posts.count()} result(s) for '{serving}'")
     else:
         messages.warning(request, f"No results found for '{serving}'")
     context = {}
     context["posts"] = page_obj.object_list
-    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
-    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    context["servings"] = Post.objects.values_list(
+        "servings", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list(
+        "preptime", flat=True).distinct()
     context["page_obj"] = page_obj
     context["is_paginated"] = page_obj.has_other_pages()
     return render(request, "search_results.html", context)
@@ -281,15 +295,18 @@ def search_by_preptime(request, preptime):
     page_obj = paginator.get_page(page_number)
 
     if posts:
-        messages.success(request, f"Found {posts.count()} result(s) for '{preptime}'")
+        messages.success(request,
+        f"Found {posts.count()} result(s) for '{preptime}'")
     else:
         messages.warning(request, f"No results found for '{preptime}'")
     context = {}
     context["posts"] = page_obj.object_list
-    context["servings"] = Post.objects.values_list("servings", flat=True).distinct()
+    context["servings"] = Post.objects.values_list(
+        "servings", flat=True).distinct()
     context["page_obj"] = page_obj
     context["is_paginated"] = page_obj.has_other_pages()
-    context["preptime"] = Post.objects.values_list("preptime", flat=True).distinct()
+    context["preptime"] = Post.objects.values_list(
+        "preptime", flat=True).distinct()
     return render(request, "search_results.html", context)
 
 
@@ -299,7 +316,8 @@ def edit_post(request, post_id):
     try:
         post = get_object_or_404(Post, id=post_id)
     except Http404:
-        messages.error(request, "You're trying to edit a post that doesn't exist.")
+        messages.error(request,
+        "You're trying to edit a post that doesn't exist.")
         return redirect("home")
 
     # Check if the current user is the author of the post

@@ -5,7 +5,10 @@ from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
 # Post model for creating blog posts
+
+
 class Post(models.Model):
+
     # Choices for preparation time and servings, used in dropdowns
     PREPTIME_CHOICES = [
         ("20", "up to 20mn"),
@@ -25,8 +28,10 @@ class Post(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = CloudinaryField("image")
-    preptime = models.CharField(max_length=5, choices=PREPTIME_CHOICES, default="20")
-    servings = models.CharField(max_length=3, choices=SERVINGS_CHOICES, default="1-2")
+    preptime = models.CharField(
+        max_length=5, choices=PREPTIME_CHOICES, default="20")
+    servings = models.CharField(
+        max_length=3, choices=SERVINGS_CHOICES, default="1-2")
     likes = models.ManyToManyField(User, related_name="likes", blank=True)
 
     # Custom save method to automatically generate slug from title
@@ -43,15 +48,21 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse("home")
 
+
 # Comment model for creating comments on blog posts
 class Comment(models.Model):
+
     # Fields for the post model
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name="comments")
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_comments"
     )
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    # String representation of the Comment object for viewing in the admin panel
+    # String representation of the Comment object
+    # for viewing in the admin panel
+
     def __str__(self):
         return "%s - %s" % (self.body, self.user)

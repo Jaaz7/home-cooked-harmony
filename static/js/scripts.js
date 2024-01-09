@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/*globals $, tinymce, tinyMCE */
+
 $(document).ready(function () {
   // Update the copyright year dynamically
   const currentYear = new Date().getFullYear();
@@ -25,7 +28,7 @@ $(document).ready(function () {
   });
 
   // Confirmation modal for post deletion
-  $(document).on("click", "#delete-button", function (e) {
+  $(document).on("click", ".delete-button", function (e) {
     e.preventDefault();
     const form = this.form;
     $("#confirmDeletePostModal").modal("show");

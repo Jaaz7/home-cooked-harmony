@@ -1,6 +1,7 @@
 from django import forms
 from .models import Post, Comment
 
+
 # Form class for creating or editing a Post
 class PostForm(forms.ModelForm):
     # Making the image field optional
@@ -17,6 +18,7 @@ class PostForm(forms.ModelForm):
             "preptime",
             "servings",
         ]
+
 
 # Form class for creating a Comment
 class CommentForm(forms.ModelForm):

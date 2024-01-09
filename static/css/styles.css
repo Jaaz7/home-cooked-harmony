@@ -101,7 +101,7 @@ body {
 >> Used to create posts in add post view;
 >> Used to update posts in edit post view
  */
-#button {
+.button {
   background: linear-gradient(to right, #ef9661, #ffca92);
   color: rgb(77 54 54);
   border: none;
