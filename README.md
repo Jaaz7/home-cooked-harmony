@@ -191,6 +191,33 @@ Optimized for all devices, the website ensures a smooth experience, whether user
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4ea84cbb-3dbb-4a40-80c4-01b41c03de4b" width="80%" height="80%"></details>
     - <details><summary>Register Page</summary>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/3c6695c0-55ad-4076-8cae-b72cd47ec13b" width="80%" height="80%"></details>
+    - <details><summary>Detailed Post Page</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/b7443551-733b-4275-8585-3f8b08adb266" width="80%" height="80%"></details>
+    - <details><summary>Edit, Delete and Like Buttons in Detailed Post Page</summary>
+      <br>What the post owner sees<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/f5cd4ff8-c1e4-4fae-ba9e-9fa08fd84de1" width="30%" height="30%">
+      <br>What non-authors see<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/a82bafa8-4519-46cd-8030-6ae3baac587f" width="30%" height="30%"></details>
+    - <details><summary>Comment Section</summary>
+      <br>For visitors<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/3840c4c9-397d-47c8-8a88-31a499fdae28" width="70%" height="70%">
+      <br>For authenticated users<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/01ee79c2-47bd-4888-9c3d-d6949749a1a5" width="70%" height="70%"></details>
+    - <details><summary>Edit and Delete buttons and Like Counter in the Homepage</summary>
+      <br>What post authors see<br><br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4bdf34a2-792d-4ec1-b90d-b9676c45bed0" width="70%" height="70%">
+      <br>Like counter display is availabe for all users and visitors in the homepage<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/79ce2131-8cf6-4716-8190-8a6f54fbb3ad" width="20%" height="20%"></details>
+    - <details><summary>Add Post Page</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/194b6cc2-6358-403f-ae4d-74dd7a9dd4fc" width="80%" height="80%"></details>
+    - <details><summary>Edit Post Page</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/413ad1ee-911c-4e3c-b2bc-76c994fe849e" width="80%" height="80%"></details>
+    - <details><summary>Modals</summary>
+      <br>There are 4 modals in total, two for defensive programming (deleting posts&comments and logout), and two informative ones. This is one example, they are explored in the TESTS.md file<br><br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/dbadef70-ead0-480b-9632-c37de4d2634b" width="40%" height="40%"></details>
+    - <details><summary>Alerts</summary>
+      <br>There is a multitude of messages, one for every CRUD action and some informative ones for user experience enhancement. This is one example, they are explored in the TESTS.md file<br><br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4734028e-e442-4e0a-9fac-fb55b7d439ca" width="100%" height="100%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
