@@ -174,11 +174,19 @@ Optimized for all devices, the website ensures a smooth experience, whether user
   - Registered users can edit and delete their posts.
   - Registered users can delete their comments.
   - ### Existing Features
-    - <details><summary>Homepage</summary>
+    - <details><summary>Homepage&Navigation Bar</summary>
       <br>For visitors<br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/76f7d05a-6ed2-48e1-b1bf-8ad9e921bdcc" width="80%" height="80%"><br>
-      <br>For Registered users<br>
+      <br>For Registered users the navigation bar changes<br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/1e3c9999-01b9-416c-bd48-6a3b671e2487" width="80%" height="80%"></details>
+    - <details><summary>About Section</summary>
+      <br>The about section only appears in the home page<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/18552a51-fecc-4e6d-86d3-df89fed4e5a1" width="40%" height="40%"></details>
+    - <details><summary>Search Section</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/ba643e35-387d-4e88-b54c-290c9351127a" width="40%" height="40%"></details>
+    - <details><summary>Footer&Socials</summary>
+      <br>It features a copyright message and social media buttons<br>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/8e908dfc-7885-4b42-91b4-3b7f1f5da7a8" width="90%" height="90%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
