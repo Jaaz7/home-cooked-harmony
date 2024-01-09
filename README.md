@@ -220,8 +220,8 @@ Optimized for all devices, the website ensures a smooth experience, whether user
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4734028e-e442-4e0a-9fac-fb55b7d439ca" width="100%" height="100%"></details>
     - <details><summary>No Posts Message</summary>
       <br>These messages show up when there are no posts to view<br><br>
-      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/429f05a3-0fa5-4f27-8de5-8491daeca883" width="80%" height="80%">
-      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/920b6258-c4bd-4e72-ad65-e5a5d3e2f9e3" width="80%" height="80%"></details>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/55fa92bd-1872-44fd-acaf-e86230b49b2e" width="40%" height="40%">
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/920b6258-c4bd-4e72-ad65-e5a5d3e2f9e3" width="40%" height="40%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
