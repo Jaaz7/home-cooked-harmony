@@ -187,6 +187,10 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - <details><summary>Footer&Socials</summary>
       <br>It features a copyright message and social media buttons<br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/8e908dfc-7885-4b42-91b4-3b7f1f5da7a8" width="100%" height="100%"></details>
+    - <details><summary>Login Page</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4ea84cbb-3dbb-4a40-80c4-01b41c03de4b" width="80%" height="80%"></details>
+    - <details><summary>Register Page</summary>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/3c6695c0-55ad-4076-8cae-b72cd47ec13b" width="80%" height="80%"></details>
   - ### Features Left to Implement
     - Profile picture for the user.
     - Way to recover the password.
