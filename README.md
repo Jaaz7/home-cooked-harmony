@@ -1,5 +1,5 @@
 # Home Cooked Harmony
-**A django-based blog where you can share your favourite recipes and engage with the community.**
+**A full-stack, django-based blog where you can share your favourite recipes and engage with the community.**
 <br><br>
 <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/0bb6b13d-add8-459c-8ccc-7185cc8186d7" width=90% height=90%>
 <br>
@@ -97,10 +97,10 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - Search button for quick find.
     - View comments.
     - Clear specifications for registration, with detailed error messages if any encountered.
+    - Smooth but strict signup allowing to a secure user account.
 
   - ### Registered User
     - All visitor points above.
-    - Smooth but strict signup allowing to a secure and personalized user account.
     - Easy login page with clear error messages if any encountered.
     - Access to posting recipes.
     - Access to posting comments.
@@ -144,16 +144,48 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     I use the login_required decorator for the following views: add_post, logout_view, delete_post, delete_comment, like_post and edit_post.
     This ensures backend protection and enhances user experience: if the user tries to access any of these views previously mentioned but they're not logged in, they are redirected to the login page.<br><br>
   - CSRF Protection
-    CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the         user is authenticated. Django has a built-in protection uses tokens to ensure that any form submitted or a request made to a Django app really         comes from the user, not an imposter. This protection is being used in every form that requires user input.
+    CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the               user is authenticated. Django has a built-in protection uses tokens to ensure that any form submitted or a request made to a Django app really               comes from the user, not an imposter. This protection is being used in every form that requires user input.
 
 ---
 ## Features
   - ### Existing Features
   - ### Features Left to Implement
+    - Profile picture for the user.
+    - Way to recover the password.
+    - User dashboard.
+    - Account deletion option.
+    - Custom server error pages.
 
 ---
 ## Technologies Used
-  - 
+  - ### Languages
+    - [HTML5](https://en.wikipedia.org/wiki/HTML5)
+    - [CSS3](https://en.wikipedia.org/wiki/CSS)
+    - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+    - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+  - ### Databases
+    - [ElephantSQL](https://www.elephantsql.com/) - PostgreSQL.
+    - [Cloudinary](https://cloudinary.com/) - Cloud-based service for image storage.
+  - ### Frameworks
+    - [Bootstrap](https://getbootstrap.com/) - Provides a collection of HTML, CSS, and JavaScript-based design.
+    - [jQuery](https://jquery.com/) - For efficient JavaScript manipulation.
+  - ### Libraries
+    - [Fontawesome](https://fontawesome.com/) - Provides vector icon sets for the blog.
+    - [TinyMCE](https://www.tiny.cloud/) - A WYSIWYG (What You See Is What You Get) rich text editor.
+  - ### Programs
+    - [VS Code](https://code.visualstudio.com/) - To write code.
+    - [GitHub](https://github.com/) - For repository hosting.
+    - [Django Template Language (DTL)](https://docs.djangoproject.com/en/4.2/ref/templates/language/) - Template engine that works very similar to Jinja2.
+    - [Heroku]() - Used as the cloud-based platform to deploy the site.
+    - [Google Fonts](https://fonts.google.com/) - Import main font the website.
+    - [WireframeSketcher](https://wireframesketcher.com/) - Used to create wireframes and schemes.
+    - [Am I Responsive](https://ui.dev/amiresponsive) - Show the website on a range of devices.
+    - [Git](https://git-scm.com/) - Version control.
+    - [JSHint](https://jshint.com/) - Used to validate JavaScript.
+    - [W3C Markup Validation Service](https://validator.w3.org/) - Used to validate HTML.
+    - [CSS Validation Service](https://jigsaw.w3.org/css-validator/) - Used to validate CSS.
+    - [CI Python Linter](https://pep8ci.herokuapp.com/#) - Used to validate Python.
+    - [Coolors](https://coolors.co/efecca-a9cbb7-f7ff58-ff934f-5e565a) - Color Scheme.
 
 ---
 ## Deployment
@@ -234,6 +266,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     - [Django 5.0.1 documentation](https://django.readthedocs.io/en/stable/contents.html) - Comprehensive guide for Django framework used in the          project.
     - [PostgreSQL 5.4 documentation](https://www.postgresql.org/docs/15/sql-commands.html) - This documentation was important for performing commands 
     in the database, eg. retrieving field types from tables.
+    - [Bootstrap Template](https://github.com/StartBootstrap/startbootstrap-blog-post) - A front-end template that values responsiveness.
   - ### Inspirational Resources
     - [Django tutorials from Codemy](https://www.youtube.com/@Codemycom/featured) - A video series by John Elder, providing practical Django         development skills.
     - Code Institute's "I Think Therefore I Blog" walkthrough project - Provided a foundational understanding of blog development in Django.
