@@ -214,7 +214,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/413ad1ee-911c-4e3c-b2bc-76c994fe849e" width="80%" height="80%"></details>
     - <details><summary>Modals</summary>
       <br>There are 4 modals in total, two for defensive programming (deleting posts&comments and logout), and two informative ones. This is one example, they are explored in the TESTS.md file<br><br>
-      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/dbadef70-ead0-480b-9632-c37de4d2634b" width="40%" height="40%"></details>
+      <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/dbadef70-ead0-480b-9632-c37de4d2634b" width="50%" height="50%"></details>
     - <details><summary>Alerts</summary>
       <br>There is a multitude of messages, one for every CRUD action and some informative ones for user experience enhancement. This is one example, they are explored in the TESTS.md file<br><br>
       <img src="https://github.com/Jaaz7/home-cooked-harmony/assets/130407877/4734028e-e442-4e0a-9fac-fb55b7d439ca" width="100%" height="100%"></details>
