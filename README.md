@@ -160,7 +160,7 @@ Optimized for all devices, the website ensures a smooth experience, whether user
     I use the login_required decorator for the following views: add_post, logout_view, delete_post, delete_comment, like_post and edit_post.
     This ensures backend protection and enhances user experience: if the user tries to access any of these views previously mentioned but they're not logged in, they are redirected to the login page.<br><br>
   - CSRF Protection
-    CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the               user is authenticated. Django has a built-in protection uses tokens to ensure that any form submitted or a request made to a Django app really               comes from the user, not an imposter. This protection is being used in every form that requires user input.
+    CSRF stands for Cross-Site Request Forgery. It's a type of attack where a malicious website can make requests to a different website where the               user is authenticated. Django has a built-in protection that ensures that any submitted form request come from the authenticated user, not an imposter. This protection is being enforced.
 
 ---
 ## Features
