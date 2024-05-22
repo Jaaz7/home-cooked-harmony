@@ -9,13 +9,13 @@ $(document).ready(function () {
   });
 
   // Initialize TinyMCE rich text editor
-  tinymce.init({
-    selector: "#postBody",
-    plugins:
-      "mentions anchor autolink charmap codesample emoticons link lists visualblocks wordcount checklist casechange formatpainter permanentpen footnotes advtemplate advcode powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
-    toolbar:
-      "undo redo | formatselect | bold italic underline strikethrough | link | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
-  });
+  // tinymce.init({
+  //   selector: "#postBody",
+  //   plugins:
+  //     "mentions anchor autolink charmap codesample emoticons link lists visualblocks wordcount checklist casechange formatpainter permanentpen footnotes advtemplate advcode powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss",
+  //   toolbar:
+  //     "undo redo | formatselect | bold italic underline strikethrough | link | align | checklist numlist bullist indent outdent | emoticons charmap | removeformat",
+  // });
 
   // Handle logout link click with confirmation modal
   $(document).on("click", "#logout-link", function (e) {
